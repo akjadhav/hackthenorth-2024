@@ -1,7 +1,9 @@
 {
   "name": "hackthenorth-2024",
   "private": true,
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
@@ -11,13 +13,15 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@mappedin/mappedin-js": "^6.0.1-beta.3",
     "@remix-run/node": "^2.12.0",
     "@remix-run/react": "^2.12.0",
     "@remix-run/serve": "^2.12.0",
     "convex": "^1.16.0",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remix-utils": "^7.6.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.12.0",
