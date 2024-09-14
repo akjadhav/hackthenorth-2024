@@ -1,0 +1,24 @@
+{
+  "objects": {
+    "a1ed3d6b": {
+      "class": "person",
+      "confidence": 0.57,
+      "depth": 0.82
+    },
+    "b03d99a4": {
+      "class": "person",
+      "confidence": 0.32,
+      "depth": 0.98
+    }
+  },
+  "descriptions": {
+    "a1ed3d6b": "The person appears to be standing near the center of the image, possibly waiting or looking at something. They have a backpack on their shoulders and are dressed in casual attire.",
+    "b03d99a4": "This person seems to be standing further back in the scene compared to the first person, indicated by the higher depth value. Their confidence score is lower, suggesting they may not be as clearly visible or may be partially obscured."
+  },
+  "scene_analysis": {
+    "composition": "The image looks like a public indoor space, possibly a hall or lobby with tiled flooring. Furniture is placed throughout, and there are counters and walls with design elements.",
+    "lighting_and_colors": "The lighting is bright and even, suggesting indoor artificial lighting. The colors are mostly subdued with grays, blacks, and neutral tones, with the exception of a bright red structure to the left.",
+    "atmosphere": "The scene appears to be calm and orderly, with no signs of rush or disorder. It's likely a public space designed for wait times or transit.",
+    "text_and_signage": "There is text in the upper right corner of the image, possibly related to the camera system (date and time information), but the specific content of the text is not clear."
+  }
+}

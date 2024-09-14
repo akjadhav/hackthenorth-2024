@@ -1,0 +1,54 @@
+{
+  "objects": {
+    "e10f0b3a": {
+      "class": "chair",
+      "confidence": 0.88,
+      "depth": 0.71
+    },
+    "7eaafc0c": {
+      "class": "person",
+      "confidence": 0.87,
+      "depth": 0.95
+    },
+    "513069d5": {
+      "class": "handbag",
+      "confidence": 0.6,
+      "depth": 0.87
+    },
+    "e16ec3de": {
+      "class": "suitcase",
+      "confidence": 0.51,
+      "depth": 0.7
+    },
+    "af888fe4": {
+      "class": "chair",
+      "confidence": 0.34,
+      "depth": 0.85
+    },
+    "e83d1730": {
+      "class": "chair",
+      "confidence": 0.29,
+      "depth": 0.97
+    },
+    "642d2c53": {
+      "class": "chair",
+      "confidence": 0.26,
+      "depth": 0.97
+    }
+  },
+  "descriptions": {
+    "e10f0b3a": "A chair with a patterned red and beige upholstery located on the left side of the image, it appears closer to the foreground than most objects due to its depth value.",
+    "7eaafc0c": "A person wearing a red shirt sitting in a chair, with a black suitcase to their right and a blue backpack to their left. The individual appears to be holding a red container, possibly a drink, and looking slightly to their right.",
+    "513069d5": "A handbag positioned on the floor near the chair on which the person is seated, slightly ahead of the suitcase to the person's left.",
+    "e16ec3de": "A black suitcase positioned on the floor to the right of the seated person, it is similar in depth to the closest chair, indicating it is also in the foreground.",
+    "af888fe4": "A chair on the right with an indistinct pattern and lower confidence located farther back in the scene relative to the suitcase and the closest chair.",
+    "e83d1730": "A chair barely visible and partially obscured by the person seated, with the lowest confidence value and one of the farthest depth values, suggesting it is in the background of the scene.",
+    "642d2c53": "A chair partially visible and overlapping with e83d1730, with low confidence and far background depth information, positioned to the right of the person."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be an interior space, perhaps a waiting room or lounge, with multiple chairs. There is a person seated near the center of the composition with luggage items nearby.",
+    "lighting_and_colors": "The scene is evenly lit, likely by artificial light sources above. The colors are mostly muted with neutral wall tones, though the red shirt of the person and the patterned chair add pops of color.",
+    "atmosphere": "The atmosphere appears calm with a single person waiting or resting, possibly in a transit or office setting.",
+    "text_and_signage": "There is no clearly visible text or signage discernible in the image."
+  }
+}

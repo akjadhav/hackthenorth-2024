@@ -1,0 +1,54 @@
+{
+  "objects": {
+    "568455a1": {
+      "class": "person",
+      "confidence": 0.88,
+      "depth": 0.96
+    },
+    "2ff269ba": {
+      "class": "chair",
+      "confidence": 0.87,
+      "depth": 0.76
+    },
+    "1b298350": {
+      "class": "suitcase",
+      "confidence": 0.82,
+      "depth": 0.85
+    },
+    "4b5bd1ea": {
+      "class": "handbag",
+      "confidence": 0.44,
+      "depth": 0.91
+    },
+    "e7cddb4b": {
+      "class": "backpack",
+      "confidence": 0.29,
+      "depth": 0.91
+    },
+    "cc71ea65": {
+      "class": "chair",
+      "confidence": 0.27,
+      "depth": 0.87
+    },
+    "4bb84f4b": {
+      "class": "suitcase",
+      "confidence": 0.26,
+      "depth": 0.61
+    }
+  },
+  "descriptions": {
+    "568455a1": "A person seated in the center of the image, wearing a red T-shirt, with a neutral expression, holding a beverage can.",
+    "2ff269ba": "A patterned chair towards the front-left of the scene with items placed on it.",
+    "1b298350": "A vertical, dark-colored suitcase positioned in the center-right of the scene, near the seated person.",
+    "4b5bd1ea": "An item resembling a handbag to the right of the suitcase which has a lower confidence level, indicating it might not be a handbag.",
+    "e7cddb4b": "An item that might be a backpack near the right side of the suitcase, having low confidence for accurate identification.",
+    "cc71ea65": "Another chair in the background with a low confidence level, indicating less certainty of it being a chair.",
+    "4bb84f4b": "A suitcase on the chair to the left of the scene, which has low confidence and might be obscured or partially hidden."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be an indoor setting, possibly a waiting area. A person is seated centrally with luggage nearby, suggesting a travel scenario.",
+    "lighting_and_colors": "The lighting seems to be artificial and evenly distributed, with no harsh shadows visible. The image features a warm tone due to the yellow wall color and indoor lighting.",
+    "atmosphere": "The scene appears ordinary and calm, consistent with an indoor waiting scenario. The person seems to be relaxed.",
+    "text_and_signage": "There is no visible text or signage that is legible in this scene."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "objects": {
+    "7dd1b9ee": {
+      "class": "person",
+      "confidence": 0.72,
+      "depth": 0.86
+    },
+    "776fe459": {
+      "class": "backpack",
+      "confidence": 0.35,
+      "depth": 0.83
+    },
+    "ed2b0919": {
+      "class": "person",
+      "confidence": 0.27,
+      "depth": 0.98
+    },
+    "2552e90e": {
+      "class": "backpack",
+      "confidence": 0.26,
+      "depth": 0.79
+    }
+  },
+  "descriptions": {
+    "7dd1b9ee": "A person seen from behind, wearing dark clothing and a light-colored backpack on the left side of the image facing away from the camera. Their pose suggests they may be walking.",
+    "776fe459": "A backpack that appears to be sitting on a piece of furniture, less clear than others, possibly a dark color.",
+    "ed2b0919": "Another person further away from the camera than the first person, with a lower confidence score, making it less clear. This person is possibly standing.",
+    "2552e90e": "A backpack closer to the camera, also on a piece of furniture. It appears clearer and has similar features to '776fe459', also likely a dark color."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be inside a building with a modern and spacious interior. There is a red structure with hanging decorations on the left, tiled flooring, and seating areas with dark-colored furniture. Objects and people are scattered across the setting, which suggests a public space, possibly a lobby or waiting area.",
+    "lighting_and_colors": "The scene is well-lit with what seems to be artificial light, given the indoor setting. Neutral tones such as gray and beige dominate the space, with the red structure adding a bright splash of color. Reflections on the floor suggest glossy tiles.",
+    "atmosphere": "The atmosphere appears calm and quiet with only two detected people, conveying a sense of stillness or a less busy time in what might be a typically bustling area.",
+    "text_and_signage": "There is no clear text or signage visible in the image other than the watermark 'tapo' at the bottom left, which indicates the brand of the surveillance equipment used."
+  }
+}

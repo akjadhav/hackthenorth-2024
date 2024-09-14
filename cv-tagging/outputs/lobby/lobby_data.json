@@ -1,195 +1,522 @@
 [
   {
     "frame_number": 0,
-    "objects": [
-      "person, confidence: 0.42, depth: 0.59",
-      "backpack, confidence: 0.38, depth: 0.77",
-      "person, confidence: 0.34, depth: 0.98",
-      "person, confidence: 0.32, depth: 0.99"
-    ],
-    "description": "The image is a surveillance video of an area with various objects in a walkway, including persons, backpacks, and rugs. There are six people in the scene with one person standing in the foreground and others scattered throughout the area. A bench with luggage sitting on it is present, as well as a tripod nearby. There are a few other backpacks visible in the shot, with one on the bench, another on the floor beside the bench, and another near the middle of the scene.\n\n\nThe objects, such as the bench, backpacks, and persons, are all overseen by a camera, capturing a large space within a walkway. The man on the left is among the few persons visible in the frame. The objects are in the background, suggesting depth in the image, while the persons are in the foreground. The people and objects are organized along the horizontal and vertical axis, giving a slight illusion of depth in the image.\n\n\nIn addition to the camera, the backpacks are visible on the luggage area in the middle of the frame as well as in another location on the floor. A red bench is located in the middle of the image, and portions of a door, possibly indicating an entrance to another room, can be seen on the right side of the camera's view.\n\n\nThis thorough scene presents various objects, capturing a multifunctional area of a facility like a museum, with people and objects distributed across all areas of the image."
+    "objects": {
+      "ca484598": {
+        "class": "person",
+        "confidence": 0.42,
+        "depth": 0.59
+      },
+      "59a1849b": {
+        "class": "backpack",
+        "confidence": 0.38,
+        "depth": 0.77
+      },
+      "90ddd8d3": {
+        "class": "person",
+        "confidence": 0.34,
+        "depth": 0.98
+      },
+      "22f43ea9": {
+        "class": "person",
+        "confidence": 0.32,
+        "depth": 0.99
+      }
+    },
+    "descriptions": {
+      "ca484598": "A person is standing on the lower right side of the frame, facing towards the camera. They appear to be wearing a light-colored top, dark pants, and carrying a dark backpack over their right shoulder.",
+      "59a1849b": "A dark-colored backpack is placed on the bench in the center of the frame, suggesting its owner might be nearby.",
+      "90ddd8d3": "A person is positioned on the left side of the frame, near the back. They are facing away from the camera, and it is challenging to discern specific details about their appearance due to the distance.",
+      "22f43ea9": "Another person is located farther back on the left side of the frame, next to the previous person. Similarly facing away and hard to distinguish specific features."
+    }
   },
   {
     "frame_number": 15,
-    "objects": [
-      "person, confidence: 0.55, depth: 0.77",
-      "person, confidence: 0.38, depth: 0.98",
-      "backpack, confidence: 0.35, depth: 0.80",
-      "backpack, confidence: 0.34, depth: 0.77"
-    ],
-    "description": "This image features a lobby with a clock mounted on the wall near the center roof of a red indoor area. Furthermore, an iconic red and white beach umbrella can be spotted in the photo, as well as a person standing close to the beach umbrella. \n\n\nThere are four people in the scene, two located at the bottom-left corner, another closer to the cafeteria area, and the last person standing near the clock. The clock is positioned on the wall overlooking the entire lobby. \n\n\nA key point of interest is a bench situated in the vicinity, also present in the center of the room and probably intended for relaxation or resting during leisure visits. \n\n\nIn the center of the room, a chair can be seen as a part of the living room area. Several items can be identified with varying labels, including backpacks and handbags, to better understand the context of the setting."
+    "objects": {
+      "076a0e69": {
+        "class": "person",
+        "confidence": 0.55,
+        "depth": 0.77
+      },
+      "a9ca6217": {
+        "class": "person",
+        "confidence": 0.38,
+        "depth": 0.98
+      },
+      "f9f8f76b": {
+        "class": "backpack",
+        "confidence": 0.35,
+        "depth": 0.8
+      },
+      "4f259455": {
+        "class": "backpack",
+        "confidence": 0.34,
+        "depth": 0.77
+      }
+    },
+    "descriptions": {
+      "076a0e69": "This person appears to be walking and carrying a bag, dressed in a darker outfit.",
+      "a9ca6217": "This individual is located further away compared to the others, possibly moving towards the background, with a lighter attire.",
+      "f9f8f76b": "This is a backpack resting on a bench, seemingly full and with a rounded top design.",
+      "4f259455": "Another backpack located on the same bench as the previous one, also appearing to be quite full, contributing to the personal items scene."
+    }
   },
   {
     "frame_number": 30,
-    "objects": [
-      "person, confidence: 0.58, depth: 0.81",
-      "person, confidence: 0.40, depth: 0.98",
-      "backpack, confidence: 0.33, depth: 0.81",
-      "suitcase, confidence: 0.29, depth: 0.80",
-      "backpack, confidence: 0.27, depth: 0.82"
-    ],
-    "description": "The scene is set in an indoor setting, likely a mall, with an area that resembles a mall environment, characterized by multiple objects and people. The image is captured by a camera installed on a ceiling in this public space.\n\n\nThere are three prominent people in the image, standing out due to their prominence. They are all spending time in this indoor area, possibly shopping or engaging in other mall activities. They are accompanied by suitcases, which appear to be traveling luggage, and a bag on the ground.\n\n\nMultiple personal items are visible throughout the scene. In total, there are twelve backpacks of various colors and sizes, and three suitcases. There are also two chairs and a cell phone on the ground. Various other accessories can be seen, such as three ties, two pairs of boots, two keyboards, and a stack of books. \n\n\nA person in the scene is standing towards the left of the image. The suitcases are located closer to a central point for depth perspective. The backpacks showcase an evenly spaced out representation of the item in various areas, with some situated closer to the person and some in the other areas of the scene."
+    "objects": {
+      "cf76e48c": {
+        "class": "person",
+        "confidence": 0.58,
+        "depth": 0.81
+      },
+      "36f35eec": {
+        "class": "person",
+        "confidence": 0.4,
+        "depth": 0.98
+      },
+      "55725b45": {
+        "class": "backpack",
+        "confidence": 0.33,
+        "depth": 0.81
+      },
+      "ea6c470b": {
+        "class": "suitcase",
+        "confidence": 0.29,
+        "depth": 0.8
+      },
+      "f344d34a": {
+        "class": "backpack",
+        "confidence": 0.27,
+        "depth": 0.82
+      }
+    },
+    "descriptions": {
+      "cf76e48c": "A person standing with a slight lean to the right, wearing a dark-colored top and lighter colored bottoms. The individual's head is turned towards the left side of the photo, possibly in motion or looking at something.",
+      "36f35eec": "Another person standing further back compared to the first, appears to be wearing a coat and has a lighter color at the bottom, which might be pants or the lighting effect.",
+      "55725b45": "A backpack in the foreground, with black predominant color and a design or light reflections on the upper part. It seems to be leaning against a bench or similar structure.",
+      "ea6c470b": "A suitcase is placed on what appears to be a bench or seating surface. The suitcase seems to have a patterned design and shows a mix of lighter colors, possibly beige or a similar shade with darker accents.",
+      "f344d34a": "Another backpack detected, shown to be mostly black like the first, also seemingly positioned against a surface which could be a bench."
+    }
   },
   {
     "frame_number": 45,
-    "objects": [
-      "person, confidence: 0.73, depth: 0.77",
-      "backpack, confidence: 0.66, depth: 0.78",
-      "backpack, confidence: 0.37, depth: 0.81",
-      "airplane, confidence: 0.35, depth: 0.78",
-      "backpack, confidence: 0.33, depth: 0.77",
-      "person, confidence: 0.33, depth: 0.98"
-    ],
-    "description": "The image showcases a busy area with a variety of objects displayed within the scene, such as a backpack that is \"very close\" and occupies a \"whole area.\" Other objects are grouped together or in pairs depending on their distance from the camera, indicating the environment as comfortable, busy, and having a mix of objects, including a suitcase, a dining table, and an airplane.\n\n\nGiven the depth values, the blue table is present at about two meters away while a suitcase is seen closer, both of them being large and prominent objects in the scene. The backpack and the red couch are both in the center of the image and closer to the ground, reinforcing that it is a crowded area in the building. The small airplane and other smaller objects are further away, mostly in the background, suggesting a multi-layered environment with varying distances and heights of the objects.\n\n\nIn the warehouse, there's a couch with a backpack on top of it, located at a depth of about 2 meters (in the middle of the room). Behind the person in the image, two other backpacks can be seen, adding to the depth of the scene and reflecting real-life busy surroundings.\n\n\nAs a result, this image is representative of a high-traffic and diverse area with a mix of items placed throughout the environment. Placement of objects and lighting within the image help emphasize the multi-level architecture and busy ambiance."
+    "objects": {
+      "a60b5dde": {
+        "class": "person",
+        "confidence": 0.73,
+        "depth": 0.77
+      },
+      "5d906bf3": {
+        "class": "backpack",
+        "confidence": 0.66,
+        "depth": 0.78
+      },
+      "1951de42": {
+        "class": "backpack",
+        "confidence": 0.37,
+        "depth": 0.81
+      },
+      "a5bffedf": {
+        "class": "airplane",
+        "confidence": 0.35,
+        "depth": 0.78
+      },
+      "13b8122e": {
+        "class": "backpack",
+        "confidence": 0.33,
+        "depth": 0.77
+      },
+      "eace5025": {
+        "class": "person",
+        "confidence": 0.33,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "a60b5dde": "A person standing on the floor with a backpack, appearing to be waiting or moving. Located closer to the camera based on depth information.",
+      "5d906bf3": "A backpack with a blue color sitting on the ground right next to the person marked as 'a60b5dde', therefore likely belonging to that person.",
+      "1951de42": "A backpack partially visible and farther from the camera compared to '5d906bf3'. Its details are not clear due to lower confidence and positioning.",
+      "a5bffedf": "An object classified as an airplane, which seems unrecognized properly. Given the indoor setting, it is likely a misidentification of another object.",
+      "13b8122e": "A backpack seen from the side view, located on the ground. It is a similar distance from the camera as 'a60b5dde' and '5d906bf3'.",
+      "eace5025": "Another person detected farther from the camera, with a lower confidence. Difficulty in discerning details due to potential overlap with other objects and lower confidence level."
+    }
   },
   {
     "frame_number": 60,
-    "objects": [
-      "person, confidence: 0.57, depth: 0.82",
-      "person, confidence: 0.32, depth: 0.98"
-    ],
-    "description": "The image captures a large hallway inside of a building where several people are visible, including one person near the center of the scene, another one closer to the right side of the image, and the third one further back. There is additional space on the left side with two small figures.\n\n\nThere are multiple benches placed throughout the area; one located in the center and two others is situated further back along the hallway. In the foreground of the image, a man is present, which is the one with his back facing you. He is bending slightly inward and is wearing a backpack.\n\n\nThe monitor screen is located at the right side, showing different screens apart from the main one and seemingly enhancing the environment. The area all around is filled with people, including an observation room with a woman, another individual, and that of a person holding luggage placed in the foreground. There is a man in the back with a backpack, and another man with a backpack closer to the front. The other two figures are situated towards the left. \n\n\nThis scene appears to be monitored, perhaps from an observation room or a security desk, as the building entrance is close by on the left, featuring screens showing the interior of the building."
+    "objects": {
+      "a1ed3d6b": {
+        "class": "person",
+        "confidence": 0.57,
+        "depth": 0.82
+      },
+      "b03d99a4": {
+        "class": "person",
+        "confidence": 0.32,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "a1ed3d6b": "The person appears to be standing near the center of the image, possibly waiting or looking at something. They have a backpack on their shoulders and are dressed in casual attire.",
+      "b03d99a4": "This person seems to be standing further back in the scene compared to the first person, indicated by the higher depth value. Their confidence score is lower, suggesting they may not be as clearly visible or may be partially obscured."
+    }
   },
   {
     "frame_number": 75,
-    "objects": [
-      "person, confidence: 0.72, depth: 0.86",
-      "backpack, confidence: 0.35, depth: 0.83",
-      "person, confidence: 0.27, depth: 0.98",
-      "backpack, confidence: 0.26, depth: 0.79"
-    ],
-    "description": "The image depicts a busy and lively room with many people and  objects. Among the people, at least five individuals can be clearly seen across the room. There are also two bags, possibly a backpack and a handbag, scattered in various parts of the room. A chair is evident in the room as well. The overall atmosphere conveys a bustling environment that could be related to an art or display.  The people may have different roles, like the patrons in the foreground, as other individuals contribute to the ambiance.\nA colorless office setting with cameras present, allowing people to interact while security covers their footprints in real-time. The people and items help create a vibrant scene where various activities can be observed.\n\n\nFor instance, one of the people appears to be adjusting a jacket, while one of the others appears to be holding a computer mouse. From the multiple people crossing paths in various orientations, it can be inferred that there are points of intersection within that they must navigate. \nSuch points might include benches, with one bench visible in the room, or other furniture that adds elements and diversity to the interior design.\n\n\nIn terms of visual information, there are two cameras present, which may signpost the surveillance measures put in place, emphasizing the observation and monitoring of the room."
+    "objects": {
+      "7dd1b9ee": {
+        "class": "person",
+        "confidence": 0.72,
+        "depth": 0.86
+      },
+      "776fe459": {
+        "class": "backpack",
+        "confidence": 0.35,
+        "depth": 0.83
+      },
+      "ed2b0919": {
+        "class": "person",
+        "confidence": 0.27,
+        "depth": 0.98
+      },
+      "2552e90e": {
+        "class": "backpack",
+        "confidence": 0.26,
+        "depth": 0.79
+      }
+    },
+    "descriptions": {
+      "7dd1b9ee": "A person seen from behind, wearing dark clothing and a light-colored backpack on the left side of the image facing away from the camera. Their pose suggests they may be walking.",
+      "776fe459": "A backpack that appears to be sitting on a piece of furniture, less clear than others, possibly a dark color.",
+      "ed2b0919": "Another person further away from the camera than the first person, with a lower confidence score, making it less clear. This person is possibly standing.",
+      "2552e90e": "A backpack closer to the camera, also on a piece of furniture. It appears clearer and has similar features to '776fe459', also likely a dark color."
+    }
   },
   {
     "frame_number": 90,
-    "objects": [
-      "person, confidence: 0.71, depth: 0.88",
-      "backpack, confidence: 0.39, depth: 0.78",
-      "backpack, confidence: 0.29, depth: 0.82",
-      "person, confidence: 0.25, depth: 0.98"
-    ],
-    "description": "In the image, there is a child wearing a blue backpack, which appears to be a type of checkered bag, displayed on the right side, next to the person standing. This bag stands out among other bags and handbags placed around the room, which are further away from the viewer. In the foreground beyond the child, there appears to be another person located in the middle of the room. This person is also wearing a backpack.\n\n\nAround the room, there are several shelves on the walls that display various books. Some of these books are placed closer to the child while others are in the background. The arrangement of these books creates a library-like ambiance to the room. In the middle of the image, there is a couch overlooking the area, and the floor is covered with different floor coverings, creating a unique space.\n\n\nAdditionally, the scene features a dining table with a knife on it, and there are people walking around the area, giving a more life-like atmosphere. Overall, the image showcases many different features that make up the room layout and design."
+    "objects": {
+      "7077da9f": {
+        "class": "person",
+        "confidence": 0.71,
+        "depth": 0.88
+      },
+      "54798263": {
+        "class": "backpack",
+        "confidence": 0.39,
+        "depth": 0.78
+      },
+      "26282b7b": {
+        "class": "backpack",
+        "confidence": 0.29,
+        "depth": 0.82
+      },
+      "cd8993b3": {
+        "class": "person",
+        "confidence": 0.25,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "7077da9f": "A person standing in the middle of the scene facing away from the camera, wearing a light-colored top and dark pants, with a backpack on one shoulder.",
+      "54798263": "A backpack resting on a bench close to the camera, its position suggesting that it is in front of the person labeled 7077da9f.",
+      "26282b7b": "Another backpack also resting on the same bench, positioned to the right of the backpack labeled 54798263, closer to the central person.",
+      "cd8993b3": "An individual located further back in the scene, only partly visible, with a low confidence in the detection, indicating the person might be partially obscured or at the edge of the field of view."
+    }
   },
   {
     "frame_number": 105,
-    "objects": [
-      "person, confidence: 0.75, depth: 0.90",
-      "suitcase, confidence: 0.26, depth: 0.66"
-    ],
-    "description": "The image portrays a white building, where a man and a woman are walking through a white hall lined with rectangles of different sizes. Throughout the hallway, there are chairs and benches lined up between the walls. A person has a lower camera view, and an upper camera view, with \"The floor!\" anointed under one of the views. The woman and the man are walking through the hallway, presumably at a school.\n\n             \n\n      \n\nA suitcase is visible, though its location isn't entirely clear. The suitcase appears to have a certain level of confidence and depth, with an overall confidence score of 0.3. The floor appears on at least one of the camera views, possibly in the white building with the hallway, and is most likely in both the main view and the hallway view.\n\n\nIn the main view, the woman is standing in the background with her face pixelated out. The view gives them a red square on both sides, as well as various benches that are in the hallway.\n\n\nIn this hallway picture, the woman and the man walking together are perceived smaller. The main white building with the hallway is close in size to both the man and the woman.\n\n\nIn the hall, the square square is very real and white. Moreover, a backpack is noticeable with the camera on it. There's also a chair located in the hallway.\n\n\nThe woman and the man, captured in close-up, are both under the camera's view. Their positions have moderate confidence, and they are partly visible. The large white wall with photos is well-defined along with the tall white background and the hallway, also contributing to the white building's size. The hall is a typical educational environment."
+    "objects": {
+      "92bb118e": {
+        "class": "person",
+        "confidence": 0.75,
+        "depth": 0.9
+      },
+      "1bdc8bf0": {
+        "class": "suitcase",
+        "confidence": 0.26,
+        "depth": 0.66
+      }
+    },
+    "descriptions": {
+      "92bb118e": "The object appears to be a person, standing with their back facing the camera. The person is wearing a dark-colored top and has a backpack. They are positioned on a tiled floor near what appears to be benches or seats.",
+      "1bdc8bf0": "This object is identified with low confidence as a suitcase, placed closer to the camera than the person, on the same tiled floor, possibly near seating arrangements. Due to the low confidence, the object's appearance is not distinctly recognizable as a suitcase."
+    }
   },
   {
     "frame_number": 120,
-    "objects": [
-      "person, confidence: 0.74, depth: 0.93",
-      "airplane, confidence: 0.29, depth: 0.80"
-    ],
-    "description": "The image displays a mall-type setting, where two people are captured walking and interacting. There are three dining tables in the scene, one close to the people and the other two farthest away in the foreground. \n\n\nA bookshelf can be seen on the left side of the image, containing multiple books that are stacked up across various heights and are present over different areas of the shelf. \n\n\nThere are two bags visible in the scene, one in the foreground and the other in the middle of the area. \n\n\nA backpack is situated close to these bags and can be found close to the center of the frame. \n\n\nIn the background, an airplane  is faintly visible in the distance. \n\n\nA couch and multiple benches are also present in the room, adding to the impression of a mall-like setting. \n\n\nBy examining the depth values and confidence scores, we can identify the distance and distance between certain objects. People can be seen but their confidence scores are relatively low, suggesting some uncertainty.\n\n\n\nThis scene captured in the photo shows a three-dimensional visual of people standing against the elevator with the backpack and benches in the background. There is also a dining table in front of a lady sitting on a couch. All the objects in the room have been marked with numbers based on the scene description. The floor is covered in beige tiles, giving it an aesthetic appeal. The room appears to be a common area adjacent to an elevator where people gather to socialize, dine, or relax."
+    "objects": {
+      "8ff194f1": {
+        "class": "person",
+        "confidence": 0.74,
+        "depth": 0.93
+      },
+      "c72ec4e6": {
+        "class": "airplane",
+        "confidence": 0.29,
+        "depth": 0.8
+      }
+    },
+    "descriptions": {
+      "8ff194f1": "A person is standing with their back towards the camera, wearing a dark top, light-colored pants, and a backpack. The individual is positioned on the right-hand side of the frame, appearing to be in motion.",
+      "c72ec4e6": "The detected object, with low confidence as an airplane, does not visually appear to resemble an airplane; it may be a misclassification."
+    }
   },
   {
     "frame_number": 135,
-    "objects": [
-      "person, confidence: 0.67, depth: 0.94",
-      "person, confidence: 0.35, depth: 0.98"
-    ],
-    "description": "This is a spacious room with a large number of students present, captured in front of one of the walls. There is a woman, standing in the foreground, who appears to be playing a game of digital tag. Another person is standing to her left, while a different individual is a bit further away, both in front of others present in the room.\n\n\nThe room is lined with windows but seems mostly empty all around, with no one close in the right-hand side of the image. In this open place, there's a backpack, a chair, a bench and, in addition to the woman with a cell phone staring at her digital tag marker, all belonging to the same room."
+    "objects": {
+      "fb298af8": {
+        "class": "person",
+        "confidence": 0.67,
+        "depth": 0.94
+      },
+      "85134477": {
+        "class": "person",
+        "confidence": 0.35,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "fb298af8": "A person with a medium build wearing a light-colored top, dark pants, and carrying a dark-colored backpack over one shoulder. The person appears to be standing and facing away from the camera, slightly off to the center of the image.",
+      "85134477": "A person with an indistinct appearance due to low confidence in detection, possibly donning a dark-colored outfit and positioned further back in the scene than the first person, closer to the right edge of the image."
+    }
   },
   {
     "frame_number": 150,
-    "objects": [
-      "person, confidence: 0.74, depth: 0.95",
-      "person, confidence: 0.27, depth: 0.98"
-    ],
-    "description": "This image features two women walking into the room from different orientations, both positioned approximately in the center of the image. One of them is located closer to the right, while the other is on the left side. A bench can be found around two-thirds of the way into the room. An open doorway stands in the middle of the space, at roughly one-third of the way from the left to the middle and 20% from the top to the bottom of the frame.\n\n\nOn the wall above the women are three lamps, adding an overhead perspective to the scene. One lamp is significantly brighter, and the other two are more subdued. A red item is present in the room, possibly a couch, which is located closer to the right side of the image with a higher score. Near the back-right woman, there is a backpack on the ground.\n\n\nThere are three visible people in the image, likely participating in different activities in the room. The presence of multiple people enhances the depth of the space, making it appear more lively compared to the other individuals in the shopping mall space. Surprisingly, there are also multiple donuts present, with two located close to the foreground and two others further in the background. Although donuts might seem like an odd item to find in a department store, it is likely due to an image manipulation or a creative visual element.\n\n\nEveryone seems to be focused on their activities or possibly, some are in the background, contributing to the artistic or stylized nature of the scene. The room contains various items to make a unique, art depicting people, backpacks, a bench and a couch image."
+    "objects": {
+      "1f2ea2a6": {
+        "class": "person",
+        "confidence": 0.74,
+        "depth": 0.95
+      },
+      "ed2b0919": {
+        "class": "person",
+        "confidence": 0.27,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "1f2ea2a6": "A person is centered in the image, dressed in dark-colored clothing with a light-colored bag on their back. They appear to be walking as they are positioned mid-stride and oriented towards the foreground of the image.",
+      "ed2b0919": "Another person is observed on the right side of the image, wearing light-colored clothing. Part of their body is obscured by the infrastructure, but they seem to be standing or moving along the right wall of the setting."
+    }
   },
   {
     "frame_number": 165,
-    "objects": [
-      "person, confidence: 0.70, depth: 0.96",
-      "person, confidence: 0.30, depth: 0.98",
-      "chair, confidence: 0.26, depth: 0.92"
-    ],
-    "description": "The image depicts a indoor setting that resembles a college campus, where multiple chairs are lined up along a hallway. Some of the chairs are placed on a pattern, suggesting a well-organized seating arrangement. One of the benches is facing a table with two signs, creating an overall dynamic and purposeful atmosphere.\n\n\nThere are two people present in the scene - one of them is situated in the foreground, nearer to the cameras, while the other occupies a bit better position in the background. Interestingly, there are three potted plants in the scene, two located near the left side and one in the middle. A refrigerator is also visible on the left side, standing out as an exceptional presence due to its size, possibly situated near eating areas or offices.  \n\n\nThis environment offers a blend of different elements, capturing a sense of depth and space. The crowd of people and rows of furniture show that the area is frequently used, while the presence of a refrigerator introduces an interesting juxtaposition of old and new elements in the scene. In the left foreground of the image, two chairs are placed to face each other, contributing to the main concentration of people and showing their interaction within the hallway.\n\n\nIn essence, the scene is a mix of interconnected areas, with various seating options and objects that contribute to an engaging and dynamic atmosphere for the college campus setting."
+    "objects": {
+      "3462d4ce": {
+        "class": "person",
+        "confidence": 0.7,
+        "depth": 0.96
+      },
+      "ed716bb7": {
+        "class": "person",
+        "confidence": 0.3,
+        "depth": 0.98
+      },
+      "132f2cd2": {
+        "class": "chair",
+        "confidence": 0.26,
+        "depth": 0.92
+      }
+    },
+    "descriptions": {
+      "3462d4ce": "The person labeled as '3462d4ce' appears to be standing upright, positioned towards the upper right side of the image, and is at a slight distance from the camera based on the depth value. The person's attire and physical features are not clearly discernible due to the image quality.",
+      "ed716bb7": "The person labeled as 'ed716bb7' is partially visible on the leftmost edge of the image, facing away from the camera, and is slightly closer to the camera than '3462d4ce'. Due to low confidence and incomplete visibility, details are limited.",
+      "132f2cd2": "The object identified as a 'chair' and labeled '132f2cd2' is located towards the left side of the image, just near the edge. It seems to be a chair with a triangular backrest or similar form, possibly misidentified due to the image angle and quality."
+    }
   },
   {
     "frame_number": 180,
-    "objects": [
-      "person, confidence: 0.64, depth: 0.97",
-      "person, confidence: 0.32, depth: 0.98",
-      "person, confidence: 0.28, depth: 0.97"
-    ],
-    "description": "The image displays a lounge area near a large staircase, possibly in a mall. Seven people can be seen in the scene, walking towards the right side of the stairs or dispersed in the lounge area. Among the people, there is a man standing in close proximity to the wall, wearing a backpack. The people have varying distances from the camera's viewpoint, thus indicating varying depth in the captured image.\n\n\nTwo benches can be observed within the lounge area, with one on the right side and the other in the middle of the room. Multiple chairs can be found both near the people and at various spots around the lounge area. One chair is in the middle of the room while another is closer to the wall. Another chair is located in the right background.\n\n\nA handbag is spotted in the room, situated near the people on the right side. The presence of people and various furniture items, providing a sense of a public area or casual meeting space, further suggests it could be a mall. The image captures a snapshot showing the depth and spatial relationships among these objects."
+    "objects": {
+      "28da9b46": {
+        "class": "person",
+        "confidence": 0.64,
+        "depth": 0.97
+      },
+      "b03d99a4": {
+        "class": "person",
+        "confidence": 0.32,
+        "depth": 0.98
+      },
+      "d72bfcff": {
+        "class": "person",
+        "confidence": 0.28,
+        "depth": 0.97
+      }
+    },
+    "descriptions": {
+      "28da9b46": "A person standing in the middle of the scene, appearing to be in motion, partially occluded by a vertical element.",
+      "b03d99a4": "A person located further to the right of the image, also in motion, with lower confidence suggesting possible partial view or blur.",
+      "d72bfcff": "Another person, detected with the least confidence, likely due to being mostly occluded or not facing the camera directly."
+    }
   },
   {
     "frame_number": 195,
-    "objects": [
-      "person, confidence: 0.53, depth: 0.97",
-      "person, confidence: 0.38, depth: 0.98",
-      "person, confidence: 0.35, depth: 0.97"
-    ],
-    "description": "The image shows a predominantly empty city street scene with several objects in the center of the photo. Among them, there are two people looking from between two malls, each with a backpack. One person appears to be wearing a black mask, and the other two individuals are situated closer to one another.\n\n\nAdditionally, there is a bird visible in the scene, located to the left of the image. Trees can be observed close to these individuals.\n\n\nWithin this scene, there are two seating areas, where several benches are placed, one at the upper and lower sections of the image, giving a sense of depth to the scene. A chair and a dining table also contribute to the visual complexity, providing more context to the depth of certain objects. The scene appears almost devoid of other people, providing a distinct perspective on the available space in the scene.\n\n\nThe city street scene is a blend of colorful and empty elements, with the mall walkway being distinctly visible in the image, featuring people at both ends. The benches and other visual elements offer a sense of depth, allowing one to conclude if these objects were part of a larger area or if they are nearer to the camera. Overall, it is an interesting snapshot of an urban environment, adding another layer of complexity to the scene."
+    "objects": {
+      "86f9a978": {
+        "class": "person",
+        "confidence": 0.53,
+        "depth": 0.97
+      },
+      "a9ca6217": {
+        "class": "person",
+        "confidence": 0.38,
+        "depth": 0.98
+      },
+      "ab64147e": {
+        "class": "person",
+        "confidence": 0.35,
+        "depth": 0.97
+      }
+    },
+    "descriptions": {
+      "86f9a978": "A person standing with what appears to be a stance of slight movement, possibly walking, wearing long garments that reach the floor.",
+      "a9ca6217": "A person standing with what seems like a stationary posture, wearing casual attire, potentially observing something or waiting.",
+      "ab64147e": "A person sitting at a table, likely engaged in an activity on the table, perhaps reading or eating, with focused body language."
+    }
   },
   {
     "frame_number": 210,
-    "objects": [
-      "person, confidence: 0.54, depth: 0.98",
-      "person, confidence: 0.27, depth: 0.98"
-    ],
-    "description": "The image depicts a wide paved area, with two people standing in an atrium or lobby in what may be a mall or public space. The people are located in the center of the scene. \n\n\nThere are two benches in the area, which are placed closer to the foreground. A large dining table is situated surrounded by multiple chairs, likely designed for people to sit and eat or drink. The seating area appears to be organized in a way where people can comfortably interact in the space.\n\n\nIn the context of the scene, one person stands to the left of the other, closer to the middle of the scene. Positioned among the tables and chairs, people often enjoy both people and the dining room in that area. \n\n\nThe image exhibits a high amount of detail along with various elements that detail the indoor seating area. With these details, the overall ambiance of the space appears to be lively, while maintaining a comfortable and organized environment for its visitors. As one can see, the benches in the foreground are arranged on levels surrounding the table, while some people are at a distance, and the chairs surrounding them add to the sense of realistic life in a vividly blue-lit environment."
+    "objects": {
+      "44e2d086": {
+        "class": "person",
+        "confidence": 0.54,
+        "depth": 0.98
+      },
+      "ed2b0919": {
+        "class": "person",
+        "confidence": 0.27,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "44e2d086": "An individual standing and facing slightly towards the right of the frame. Due to the confidence level, details are indistinct but the person appears to be wearing casual clothing.",
+      "ed2b0919": "Another individual with an unclear silhouette due to low confidence in detection. The posture suggests the person might be in motion or standing with a relaxed stance."
+    }
   },
   {
     "frame_number": 225,
-    "objects": [
-      "person, confidence: 0.65, depth: 0.98",
-      "person, confidence: 0.30, depth: 0.98"
-    ],
-    "description": "The image showcases a lively event space with various objects populating the scene. Among these objects are two people standing and a bench beside a book on the floor. In the room, there is a table on the right side.\n\n\nLowest to the bottom left corner of the image, there are signs in the background, setting the stage for a function. The depth and spatial relationships between objects evoke a perception of interconnectedness. The signs in the room appear to have some prominence and add to the event atmosphere.\n\n\nTwo persons are standing in the space, where one appears to be closer to the camera. The other person is placed further away, closer to one of the signs. A backpack can also be observed on the floor near one of the people.\n\n\nMeanwhile on the left side of the image, there are two items contributing to the overall ambiance: a stack of books is present, and two couches appear in the scene, but the couches are barely visible and might be obscured by other objects. On the far right side, a bench seems to be placed next to the book on the other side of the room. All of these objects convey a lively and bustling environment, capturing the essence of the gathering.\n\n\n---\n\n---\n---\n---\n\n---\n---\n\n---\n---\n---\n---\n---\n---\n---\n---\n---\n---\n---\n---\n---"
+    "objects": {
+      "dd5b468d": {
+        "class": "person",
+        "confidence": 0.65,
+        "depth": 0.98
+      },
+      "ed716bb7": {
+        "class": "person",
+        "confidence": 0.3,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "dd5b468d": "An individual standing in the middle of the scene, facing slightly towards the right of the frame. Due to the image quality and perspective, details such as clothing or features are indistinct.",
+      "ed716bb7": "A person that appears less distinct, possibly due to motion or lower image clarity. Similar to the first person, they appear to be standing and facing towards the right side of the frame."
+    }
   },
   {
     "frame_number": 240,
-    "objects": [
-      "person, confidence: 0.56, depth: 0.98",
-      "person, confidence: 0.37, depth: 0.98"
-    ],
-    "description": "The scene is an indoor shopping area within a large mall. Shoppers and sales reps can be seen scattered throughout, engaging with customers and displaying items. A bench has been placed in the middle of the store, which serves as a centerpiece for seating, creating a cozy and inviting atmosphere.\n\n\nThere is one large image board dominating one part of the mall area. Throughout the building, various books are displayed on shelves and shops, with cakes and pastries on the bench and many sundries stocked for sale.\n\n\nTwo people are visible in the foreground of the lefty photo, while another person is near the bench in the shopping area. There is a chair in the background, occupying a significant portion of the scene.\n\n\nThis mall appears to be reasonably large, with good foot traffic, contributing to the active nature of shopping areas in such places. The products showcased here are most likely clothing and other accessories, with a sense of hustle and bustle.\n\n\nA considerable number of books are set, indicating that the store likely hosts a book section for residents of the town. Such stores often appear in a commercial complex, likely sharing common spots like hallways or seating areas.\n\n\nIn addition to the people and items, the environment seems to be a combination of urban surroundings and the mall itself. The unique layout and the layout create a visually intriguing scene, likely designed for shopping and relaxation in equal measure."
+    "objects": {
+      "396e33f6": {
+        "class": "person",
+        "confidence": 0.56,
+        "depth": 0.98
+      },
+      "4d0e2895": {
+        "class": "person",
+        "confidence": 0.37,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "396e33f6": "A person standing in the middle of the scene facing away from the camera. They appear to be wearing dark clothing and might be carrying a bag on their shoulder.",
+      "4d0e2895": "Another person positioned to the right of the first person, also facing away from the camera. Their clothing appears lighter in color, and they also seem to be carrying something on their shoulder."
+    }
   },
   {
     "frame_number": 255,
-    "objects": [
-      "person, confidence: 0.59, depth: 0.98"
-    ],
-    "description": "The image presents a large college campus walkway showcasing multiple students walking, large couch areas and several signs for students to read. Among the signage, there are various sizes of couches visible in different parts of the area. The pathway connects the main building to other buildings in a way that mimics a typical campus environment. \n\n\nUsher rooms in the scene include staff sitting in a lounge waiting table. A big black conference table, green in color, is placed in the restaurant to create a comfortable gathering space for students. The seating areas around the tables have red cushions on them, providing an inviting atmosphere for the students. \n\n\nIn this perspective, the entrance to the food service area is on the right, likely indicating the reception or common area. The students appear to occupy a significant portion of the image, suggesting a busy and bustling environment. There are a total of 5 people in the viewable portion of the area. The students are located mostly along the left side of the frame, some in the middle, and others on the right side.\n\n\nIn summary, this image showcases a packed restaurant inside college dormitories where the beige couches are placed near the right side of the image, as well as other types of furniture that create a welcoming and relaxing environment for the students in the area."
+    "objects": {
+      "48a7f086": {
+        "class": "person",
+        "confidence": 0.59,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "48a7f086": "The detected person appears to be standing with a slight tilt of their body, facing away from the camera towards the right side of the image. They are positioned on the right half of the scene near some glass panes which reflect the interior, creating a semi-transparent effect around the person. Their attire is not clearly discernible due to the distance and quality of the image."
+    }
   },
   {
     "frame_number": 270,
-    "objects": [
-      "person, confidence: 0.46, depth: 0.98",
-      "person, confidence: 0.32, depth: 0.98"
-    ],
-    "description": "The image presents a mall food court scene where a person is walking through a public mall with a sign situated in the food court. Other objects and people can be observed throughout the image, including two persons and additional displays on the walls. The scene reflects various points of interest to the viewer, depicting an inviting atmosphere inside the shopping mall.\n\n\nAs for the people, various observations may suggest their age, dress, and possibly their level of engagement with the surroundings. The presence of other people adds depth to the scene, enhancing the overall ambience of the mall. In addition, assorted seating arrangements, like benches and chairs, are scattered across the mall in various sizes and positions.\n\n\nUpon closer examination, a food court floor plan can be seen, likely indicating vendors and eating establishments available within the vicinity. The setting suggests someone is exiting the front doors at the end of the hallway. The presence of a backpack near the main entrance indicates public transportation is available here, providing convenience to the customers.\n\n\nMultiple tables and chairs are perceptible in the image, highlighting a typical well-prepared food court for customers to enjoy their meals, and a carousel offers another area within the food court for additional customers to peruse food items during a casual stroll through the shopping mall."
+    "objects": {
+      "1491a0ad": {
+        "class": "person",
+        "confidence": 0.46,
+        "depth": 0.98
+      },
+      "b03d99a4": {
+        "class": "person",
+        "confidence": 0.32,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "1491a0ad": "A person standing near what appears to be a public seating area, facing away from the camera. Due to the confidence level and the image quality, specific details about their appearance are not clear.",
+      "b03d99a4": "Another person standing, also facing away from the camera and next to the first person. Both figures are highlighted, but it is difficult to make out distinct features or clothing due to the low confidence level."
+    }
   },
   {
     "frame_number": 285,
-    "objects": [
-      "person, confidence: 0.55, depth: 0.98",
-      "person, confidence: 0.40, depth: 0.98",
-      "chair, confidence: 0.35, depth: 0.94"
-    ],
-    "description": "This image depicts an office-like area inside a house filled with various objects placed in a pattern to give the appearance of depth. In the center of the scene, there appears to be a woman sitting on a sofa placed next to a bench and two chairs. On the bench, there is an umbrella, a couple of books, and another umbrella lying down. To the left, there's a set of white lights and a tie, and to the far left, we observe a cake. In the same area, there is a TV mounted on the wall near the umbrella and books. \n\n\nA person is standing to the right of the woman sitting in the center, and they seem to be interacting in this space. There's a chair further inside the scene on the right side. The confined space and items make it appear to be an indoor camping tents party with friends. The presence of the person touching a monitor indicates the possibility of their potential involvement in a game. Among all this, a monitor showing a path between buildings in a multiplayer video game is visible next to the people, creating fun and excitement for the gameplayers."
+    "objects": {
+      "a2cecde5": {
+        "class": "person",
+        "confidence": 0.55,
+        "depth": 0.98
+      },
+      "36f35eec": {
+        "class": "person",
+        "confidence": 0.4,
+        "depth": 0.98
+      },
+      "85922d3f": {
+        "class": "chair",
+        "confidence": 0.35,
+        "depth": 0.94
+      }
+    },
+    "descriptions": {
+      "a2cecde5": "A person standing with moderate confidence of detection. Given the depth value, they are likely positioned towards the back of the visible space. Details are not clear due to the moderate confidence level but the individual appears to be upright and facing the camera.",
+      "36f35eec": "Another person with a lower confidence of detection. Similar to the first, this person is possibly at the back of the scene due to the identical depth, standing and potentially facing the camera.",
+      "85922d3f": "A chair with the lowest confidence of detection, positioned slightly in front of the two people in the scene based on its depth value. The chair appears to be of a standard four-legged design and is unoccupied."
+    }
   },
   {
     "frame_number": 300,
-    "objects": [
-      "person, confidence: 0.44, depth: 0.98",
-      "person, confidence: 0.35, depth: 0.98"
-    ],
-    "description": "The image captures a public area in the interior of a building, displaying a variety of objects throughout the scene. Near the front-most person, a wooden park bench is located between the person and another person with a long black trench coat and hands on hips.\n\n\nIn the foreground, a lounge chair can be seen situated in front of a short person in a grey trench coat. Someone is sitting on a bench. A person is standing right in front of the group, also looking onward.\n\n\nThe benches are positioned in the scene, one on the right side with another person standing in the background. A refrigerator is visible in the background as well. There's a donut with an apple in the middle of the scene, adding a sense of depth to the photograph."
+    "objects": {
+      "f4f9b0be": {
+        "class": "person",
+        "confidence": 0.44,
+        "depth": 0.98
+      },
+      "85134477": {
+        "class": "person",
+        "confidence": 0.35,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "f4f9b0be": "This object appears to be a person viewed from behind, wearing a light-toned top and darker bottoms, positioned on the left side of the corridor.",
+      "85134477": "This object is another person seen from behind, dressed in dark attire, also on the left side of the corridor parallel to the first person."
+    }
   },
   {
     "frame_number": 315,
-    "objects": [
-      "person, confidence: 0.36, depth: 0.98"
-    ],
-    "description": "The image displays a spacious indoor area with people walking around. Some people are visible at various distances, such as three people walking away and another peaking out from behind a table. They are arranged across the area, with a few of them appearing closer than others.\n\n\nThere is a bench situated in the middle of the scene. Among other items in the room, several white, red, and black dining tables can be found, with only the table at the far end having an enclosed area. The tables are located across the room, with some people sitting by a wall. A couch and chairs are also present in the scene, with chairs being scattered towards the right side of the indoor area.\n\n\nA notable feature is a black object in the right corner, possibly related to the electronic devices within the scene, contributing to the indoor setting. A couple of handbags are located in the left and one near the middle of the scene.\n\n\nIn the scene, there are 6 people (some closer to the foreground and some in the background), 3 dining tables, 2 benches, 1 couch, 2 handbags, and 2 chairs.\n\n\nThe confidence score list is seen in the fourth row, and the values represent the trustworthiness map of the objects in the room."
+    "objects": {
+      "b744448d": {
+        "class": "person",
+        "confidence": 0.36,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "b744448d": "A person appears to be standing in the scene. Given the low confidence score, specific details like clothing or posture are indeterminable. They appear to be at some distance from the foreground, indicated by the depth value of 0.98."
+    }
   }
 ]

@@ -1,0 +1,48 @@
+{
+  "objects": {
+    "a99f1d25": {
+      "class": "person",
+      "confidence": 0.87,
+      "depth": 0.96
+    },
+    "1b8ea1aa": {
+      "class": "chair",
+      "confidence": 0.8,
+      "depth": 0.77
+    },
+    "39611745": {
+      "class": "suitcase",
+      "confidence": 0.71,
+      "depth": 0.83
+    },
+    "df7f04f5": {
+      "class": "backpack",
+      "confidence": 0.46,
+      "depth": 0.9
+    },
+    "1be1f53d": {
+      "class": "handbag",
+      "confidence": 0.39,
+      "depth": 0.9
+    },
+    "02a4dc40": {
+      "class": "backpack",
+      "confidence": 0.28,
+      "depth": 0.98
+    }
+  },
+  "descriptions": {
+    "a99f1d25": "A person dressed in a red t-shirt and black shorts sitting on a chair, facing the camera.",
+    "1b8ea1aa": "An upholstered chair with patterned fabric, partly visible at the left edge of the image.",
+    "39611745": "A vertical, dark-colored suitcase with wheels and an extended handle, positioned on the floor.",
+    "df7f04f5": "A dark-colored backpack on the floor, sitting upright and located in front of the person.",
+    "1be1f53d": "A handbag, indiscernible in color due to low confidence detection, appears to be near the bottom of the frame, potentially under the suitcase or chair.",
+    "02a4dc40": "A second backpack with low confidence detection, color and features unclear, its depth suggests it is located behind the person, potentially on another chair."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be an indoor setting, possibly a waiting area or a lobby. A person is centrally positioned, with various luggage items in the fore and background.",
+    "lighting_and_colors": "The room features fluorescent lighting, creating a brightly lit scene with neutral colors such as beige walls. The red shirt of the person adds a splash of color to the otherwise muted tones.",
+    "atmosphere": "The atmosphere looks typical of a functional, utilitarian space used for transient purposes, such as waiting or passing through. It seems quiet and still.",
+    "text_and_signage": "No visible text or signage that provides additional context to the scene, aside from a possible brand watermark 'tapo' at the bottom left."
+  }
+}
