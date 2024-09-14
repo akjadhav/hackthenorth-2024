@@ -1,0 +1,13 @@
+The image displays a spacious indoor area with people walking around. Some people are visible at various distances, such as three people walking away and another peaking out from behind a table. They are arranged across the area, with a few of them appearing closer than others.
+
+
+There is a bench situated in the middle of the scene. Among other items in the room, several white, red, and black dining tables can be found, with only the table at the far end having an enclosed area. The tables are located across the room, with some people sitting by a wall. A couch and chairs are also present in the scene, with chairs being scattered towards the right side of the indoor area.
+
+
+A notable feature is a black object in the right corner, possibly related to the electronic devices within the scene, contributing to the indoor setting. A couple of handbags are located in the left and one near the middle of the scene.
+
+
+In the scene, there are 6 people (some closer to the foreground and some in the background), 3 dining tables, 2 benches, 1 couch, 2 handbags, and 2 chairs.
+
+
+The confidence score list is seen in the fourth row, and the values represent the trustworthiness map of the objects in the room.

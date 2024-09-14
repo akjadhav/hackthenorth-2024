@@ -19,7 +19,7 @@ class FrameExtractor:
             if not success:
                 break
             
-            if frame_count % fps == 0:  # Extract one frame per second
+            if frame_count % fps == 0:  # extract one frame per second lol (testing)
                 frame_path = os.path.join(self.output_folder, f"{frame_count:04d}.jpg")
                 cv2.imwrite(frame_path, frame)
             

@@ -12,11 +12,11 @@ class ObjectDetector:
         return results[0].boxes.data.tolist()
 
     def scale_depth(self, depth_value, min_depth, max_depth):
-        # Invert the depth value (closer objects will have lower values)
+        # invert the depth value (closer objects will have lower values)
         inverted_depth = max_depth - depth_value + min_depth
-        # Apply logarithmic scaling
+        # apply logarithmic scaling
         log_depth = np.log(inverted_depth - min_depth + 1)
-        # Normalize to 0-1 range
+        # normalize to 0-1 range
         normalized_depth = (log_depth - np.log(1)) / (np.log(max_depth - min_depth + 1) - np.log(1))
         return normalized_depth
 
@@ -31,15 +31,13 @@ class ObjectDetector:
             
             # calculate center of the bounding box
             center_x, center_y = int((x1 + x2) / 2), int((y1 + y2) / 2)
-            
             # get depth value at the center of the object
             depth = depth_map[center_y, center_x]
-            
             # scale depth value
             scaled_depth = self.scale_depth(depth, min_depth, max_depth)
             
             cv2.rectangle(img, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-            cv2.putText(img, f"{class_name}: {conf:.2f}, Depth: {scaled_depth:.2f}", 
+            cv2.putText(img, f"{class_name}: {conf:.2f}, depth: {scaled_depth:.2f}", 
                         (int(x1), int(y1)-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         
         return img
