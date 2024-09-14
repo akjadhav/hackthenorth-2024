@@ -1,0 +1,54 @@
+{
+  "objects": {
+    "07a88192": {
+      "class": "person",
+      "confidence": 0.89,
+      "depth": 0.95
+    },
+    "365154c1": {
+      "class": "chair",
+      "confidence": 0.87,
+      "depth": 0.75
+    },
+    "6d8dc7cb": {
+      "class": "suitcase",
+      "confidence": 0.75,
+      "depth": 0.78
+    },
+    "15a7ccd8": {
+      "class": "chair",
+      "confidence": 0.49,
+      "depth": 0.88
+    },
+    "e0ee34dc": {
+      "class": "suitcase",
+      "confidence": 0.34,
+      "depth": 0.51
+    },
+    "798ad542": {
+      "class": "handbag",
+      "confidence": 0.34,
+      "depth": 0.87
+    },
+    "fbd66117": {
+      "class": "backpack",
+      "confidence": 0.27,
+      "depth": 0.87
+    }
+  },
+  "descriptions": {
+    "07a88192": "A person dressed in a red t-shirt and dark pants, sitting on a chair holding a bottle, possibly engaged in a waiting activity or rest.",
+    "365154c1": "A red and beige patterned chair with a wooden frame, situated in the foreground to the left of the person.",
+    "6d8dc7cb": "A large black suitcase with wheels, standing upright, and positioned to the right of the person.",
+    "15a7ccd8": "A second red and beige patterned chair with a wooden frame, partially obscured and located behind the main chair.",
+    "e0ee34dc": "Another suitcase or piece of luggage, not very clearly visible, it appears to be further ahead than other objects due to its higher depth value relative to its position.",
+    "798ad542": "A dark-colored handbag situated on the floor, to the right of the person and behind the black suitcase.",
+    "fbd66117": "A backpack, also dark in color, placed on the floor to the right of the person, and adjacent to the black suitcase."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be an indoor waiting area or lobby with chairs and luggage indicating a transitional setting such as a hotel or transportation hub.",
+    "lighting_and_colors": "The room is conventionally lit with ambient light and possibly fluorescent light with warm tones on the walls and colorful patterned chairs, providing a contrast.",
+    "atmosphere": "The scene suggests a quiet and calm atmosphere with a person waiting or resting, surrounded by personal belongings.",
+    "text_and_signage": "There are no clearly visible texts or signage in the view."
+  }
+}

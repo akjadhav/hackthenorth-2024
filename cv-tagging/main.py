@@ -46,14 +46,14 @@ def process_video(video_path, output_folder):
 
             object_info = object_detector.get_detection_info(detections, depth_map)
 
-            description = image_describer.generate_description(annotated_frame_path, object_info)
-            with open(os.path.join(frame_folder, "description.txt"), 'w') as f:
-                f.write(description)
+            description_data = image_describer.generate_description(annotated_frame_path, object_info)
+            with open(os.path.join(frame_folder, "description.json"), 'w') as f:
+                json.dump(description_data, f, indent=2)
 
             frame_data = {
                 "frame_number": frame_count,
-                "objects": object_info,
-                "description": description
+                "objects": description_data["objects"],
+                "descriptions": description_data["descriptions"]
             }
             video_data.append(frame_data)
 

@@ -1,0 +1,24 @@
+{
+  "objects": {
+    "f4f9b0be": {
+      "class": "person",
+      "confidence": 0.44,
+      "depth": 0.98
+    },
+    "85134477": {
+      "class": "person",
+      "confidence": 0.35,
+      "depth": 0.98
+    }
+  },
+  "descriptions": {
+    "f4f9b0be": "This object appears to be a person viewed from behind, wearing a light-toned top and darker bottoms, positioned on the left side of the corridor.",
+    "85134477": "This object is another person seen from behind, dressed in dark attire, also on the left side of the corridor parallel to the first person."
+  },
+  "scene_analysis": {
+    "composition": "The scene is an indoor setting with a tiled floor, featuring a corridor with red decoration on the left and seated areas with tables on the right. There's a glass facade in the background dividing the corridor space from another room.",
+    "lighting_and_colors": "The lighting is bright and evenly distributed, likely from an artificial source above. The colors are mostly neutral with grey tiles, except for the striking red decoration which adds contrast.",
+    "atmosphere": "The atmosphere seems calm and orderly, typical of an indoor public space such as a lobby or a hall with minimal activity.",
+    "text_and_signage": "There is visible text on the top left corner indicating this is a captured image from a security camera, showing 'tapo' as likely the camera brand. Timestamp and additional camera settings are visible, but they do not pertain to the setting itself."
+  }
+}

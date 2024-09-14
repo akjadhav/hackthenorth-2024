@@ -1,0 +1,30 @@
+{
+  "objects": {
+    "86f9a978": {
+      "class": "person",
+      "confidence": 0.53,
+      "depth": 0.97
+    },
+    "a9ca6217": {
+      "class": "person",
+      "confidence": 0.38,
+      "depth": 0.98
+    },
+    "ab64147e": {
+      "class": "person",
+      "confidence": 0.35,
+      "depth": 0.97
+    }
+  },
+  "descriptions": {
+    "86f9a978": "A person standing with what appears to be a stance of slight movement, possibly walking, wearing long garments that reach the floor.",
+    "a9ca6217": "A person standing with what seems like a stationary posture, wearing casual attire, potentially observing something or waiting.",
+    "ab64147e": "A person sitting at a table, likely engaged in an activity on the table, perhaps reading or eating, with focused body language."
+  },
+  "scene_analysis": {
+    "composition": "The scene looks like an indoor setting, possibly a public space or lobby area with a geometrically patterned floor, a bench, and tables. One person seems to be walking, another standing still, and the third is seated at a table.",
+    "lighting_and_colors": "The image appears brightly lit with overhead lighting, suggesting an indoor environment with artificial light sources. The colors are natural with a grayscale floor, a prominent red structure to the left, and various other muted colors throughout the scene.",
+    "atmosphere": "The atmosphere appears calm and orderly, indicative of a quiet public space or waiting area, with people stationary or in a non-hurried movement.",
+    "text_and_signage": "A large 'tapo' logo is visible at the top of the image, which is most likely a feature of the camera system overlay. No other text or signage is clearly discernible in the scene."
+  }
+}

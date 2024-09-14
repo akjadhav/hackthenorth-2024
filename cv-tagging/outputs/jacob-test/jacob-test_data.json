@@ -1,269 +1,966 @@
 [
   {
     "frame_number": 0,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "suitcase, confidence: 0.79, depth: 0.83",
-      "chair, confidence: 0.71, depth: 0.76",
-      "suitcase, confidence: 0.63, depth: 0.07",
-      "backpack, confidence: 0.28, depth: 0.90",
-      "chair, confidence: 0.25, depth: 0.87"
-    ],
-    "description": "The image displays a small sitting room, with a man sitting in a chair. There are multiple chairs in the room and a suitcase near the man in the middle. Three other persons wearing red shirts and black shorts are also standing in the room, likely also positioned to the left. \n\n\nThe room is marked with some objects to represent the depth of the space. A pair of scissors, a book, and a couple of water glasses are on the chairs, which have a depth of 0.61. There is also a backpack on the chair on the left, that has a depth of 0.93.\n\n\nThe walls in the room are painted in red and appear clean and orderly. The seating furniture includes multiple wooden chairs, some on the left and some on the right. A total of seven chairs can be observed in the room. Also, there is a person to the left of the man in the chair. Overall, the scene showcases an organized and relatively tidy sitting area."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "93aed7a4": {
+        "class": "suitcase",
+        "confidence": 0.79,
+        "depth": 0.83
+      },
+      "a45cf324": {
+        "class": "chair",
+        "confidence": 0.71,
+        "depth": 0.76
+      },
+      "29c76f99": {
+        "class": "suitcase",
+        "confidence": 0.63,
+        "depth": 0.07
+      },
+      "1221402a": {
+        "class": "backpack",
+        "confidence": 0.28,
+        "depth": 0.9
+      },
+      "e75c040e": {
+        "class": "chair",
+        "confidence": 0.25,
+        "depth": 0.87
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person seated wearing a red shirt, with one hand holding a beverage can and the other hand likely supporting a smartphone or small object.",
+      "93aed7a4": "A vertical suitcase with wheels and an extended handle, positioned to the right of the person, in front of a chair.",
+      "a45cf324": "A chair closest to the camera, with a red and gold patterned cushion and backrest, no visible occupant.",
+      "29c76f99": "A suitcase that appears to be the closest object to the camera, black in color with a shiny finish and wheels.",
+      "1221402a": "A black backpack on the floor, situated to the left of the person and slightly behind the vertical suitcase.",
+      "e75c040e": "Another chair, partially obscured by the person, sharing a similar pattern to the chair identified as 'a45cf324'."
+    }
   },
   {
     "frame_number": 15,
-    "objects": [
-      "person, confidence: 0.86, depth: 0.96",
-      "suitcase, confidence: 0.79, depth: 0.83",
-      "chair, confidence: 0.78, depth: 0.78",
-      "suitcase, confidence: 0.35, depth: 0.30",
-      "chair, confidence: 0.28, depth: 0.87",
-      "handbag, confidence: 0.28, depth: 0.91",
-      "suitcase, confidence: 0.28, depth: 0.98"
-    ],
-    "description": "The image depicts a man sitting on a chair in what appears to be a hotel room or dorm room. The man is carrying a bottle of water while reading a book. The available furniture includes a desk with another bottle and a handbag on it. \n\n\nThere are a total of five chairs, including the one the man is sitting on. Around this man, three more chairs are observed in the environment, one of which is different from the man's. The desk containing the handbag and extra bottle is situated next to this main room with a suitcase.\n\n\nThere are three suitcases in the image. One is large, with one of the chairs in the middle of the room and the man's corner being to the left. Another in the middle of the room is smaller and the man's corner becomes the third smaller suitcase. Furthermore, his corner is at the corner to the right of the room.\n\n\nThere are three bottles in the image: the one held by the man, one on the smaller left suitcase, and the third bottle is on the larger suitcase near the middle of the room. Meanwhile, another small suitcase can be described as \"in the background\" near the chairs. The main room shares an array of items like bottles."
+    "objects": {
+      "9f885268": {
+        "class": "person",
+        "confidence": 0.86,
+        "depth": 0.96
+      },
+      "93aed7a4": {
+        "class": "suitcase",
+        "confidence": 0.79,
+        "depth": 0.83
+      },
+      "0147a7db": {
+        "class": "chair",
+        "confidence": 0.78,
+        "depth": 0.78
+      },
+      "d781089b": {
+        "class": "suitcase",
+        "confidence": 0.35,
+        "depth": 0.3
+      },
+      "d22f944b": {
+        "class": "chair",
+        "confidence": 0.28,
+        "depth": 0.87
+      },
+      "8119d389": {
+        "class": "handbag",
+        "confidence": 0.28,
+        "depth": 0.91
+      },
+      "243a9132": {
+        "class": "suitcase",
+        "confidence": 0.28,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "9f885268": "A person seated on a chair, wearing a red t-shirt and holding a blue object with both hands. The individual appears to have a casual demeanor and is looking directly at the camera.",
+      "93aed7a4": "A suitcase positioned upright on the floor, notable for its bright blue color and extended handle, indicating it may be ready for travel or recently used.",
+      "0147a7db": "A chair with a red fabric pattern, positioned facing the camera and empty, suggesting it is available for seating.",
+      "d781089b": "Another suitcase, less confidently detected, likely because of its partial visibility. It appears to be closer than the other objects, perhaps a black suitcase lying flat.",
+      "d22f944b": "A second chair detected with lower confidence, indicating it could be partially obscured or blending with the background. It appears similar to the first chair, with red patterning.",
+      "8119d389": "A handbag detected at a close depth with low confidence, possibly due to its location or angle. It seems to be placed next to the seated person.",
+      "243a9132": "Yet another suitcase, detected with low confidence, suggesting it could be partially obscured or in an area with less visual clarity. It appears to be at a similar depth as the person."
+    }
   },
   {
     "frame_number": 30,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "chair, confidence: 0.85, depth: 0.74",
-      "suitcase, confidence: 0.78, depth: 0.84",
-      "suitcase, confidence: 0.49, depth: 0.44",
-      "chair, confidence: 0.34, depth: 0.77",
-      "backpack, confidence: 0.25, depth: 0.91"
-    ],
-    "description": "The image is a close-up of a person sitting in a room with multiple objects visible around them. A red chair is placed near them, accompanied by a suitcase and a backpack. The man is sitting in the middle of a yellow room. Sitting atop the chair is an open bottle, possibly containing water.\n\n\nIn addition to these objects, there are two chairs (one red the other brown), located ahead of the person seated, and the man in between these two. Multiple suitcases and backpacks can be seen all around, and a cup can also be spotted near the middle of the image, away from the man.\n\n\nIn terms of the objects' depth, the man is closest to the yellow room, while the other objects\u2014including the chairs and suitcases\u2014are either in the room or closer to the background, with the luggage cart placed closely to the man, and the suitcases surrounding him depixed over it. Overall, the room has a sense of compactness."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "5bf288ff": {
+        "class": "chair",
+        "confidence": 0.85,
+        "depth": 0.74
+      },
+      "9f375805": {
+        "class": "suitcase",
+        "confidence": 0.78,
+        "depth": 0.84
+      },
+      "11ad4a16": {
+        "class": "suitcase",
+        "confidence": 0.49,
+        "depth": 0.44
+      },
+      "8d75985d": {
+        "class": "chair",
+        "confidence": 0.34,
+        "depth": 0.77
+      },
+      "29651eca": {
+        "class": "backpack",
+        "confidence": 0.25,
+        "depth": 0.91
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person seated on a chair, centered in the frame, wearing a red shirt and dark shorts, holding a blue bottle.",
+      "5bf288ff": "A patterned chair with wooden arms and a red with tan pattern, located to the left of the person.",
+      "9f375805": "A large upright suitcase positioned on the right side of the person. It appears to be dark colored with an extendable handle that is raised.",
+      "11ad4a16": "Another suitcase which seems to be smaller and blue, located to the right of the frame on a chair, further away from the camera compared to the upright suitcase.",
+      "8d75985d": "A chair similar to the previous one but the view is partially obscured, positioned to the far left side of the frame.",
+      "29651eca": "A backpack resting on the floor in front of the seated person, to the right from the camera's perspective. It appears to be dark colored."
+    }
   },
   {
     "frame_number": 45,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "chair, confidence: 0.87, depth: 0.76",
-      "suitcase, confidence: 0.82, depth: 0.85",
-      "handbag, confidence: 0.44, depth: 0.91",
-      "backpack, confidence: 0.29, depth: 0.91",
-      "chair, confidence: 0.27, depth: 0.87",
-      "suitcase, confidence: 0.26, depth: 0.61"
-    ],
-    "description": "The image portrays a man in a yellow room posing for a portrait. Inside the room, there are various chairs in different positions. One yellow chair is situated in the middle of the room while another one is closer to the man. A grey backpack and a red chair are present, offering a sense of depth to the scene.\n\n\nThe man seems relaxed as he sits beside some luggage. In addition to the person's suitcase, there is a sports ball slightly to his right. A handbag is also visible in the scene, indicating multiple carry-ons to the room. Analyzing the contents of the room, finding the yellow chair in the right-center area, while the red chair and the grey backpack are closer to the man.\n\n\nThe depth score suggests a contrasting space within the room where distant objects lose detail rapidly as the man's presence in the room, reducing background detail, and making it easy to be more detailed. The man's presence along with the luggage shows a space where distan objects are not visible in their entirety, and the closeness of the red chair and the grey backpack in the foreground offers a sense of depth to the scene."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "2ff269ba": {
+        "class": "chair",
+        "confidence": 0.87,
+        "depth": 0.76
+      },
+      "1b298350": {
+        "class": "suitcase",
+        "confidence": 0.82,
+        "depth": 0.85
+      },
+      "4b5bd1ea": {
+        "class": "handbag",
+        "confidence": 0.44,
+        "depth": 0.91
+      },
+      "e7cddb4b": {
+        "class": "backpack",
+        "confidence": 0.29,
+        "depth": 0.91
+      },
+      "cc71ea65": {
+        "class": "chair",
+        "confidence": 0.27,
+        "depth": 0.87
+      },
+      "4bb84f4b": {
+        "class": "suitcase",
+        "confidence": 0.26,
+        "depth": 0.61
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person seated in the center of the image, wearing a red T-shirt, with a neutral expression, holding a beverage can.",
+      "2ff269ba": "A patterned chair towards the front-left of the scene with items placed on it.",
+      "1b298350": "A vertical, dark-colored suitcase positioned in the center-right of the scene, near the seated person.",
+      "4b5bd1ea": "An item resembling a handbag to the right of the suitcase which has a lower confidence level, indicating it might not be a handbag.",
+      "e7cddb4b": "An item that might be a backpack near the right side of the suitcase, having low confidence for accurate identification.",
+      "cc71ea65": "Another chair in the background with a low confidence level, indicating less certainty of it being a chair.",
+      "4bb84f4b": "A suitcase on the chair to the left of the scene, which has low confidence and might be obscured or partially hidden."
+    }
   },
   {
     "frame_number": 60,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "suitcase, confidence: 0.78, depth: 0.84",
-      "chair, confidence: 0.73, depth: 0.74",
-      "suitcase, confidence: 0.44, depth: 0.47",
-      "backpack, confidence: 0.29, depth: 0.90",
-      "handbag, confidence: 0.28, depth: 0.90"
-    ],
-    "description": "The image displays the interior of a cluttered room containing various human and personal items. A person is sitting on a chair, drinking from plastic bottle or cup while holding a handbag. The individual seems to be sitting comfortably on a stool.\n\n\nAround them, there are multiple chairs, one of which the person is sitting on. A suitcase and a backpack are present in the scene, with one suitcase closer to the person and the other further from them. The backpack itself appears to be in the foreground while the person is sitting next to them. The scene also contains two bottles, one is near the cup, and another is located close to the handbag carried by the person."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "9f375805": {
+        "class": "suitcase",
+        "confidence": 0.78,
+        "depth": 0.84
+      },
+      "1326b23f": {
+        "class": "chair",
+        "confidence": 0.73,
+        "depth": 0.74
+      },
+      "d92e0e67": {
+        "class": "suitcase",
+        "confidence": 0.44,
+        "depth": 0.47
+      },
+      "ccd64103": {
+        "class": "backpack",
+        "confidence": 0.29,
+        "depth": 0.9
+      },
+      "2e0d2261": {
+        "class": "handbag",
+        "confidence": 0.28,
+        "depth": 0.9
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person wearing a red shirt, seated with legs crossed, holding a cup with both hands. Seems to be focused on something out of the camera frame.",
+      "9f375805": "A large vertical suitcase with an extended handle, positioned upright adjacent to the seated person, slightly in the foreground.",
+      "1326b23f": "A chair with a red patterned fabric, located to the far left of the person and partially cut off by the camera's field of view. Closest to the camera.",
+      "d92e0e67": "Another suitcase, less confidently detected, possibly due to it being partially obscured. Situated on top of a wooden furnishing piece, further back in the image.",
+      "ccd64103": "A dark-colored backpack, placed on the floor near the suitcase beside the seated person, almost equally distant from the camera as the person.",
+      "2e0d2261": "A handbag with an unclear design, potentially resting on the ground or on another object, located near the seated person and the aforementioned suitcase."
+    }
   },
   {
     "frame_number": 75,
-    "objects": [
-      "person, confidence: 0.87, depth: 0.97",
-      "suitcase, confidence: 0.77, depth: 0.85",
-      "chair, confidence: 0.52, depth: 0.79",
-      "backpack, confidence: 0.36, depth: 0.91",
-      "handbag, confidence: 0.30, depth: 0.91",
-      "backpack, confidence: 0.27, depth: 0.97"
-    ],
-    "description": "The image displays a man, at his desk, happily looking at a card. Around him, there are several chairs, a backpack, a suitcase, and a messenger bag. \n\n\nThere are couches on both sides of the man, with a relatively wider one as seen in the upper portion of the scene. Another smaller couch is positioned to the man's right side. There is also a handbag near the middle of the room, as well as a bottle, further indicating that it's a busy room being utilized by the man and indicating that it's in a corner of the room.\n\n\nAdditionally, there's a chair to one side of the man, and a couple of other chairs placed nearby along with a vase. The vase, though still being detected as an object, is not as prominently displayed as some of the other objects in the room. The camera captures his smile and his interaction with the card, conveying a sense of relaxed engagement with his surroundings."
+    "objects": {
+      "bd1b8fc5": {
+        "class": "person",
+        "confidence": 0.87,
+        "depth": 0.97
+      },
+      "5104b47d": {
+        "class": "suitcase",
+        "confidence": 0.77,
+        "depth": 0.85
+      },
+      "bef7c8f8": {
+        "class": "chair",
+        "confidence": 0.52,
+        "depth": 0.79
+      },
+      "a6fb6737": {
+        "class": "backpack",
+        "confidence": 0.36,
+        "depth": 0.91
+      },
+      "9ee70851": {
+        "class": "handbag",
+        "confidence": 0.3,
+        "depth": 0.91
+      },
+      "61de5b8a": {
+        "class": "backpack",
+        "confidence": 0.27,
+        "depth": 0.97
+      }
+    },
+    "descriptions": {
+      "bd1b8fc5": "A person with medium-length hair, wearing a red shirt and what appear to be dark shorts, is sitting on a surface with their feet on the ground, facing slightly to the left. The person is holding a blue bottle with a cap and label.",
+      "5104b47d": "There is a suitcase positioned upright on the floor, it seems to have a dark fabric exterior with details like handles and possibly wheels visible, indicative of a rolling suitcase design.",
+      "bef7c8f8": "A chair with a red and beige patterned fabric is located to the left in the image, with a wooden frame and arms, similar to a traditional accent chair.",
+      "a6fb6737": "A dark-colored backpack is placed on the floor to the right of the suitcase. It appears to be a standard design, possibly made of fabric, with a visible frontal pocket.",
+      "9ee70851": "A handbag or small tote, possibly dark in color and appears somewhat rounded or slouchy in structure, is located near the backpack on the right side of the suitcase.",
+      "61de5b8a": "Another backpack is located farther to the left, on the same surface as the person. It seems to have a dark color and is similar in appearance to the other backpack, with zippers and pockets that are typical for a backpack."
+    }
   },
   {
     "frame_number": 90,
-    "objects": [
-      "person, confidence: 0.87, depth: 0.96",
-      "chair, confidence: 0.80, depth: 0.77",
-      "suitcase, confidence: 0.71, depth: 0.83",
-      "backpack, confidence: 0.46, depth: 0.90",
-      "handbag, confidence: 0.39, depth: 0.90",
-      "backpack, confidence: 0.28, depth: 0.98"
-    ],
-    "description": "The image shows a man sitting on a red chair that covers a significant portion of the room. This scene has various chairs, each colored differently, adding to the visual interest of the space. There are also a couple of bags in the room, showcasing the variety of belongings around. \n\n\nA few pieces of luggage, including a suitcase, backpack, and handbag, can be seen in the room. These items are noticeable in different parts of the room, with the suitcase being the largest, the backpack placed close to it and another smaller handbag also present in the room. The man is sitting on a red chair that is near the left side of the room. A television is present in the room, suspended in the room's background, indicating that this is a living or entertainment space."
+    "objects": {
+      "a99f1d25": {
+        "class": "person",
+        "confidence": 0.87,
+        "depth": 0.96
+      },
+      "1b8ea1aa": {
+        "class": "chair",
+        "confidence": 0.8,
+        "depth": 0.77
+      },
+      "39611745": {
+        "class": "suitcase",
+        "confidence": 0.71,
+        "depth": 0.83
+      },
+      "df7f04f5": {
+        "class": "backpack",
+        "confidence": 0.46,
+        "depth": 0.9
+      },
+      "1be1f53d": {
+        "class": "handbag",
+        "confidence": 0.39,
+        "depth": 0.9
+      },
+      "02a4dc40": {
+        "class": "backpack",
+        "confidence": 0.28,
+        "depth": 0.98
+      }
+    },
+    "descriptions": {
+      "a99f1d25": "A person dressed in a red t-shirt and black shorts sitting on a chair, facing the camera.",
+      "1b8ea1aa": "An upholstered chair with patterned fabric, partly visible at the left edge of the image.",
+      "39611745": "A vertical, dark-colored suitcase with wheels and an extended handle, positioned on the floor.",
+      "df7f04f5": "A dark-colored backpack on the floor, sitting upright and located in front of the person.",
+      "1be1f53d": "A handbag, indiscernible in color due to low confidence detection, appears to be near the bottom of the frame, potentially under the suitcase or chair.",
+      "02a4dc40": "A second backpack with low confidence detection, color and features unclear, its depth suggests it is located behind the person, potentially on another chair."
+    }
   },
   {
     "frame_number": 105,
-    "objects": [
-      "person, confidence: 0.86, depth: 0.96",
-      "chair, confidence: 0.72, depth: 0.77",
-      "suitcase, confidence: 0.69, depth: 0.84",
-      "handbag, confidence: 0.36, depth: 0.89",
-      "backpack, confidence: 0.31, depth: 0.89"
-    ],
-    "description": "The image depicts a man in a yellow living room with three different luggages visible: a handbag positioned towards the center, a suitcase to the right, and a backpack sitting further back. The man sits on the left side of the room with the luggage around. A bottle can be seen nearby on a surface. \n\n\nThe room gives off a warm ambiance with yellow as the main color. Multiple chairs are present, with one located on the left side closer to the suitcase, two further in the back from left to right, and the main chair he is sitting on. \n\n\nNumerating the chairs from the left will have you focus on the man and the luggage. On the right, the next chair is sitting in the room towards the right side, with two chairs in the middle, including the closest to the camera.\n\n\nOne backpack is seen on the right, and various suitcases and bags are displayed in the main living room area - this is at the close, middle, and far from the room are the three rooms. The depth of the scene shows the room is sparse and quite an unoccupied space. The camera's focus is on the four main areas of the room; both the main room and its boundaries. Squinting into these four areas, one could perceive the depth of the living room as quite deep overall."
+    "objects": {
+      "9f885268": {
+        "class": "person",
+        "confidence": 0.86,
+        "depth": 0.96
+      },
+      "e41f6f88": {
+        "class": "chair",
+        "confidence": 0.72,
+        "depth": 0.77
+      },
+      "8532efc7": {
+        "class": "suitcase",
+        "confidence": 0.69,
+        "depth": 0.84
+      },
+      "04b6adf4": {
+        "class": "handbag",
+        "confidence": 0.36,
+        "depth": 0.89
+      },
+      "c629a599": {
+        "class": "backpack",
+        "confidence": 0.31,
+        "depth": 0.89
+      }
+    },
+    "descriptions": {
+      "9f885268": "A person sitting on a chair, facing the camera directly. The person is wearing a red shirt and appears to be holding a beverage can.",
+      "e41f6f88": "A patterned chair with a red and beige design. Appears to be made of wood and upholstery, placed to the left of the frame, and not occupied.",
+      "8532efc7": "A black, upright suitcase with wheels and an extended handle, positioned vertically on the floor to the right side of the person.",
+      "04b6adf4": "A dark-colored handbag located on the floor. Due to low confidence, details are indistinct, but it appears to be close to the suitcase.",
+      "c629a599": "A dark-colored backpack positioned on the floor, also with indistinct details due to low confidence, next to the handbag near the suitcase."
+    }
   },
   {
     "frame_number": 120,
-    "objects": [
-      "person, confidence: 0.87, depth: 0.95",
-      "chair, confidence: 0.74, depth: 0.74",
-      "suitcase, confidence: 0.70, depth: 0.81",
-      "handbag, confidence: 0.49, depth: 0.88",
-      "backpack, confidence: 0.34, depth: 0.88",
-      "chair, confidence: 0.26, depth: 0.88"
-    ],
-    "description": "In the image, a person is standing inside of a yellow room. This individual's upper body can be seen in front of three chairs. The chairs are positioned at different distances from the individual, one being closer to him, another in the middle, and the third one further away on the right. \n\n\nThere is a suitcase placed in the room, likely signifying that the person is either waiting for someone or preparing for travel. Beside the suitcase, there is a chair that is closer to the person, while another is in the middle of the room, and the third is on the right side of the room. Additionally, there is a backpack near the person.\n\n\nBoth the person and nearby suitcase reflect the background of the image. There is a blue handbag situated in the bottom-left corner, adding an interesting element to the scene. The scene appears to be a mix of objects and furniture with varying distances from the person and various colors, giving the image a somewhat challenging depth perception."
+    "objects": {
+      "7eaafc0c": {
+        "class": "person",
+        "confidence": 0.87,
+        "depth": 0.95
+      },
+      "936a4e9b": {
+        "class": "chair",
+        "confidence": 0.74,
+        "depth": 0.74
+      },
+      "f8f2e3c3": {
+        "class": "suitcase",
+        "confidence": 0.7,
+        "depth": 0.81
+      },
+      "dea9f35f": {
+        "class": "handbag",
+        "confidence": 0.49,
+        "depth": 0.88
+      },
+      "5b28ec5f": {
+        "class": "backpack",
+        "confidence": 0.34,
+        "depth": 0.88
+      },
+      "dd681056": {
+        "class": "chair",
+        "confidence": 0.26,
+        "depth": 0.88
+      }
+    },
+    "descriptions": {
+      "7eaafc0c": "A person seated, wearing a red shirt with short sleeves, dark shorts, and is barefoot. The person is resting their left arm on the armrest and the right arm on their lap.",
+      "936a4e9b": "A chair with armrests, featuring a red pattern on the seat and back cushion, positioned to the left in the image, and appears closer to the foreground than other objects.",
+      "f8f2e3c3": "A large dark-colored suitcase with extended handle, standing upright on its wheels, located to the right of the person and slightly behind them.",
+      "dea9f35f": "A medium-sized handbag, of indeterminate color due to image quality, resting atop the suitcase.",
+      "5b28ec5f": "A dark-colored backpack, possibly black, located on the floor, directly in front of the suitcase, at a slightly lower depth.",
+      "dd681056": "Another chair, not fully visible, with a red pattern similar to the first chair, is placed further to the back, slightly behind and to the right of the seated person."
+    }
   },
   {
     "frame_number": 135,
-    "objects": [
-      "person, confidence: 0.89, depth: 0.95",
-      "chair, confidence: 0.77, depth: 0.71",
-      "suitcase, confidence: 0.70, depth: 0.81",
-      "handbag, confidence: 0.38, depth: 0.89",
-      "backpack, confidence: 0.27, depth: 0.89"
-    ],
-    "description": "The image depicts a man surrounded by various objects and some chairs. Above the man there is a series of text which resembles a checkerboard pattern. \nHe is sitting in a chair wearing a red shirt and looking at the camera. The man appears to be closer to the camera, as he is in a close-up shot.\n\nThere are two chairs in the room, one on the left side near the man, and a second chair towards the far end of the room. There are multiple suitcases in the image, two located next to the first chair and another one to the right of the first chair. \nA laptop is also shown, sitting on a flat surface in the middle of the room. A bottle and a handbag can be seen placed on a surface, giving a sense of depth in the image."
+    "objects": {
+      "07a88192": {
+        "class": "person",
+        "confidence": 0.89,
+        "depth": 0.95
+      },
+      "6209a6bb": {
+        "class": "chair",
+        "confidence": 0.77,
+        "depth": 0.71
+      },
+      "f8f2e3c3": {
+        "class": "suitcase",
+        "confidence": 0.7,
+        "depth": 0.81
+      },
+      "76c7b947": {
+        "class": "handbag",
+        "confidence": 0.38,
+        "depth": 0.89
+      },
+      "8bd30d21": {
+        "class": "backpack",
+        "confidence": 0.27,
+        "depth": 0.89
+      }
+    },
+    "descriptions": {
+      "07a88192": "A person is seated on a piece of furniture, wearing a red shirt and black pants. They have short hair and are holding a bottle in their hands. Their posture is upright, and they appear to be looking towards the camera.",
+      "6209a6bb": "The chair is patterned with red tones and has visible dark wooden armrests. It is positioned on the left side of the frame, unoccupied, and appears to be part of a set.",
+      "f8f2e3c3": "A large suitcase stands upright on the floor. It is likely made of a hard shell material with a dark color scheme. It is located near the center of the composition, slightly to the left, and closer to the camera than the person.",
+      "76c7b947": "The detected handbag is a black, soft material bag resting on the floor. Due to its low confidence score, its features are not very distinguishable. Its position is to the immediate left of the suitcase.",
+      "8bd30d21": "This object is identified as a backpack although it's recognized with low confidence. It is situated behind the person on what appears to be a chair or couch. It is blue and partially obscured by the person seated in front of it."
+    }
   },
   {
     "frame_number": 150,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "chair, confidence: 0.76, depth: 0.77",
-      "suitcase, confidence: 0.67, depth: 0.82",
-      "handbag, confidence: 0.39, depth: 0.90",
-      "backpack, confidence: 0.28, depth: 0.90"
-    ],
-    "description": "The image includes a person who can be seen in the foreground, closely wearing a red shirt. There are several chairs placed around the room; some are arranged around the person and others are positioned farther back. \n\n\nIn the room, a backpack, handbag, and luggage bags are present, suggesting that the environment may be a transitional living space for travelers. Additionally, there are multiple books aligned on the left side of the scene.\n\n\nOverall, the room appears to be a combination of living, dining, and luggage storage area. The items present give a clue that people are in their bedroom."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "9a9fcafb": {
+        "class": "chair",
+        "confidence": 0.76,
+        "depth": 0.77
+      },
+      "b37fe79c": {
+        "class": "suitcase",
+        "confidence": 0.67,
+        "depth": 0.82
+      },
+      "1be1f53d": {
+        "class": "handbag",
+        "confidence": 0.39,
+        "depth": 0.9
+      },
+      "1221402a": {
+        "class": "backpack",
+        "confidence": 0.28,
+        "depth": 0.9
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person wearing a red t-shirt is seated with one leg crossed over the other. The person is holding a bottle and appears to be looking directly at the camera.",
+      "9a9fcafb": "A chair with a vibrant red and brown pattern is located to the left in the scene. It is unoccupied and positioned in front of a table with items on it.",
+      "b37fe79c": "A grey suitcase with an extended handle stands in the foreground, slightly to the right from the center of the image. It is closer to the camera than the person and the chair.",
+      "1be1f53d": "A black handbag is located on the floor, slightly overlapping with the suitcase in the camera's field of view. Its position suggests it is nearer to the person than the suitcase.",
+      "1221402a": "A dark-colored backpack rests on the floor to the left of the suitcase, placed such that it is closer to the person who is sitting. It looks partially concealed behind the suitcase when viewed from the camera's perspective."
+    }
   },
   {
     "frame_number": 165,
-    "objects": [
-      "person, confidence: 0.89, depth: 0.95",
-      "chair, confidence: 0.88, depth: 0.75",
-      "suitcase, confidence: 0.71, depth: 0.79",
-      "handbag, confidence: 0.49, depth: 0.88",
-      "backpack, confidence: 0.31, depth: 0.88"
-    ],
-    "description": "The image presents a young man standing in front of various items of luggage. There are two suitcases - one near him and another further away - with a chair in between them, providing an interesting mix of colors and size differences. A handbag is present to the left of the man along with an additional backpack and a TV, all placed near the wall.\n\n\nAnother chair is seen in the middle-back area of the room, while another person can be sensed on the right side of the room. The layout of the room creates a vibrant scene with different kinds of objects intermingled \u2013 a chair, suitcases, handbag, television, and a new small object surrounded by the TV.\n\n\nThe overall composition of the image demonstrates a diverse yet relatable domestic scene, with ample opportunity to understand the area's layout, the distance between the objects, and explore various furniture pieces residing in the room."
+    "objects": {
+      "07a88192": {
+        "class": "person",
+        "confidence": 0.89,
+        "depth": 0.95
+      },
+      "3bc3583c": {
+        "class": "chair",
+        "confidence": 0.88,
+        "depth": 0.75
+      },
+      "be0b4be7": {
+        "class": "suitcase",
+        "confidence": 0.71,
+        "depth": 0.79
+      },
+      "dea9f35f": {
+        "class": "handbag",
+        "confidence": 0.49,
+        "depth": 0.88
+      },
+      "b55301c7": {
+        "class": "backpack",
+        "confidence": 0.31,
+        "depth": 0.88
+      }
+    },
+    "descriptions": {
+      "07a88192": "A person is sitting on a chair, wearing a red shirt and black pants. They appear to be calmly holding a bottle, with their attention possibly directed towards something outside the frame.",
+      "3bc3583c": "A red-patterned chair with armrests and wooden frame appears to be empty and situated to the left of the person.",
+      "be0b4be7": "A large black suitcase with an extended handle is standing upright to the right of the person. It is closest to the camera compared to other objects.",
+      "dea9f35f": "A dark-colored handbag is placed on the seat of a chair to the right of the person. It seems partially obscured by the chair's pattern.",
+      "b55301c7": "A backpack is lying on the floor to the right of the person, appearing to be blue and slightly obscured by the chair and other objects."
+    }
   },
   {
     "frame_number": 180,
-    "objects": [
-      "chair, confidence: 0.88, depth: 0.72",
-      "person, confidence: 0.88, depth: 0.95",
-      "suitcase, confidence: 0.53, depth: 0.72",
-      "handbag, confidence: 0.27, depth: 0.87"
-    ],
-    "description": "The image portrays a spacious area with three main objects: a man, a chair, and a suitcase. The man wearing a red shirt is sitting in the chair, taking up most of the area due to his position. \n\n\nThe chair spans the center part of the image, covering a significant area from left to right, and a significant part of the depth value for the space. The suitcase occupies a significant portion in the foreground, extending from the middle region towards the bottom and filling approximately 1/3 of the depth value for the image.\n\n\nOverall, the scene demonstrates a comfortable and spacious setting, allowing various pieces of furniture and baggage for the man to enjoy during his time sitting in the colorful chair."
+    "objects": {
+      "251748dd": {
+        "class": "chair",
+        "confidence": 0.88,
+        "depth": 0.72
+      },
+      "29e45993": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.95
+      },
+      "5d702a1f": {
+        "class": "suitcase",
+        "confidence": 0.53,
+        "depth": 0.72
+      },
+      "3d096c06": {
+        "class": "handbag",
+        "confidence": 0.27,
+        "depth": 0.87
+      }
+    },
+    "descriptions": {
+      "251748dd": "A chair with a wooden frame and red with a patterned cushion, located on the left side of the image.",
+      "29e45993": "A person sitting on a chair, slightly toward the center-right of the image. Wearing a red shirt, holding a bottle, and with a name tag.",
+      "5d702a1f": "A suitcase standing upright on the ground, appears to be black with an extending handle, located to the right of the person.",
+      "3d096c06": "A handbag that is dark in color, placed on the ground in the foreground closer to the camera."
+    }
   },
   {
     "frame_number": 195,
-    "objects": [
-      "chair, confidence: 0.88, depth: 0.71",
-      "person, confidence: 0.87, depth: 0.95",
-      "handbag, confidence: 0.60, depth: 0.87",
-      "suitcase, confidence: 0.51, depth: 0.70",
-      "chair, confidence: 0.34, depth: 0.85",
-      "chair, confidence: 0.29, depth: 0.97",
-      "chair, confidence: 0.26, depth: 0.97"
-    ],
-    "description": "The image displays a man sitting down in a room, on his personal furniture. Surrounding him are three chairs, one towards the left, another in the middle, and the third on the right. Alongside the man, there's a large handbag off to his side. The room appears to be familiar, suggesting a place like a private apartment, office space, or perhaps a bedroom.\n\n\nFrom the perspective of the camera, the man is sitting close to the chairs, occupying an area in the center of the frame. The handbag is situated more to the right and in the foreground, closer to the camera. The chairs contribute to the room, varying in size with three distinct chairs shown within the frame. It's essential to understand how these depth values relate to the spatial arrangement of objects within the room, identifying the location of every object to create a coherent and detailed narrative."
+    "objects": {
+      "e10f0b3a": {
+        "class": "chair",
+        "confidence": 0.88,
+        "depth": 0.71
+      },
+      "7eaafc0c": {
+        "class": "person",
+        "confidence": 0.87,
+        "depth": 0.95
+      },
+      "513069d5": {
+        "class": "handbag",
+        "confidence": 0.6,
+        "depth": 0.87
+      },
+      "e16ec3de": {
+        "class": "suitcase",
+        "confidence": 0.51,
+        "depth": 0.7
+      },
+      "af888fe4": {
+        "class": "chair",
+        "confidence": 0.34,
+        "depth": 0.85
+      },
+      "e83d1730": {
+        "class": "chair",
+        "confidence": 0.29,
+        "depth": 0.97
+      },
+      "642d2c53": {
+        "class": "chair",
+        "confidence": 0.26,
+        "depth": 0.97
+      }
+    },
+    "descriptions": {
+      "e10f0b3a": "A chair with a patterned red and beige upholstery located on the left side of the image, it appears closer to the foreground than most objects due to its depth value.",
+      "7eaafc0c": "A person wearing a red shirt sitting in a chair, with a black suitcase to their right and a blue backpack to their left. The individual appears to be holding a red container, possibly a drink, and looking slightly to their right.",
+      "513069d5": "A handbag positioned on the floor near the chair on which the person is seated, slightly ahead of the suitcase to the person's left.",
+      "e16ec3de": "A black suitcase positioned on the floor to the right of the seated person, it is similar in depth to the closest chair, indicating it is also in the foreground.",
+      "af888fe4": "A chair on the right with an indistinct pattern and lower confidence located farther back in the scene relative to the suitcase and the closest chair.",
+      "e83d1730": "A chair barely visible and partially obscured by the person seated, with the lowest confidence value and one of the farthest depth values, suggesting it is in the background of the scene.",
+      "642d2c53": "A chair partially visible and overlapping with e83d1730, with low confidence and far background depth information, positioned to the right of the person."
+    }
   },
   {
     "frame_number": 210,
-    "objects": [
-      "person, confidence: 0.89, depth: 0.96",
-      "chair, confidence: 0.87, depth: 0.78",
-      "suitcase, confidence: 0.58, depth: 0.78",
-      "chair, confidence: 0.42, depth: 0.91",
-      "handbag, confidence: 0.32, depth: 0.89",
-      "chair, confidence: 0.28, depth: 0.97",
-      "backpack, confidence: 0.25, depth: 0.88"
-    ],
-    "description": "The scene showcases a person sitting on a chair that is gray and chair-shaped, while there are multiple chairs in the depicted space. There is a backpack placed on the floor near him and other chairs. One of the chairs has a suitcase placed on it. A person can be seen sitting on a seat.\n\n\nIn the scene, there is a suitcase with a depth of 0.89, a jacket, another suitcase and a chair. In the image, a man is identifiable as they sit; yet no one else is in the picture. There are other people within the person's visual field, based on the small and large suits in the background (x-axis). The different chairs have various poses due to the room's depth. The chair the man's backside sits on has a 0.71 confidence score and a small suitcase placed on it. This arrangement, positioning, and surrounding objects convey depth and a comprehensive understanding of the space.\n\n  \n\nThe person's chair is a square-shaped gray chair with a man sitting in it and a large blue suitcase on another nearby chair. Person in a red shirt sits on the chair and his chair has a 0.36 depth and positioning. He is sitting on a suitcase which is 0.92. The man is 1000 cm deep in his chair to the viewer."
+    "objects": {
+      "79373baf": {
+        "class": "person",
+        "confidence": 0.89,
+        "depth": 0.96
+      },
+      "1434ed10": {
+        "class": "chair",
+        "confidence": 0.87,
+        "depth": 0.78
+      },
+      "d2804d4d": {
+        "class": "suitcase",
+        "confidence": 0.58,
+        "depth": 0.78
+      },
+      "17f87706": {
+        "class": "chair",
+        "confidence": 0.42,
+        "depth": 0.91
+      },
+      "d31f5ab8": {
+        "class": "handbag",
+        "confidence": 0.32,
+        "depth": 0.89
+      },
+      "480417b0": {
+        "class": "chair",
+        "confidence": 0.28,
+        "depth": 0.97
+      },
+      "c52aa115": {
+        "class": "backpack",
+        "confidence": 0.25,
+        "depth": 0.88
+      }
+    },
+    "descriptions": {
+      "79373baf": "A person sitting on a chair, wearing a red t-shirt and black shorts. The individual has a badge on the left side of their chest and a watch on the left wrist.",
+      "1434ed10": "A chair with a red patterned cushion on both the seat and the backrest, visible to the left in the foreground.",
+      "d2804d4d": "A dark-colored suitcase with an extended handle, positioned to the right of the person, parallel to the chair on which the person is sitting.",
+      "17f87706": "Another chair similar to the one the person is sitting on, it's partially obscured by the person but it appears to be behind and to the left of the person.",
+      "d31f5ab8": "A small handbag; the view is partially obstructed, making visible details scarce.",
+      "480417b0": "Yet another chair of the same style as others in the image, located behind the person and partially obscured by them.",
+      "c52aa115": "A dark-colored backpack, placed on the floor, seemingly next to the suitcase and slightly behind it from the viewer's perspective."
+    }
   },
   {
     "frame_number": 225,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "chair, confidence: 0.80, depth: 0.80",
-      "suitcase, confidence: 0.70, depth: 0.81",
-      "chair, confidence: 0.51, depth: 0.90",
-      "chair, confidence: 0.39, depth: 0.97",
-      "suitcase, confidence: 0.35, depth: 0.62",
-      "handbag, confidence: 0.34, depth: 0.89",
-      "backpack, confidence: 0.26, depth: 0.98",
-      "suitcase, confidence: 0.26, depth: 0.89"
-    ],
-    "description": "In this image, a man can be seen sitting in a blue chair, smiling as he holds a water bottle in his hand. There is a red backpack and a green and yellow suitcase by his side. In the periphery of the room, there are several other chairs, a handbag, and a dining table. Apart from the man, there are multiple distinct chairs in various colors and directions.\n\n\nThere are two distinct suitcases in the scene, one in red and the other in green. Two chairs can be seen. One is close to the man with a red backpack by his side, while the other chair is situated nearby. The bags are next to the man and each other as well.\n\n\nThe image also displays two other pieces of furniture - a handbag and a dining table. The handbag is located by the side of the room, while the dining table is partly visible on the far side of the room. A banana can be seen on the dining table as well.\n\n\nIn this scenario, we can observe a man sitting by a chest of drawers, possibly suggesting a homey setting or dorm room environment. The yellow captioned chair, as well as the green bag on the bed, contribute to the overall comfortable feeling of a homey or bedroom setting."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "b2dac6ae": {
+        "class": "chair",
+        "confidence": 0.8,
+        "depth": 0.8
+      },
+      "f8f2e3c3": {
+        "class": "suitcase",
+        "confidence": 0.7,
+        "depth": 0.81
+      },
+      "cadb7e3b": {
+        "class": "chair",
+        "confidence": 0.51,
+        "depth": 0.9
+      },
+      "a9ead37d": {
+        "class": "chair",
+        "confidence": 0.39,
+        "depth": 0.97
+      },
+      "0aa62eb9": {
+        "class": "suitcase",
+        "confidence": 0.35,
+        "depth": 0.62
+      },
+      "52da57b5": {
+        "class": "handbag",
+        "confidence": 0.34,
+        "depth": 0.89
+      },
+      "af216d76": {
+        "class": "backpack",
+        "confidence": 0.26,
+        "depth": 0.98
+      },
+      "cd6e5148": {
+        "class": "suitcase",
+        "confidence": 0.26,
+        "depth": 0.89
+      }
+    },
+    "descriptions": {
+      "568455a1": "A person seated on a chair, appearing relaxed with one leg crossed over the other, wearing a red shirt and dark pants, holding an object and looking towards the camera.",
+      "b2dac6ae": "A chair with a patterned cushion and wooden armrests, empty and positioned slightly angled to the left side of the frame.",
+      "f8f2e3c3": "A dark-colored suitcase standing upright with an extended handle, located to the right of the person seated, indicating it may belong to them.",
+      "cadb7e3b": "A partially visible chair similar in design to the chair with the patterned cushion, likely from the same set, located behind the seated person.",
+      "a9ead37d": "Another chair similar to 'b2dac6ae' and 'cadb7e3b', positioned further in the background on the right, mostly obscured by the person in the foreground.",
+      "0aa62eb9": "A suitcase placed on the ground closer to the camera than most other items, suggesting it is in the foreground of the scene, possibly belonging to a recent arrival or waiting to be picked up.",
+      "52da57b5": "A handbag located on the ground next to 'f8f2e3c3', potentially the person's, showcasing dark colors and a form that implies content inside.",
+      "af216d76": "A backpack placed directly on the floor, closest to the camera's point of view, indicating it is in the immediate foreground.",
+      "cd6e5148": "A suitcase with a similar appearance to 'f8f2e3c3', standing upright and located in the middle ground, suggesting it's not as close to the person as 'f8f2e3c3'."
+    }
   },
   {
     "frame_number": 240,
-    "objects": [
-      "person, confidence: 0.89, depth: 0.95",
-      "chair, confidence: 0.87, depth: 0.75",
-      "suitcase, confidence: 0.75, depth: 0.78",
-      "chair, confidence: 0.49, depth: 0.88",
-      "suitcase, confidence: 0.34, depth: 0.51",
-      "handbag, confidence: 0.34, depth: 0.87",
-      "backpack, confidence: 0.27, depth: 0.87"
-    ],
-    "description": "The image shows a living room with a male sitting in a chair, likely on cellphone, in a vlogging context. There are two suitcases located on the floor and a backpack placed nearby. The depth of the image shows the depth values are from the front left corner to the right rear corner of the suitcase. The chair on which the man is sitting sits closest to you, while the suitcases on the floor make up the rest of the room. A handbag on the left side of the room complements the scene. \n\n\nThe man in the vlog is seated in an office chair towards the center of the room. Meanwhile, a smaller man looking away from you within the room sits on a chair on the right side of the living room. Additionally, another two objects show up closer to the chair he occupies, further underscoring the impression of the room's interior environment.\n\n\nSome additional details: The room features a small TV in the background centrally above the man, and the large suitcase on the floor is closest to you amongst the two suitcases. The empty chair, front right corner, seemingly looks unoccupied by another person or visible luggage, giving the room a spacious and uncluttered appearance."
+    "objects": {
+      "07a88192": {
+        "class": "person",
+        "confidence": 0.89,
+        "depth": 0.95
+      },
+      "365154c1": {
+        "class": "chair",
+        "confidence": 0.87,
+        "depth": 0.75
+      },
+      "6d8dc7cb": {
+        "class": "suitcase",
+        "confidence": 0.75,
+        "depth": 0.78
+      },
+      "15a7ccd8": {
+        "class": "chair",
+        "confidence": 0.49,
+        "depth": 0.88
+      },
+      "e0ee34dc": {
+        "class": "suitcase",
+        "confidence": 0.34,
+        "depth": 0.51
+      },
+      "798ad542": {
+        "class": "handbag",
+        "confidence": 0.34,
+        "depth": 0.87
+      },
+      "fbd66117": {
+        "class": "backpack",
+        "confidence": 0.27,
+        "depth": 0.87
+      }
+    },
+    "descriptions": {
+      "07a88192": "A person dressed in a red t-shirt and dark pants, sitting on a chair holding a bottle, possibly engaged in a waiting activity or rest.",
+      "365154c1": "A red and beige patterned chair with a wooden frame, situated in the foreground to the left of the person.",
+      "6d8dc7cb": "A large black suitcase with wheels, standing upright, and positioned to the right of the person.",
+      "15a7ccd8": "A second red and beige patterned chair with a wooden frame, partially obscured and located behind the main chair.",
+      "e0ee34dc": "Another suitcase or piece of luggage, not very clearly visible, it appears to be further ahead than other objects due to its higher depth value relative to its position.",
+      "798ad542": "A dark-colored handbag situated on the floor, to the right of the person and behind the black suitcase.",
+      "fbd66117": "A backpack, also dark in color, placed on the floor to the right of the person, and adjacent to the black suitcase."
+    }
   },
   {
     "frame_number": 255,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.94",
-      "chair, confidence: 0.80, depth: 0.76",
-      "suitcase, confidence: 0.75, depth: 0.80",
-      "chair, confidence: 0.47, depth: 0.86",
-      "handbag, confidence: 0.38, depth: 0.89",
-      "chair, confidence: 0.32, depth: 0.95",
-      "backpack, confidence: 0.28, depth: 0.89"
-    ],
-    "description": "The image presents a hotel room or a living space of an \"other person's room\" setting with vending points at the edge. The most prominent figure in the scene is a man wearing shorts and a t-shirt, seated in a chair in front of a suitcase or a checked chair without personal items and a black backpack. Surrounding the man are benches, a chair not having personal items, and other such nearby, all with varying degrees of probability.\n\n\nThere are several suitcases in the image. A red suitcase is centered and has a higher confidence. Another suitcase is located near the man and also has a notable confidence. In addition to these, there are two other suitcases that are less stable in the scene. They are closer to the periphery of the image. Alongside the furniture, there is a bottle and chair with a handbag beside the checked chair with no personal items and a black bag.\n\n\nThe room is also adorned with textured prints of a chair, which are situated near the man on the left. There is another print on the wall with a bottle placed on it. The vending points, which are located at the edge of the scene, extend into a multitude of directions without significant confidence."
+    "objects": {
+      "fd112969": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.94
+      },
+      "f6edeca5": {
+        "class": "chair",
+        "confidence": 0.8,
+        "depth": 0.76
+      },
+      "335ce10f": {
+        "class": "suitcase",
+        "confidence": 0.75,
+        "depth": 0.8
+      },
+      "4350750a": {
+        "class": "chair",
+        "confidence": 0.47,
+        "depth": 0.86
+      },
+      "76c7b947": {
+        "class": "handbag",
+        "confidence": 0.38,
+        "depth": 0.89
+      },
+      "6bd2e055": {
+        "class": "chair",
+        "confidence": 0.32,
+        "depth": 0.95
+      },
+      "52c2660a": {
+        "class": "backpack",
+        "confidence": 0.28,
+        "depth": 0.89
+      }
+    },
+    "descriptions": {
+      "fd112969": "A person sitting centered in the frame, wearing a red shirt and holding a bottle.",
+      "f6edeca5": "A patterned chair with wooden armrests, positioned to the left foreground.",
+      "335ce10f": "A black, upright suitcase with an extended handle, located to the right of the person.",
+      "4350750a": "A patterned chair similar to the one on the left, seen to the right of the person, partially obscured.",
+      "76c7b947": "A black handbag, indistinct in appearance, placed on the seat of the right chair.",
+      "6bd2e055": "Another chair, barely visible, likely similar to other chairs, farthest on the right.",
+      "52c2660a": "A backpack on the floor to the right, color difficult to discern, partially obscured by the suitcase."
+    }
   },
   {
     "frame_number": 270,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.95",
-      "chair, confidence: 0.83, depth: 0.79",
-      "suitcase, confidence: 0.76, depth: 0.82",
-      "handbag, confidence: 0.42, depth: 0.90",
-      "chair, confidence: 0.42, depth: 0.89",
-      "backpack, confidence: 0.32, depth: 0.90"
-    ],
-    "description": "The scene in the image showcases a person seated in a chair, accompanied by multiple objects in the room. A number of chairs are positioned both near the man and in the background. There are several suitcases scattered throughout the room, some on the left, others in the middle and a few on the right side of the image. Additionally, a backpack is resting on one of the chairs, and a handbag is located at the very far right side of the image.\n\n\nThe man in the room is wearing a red shirt and drinking water directly from its bottle. The room displays a mix of furniture, highlighting the various belongings within it. The person, seated carefully in a red chair, appears to be the main subject, situated towards the center of the frame. Other objects, like a backpack on the floor at a lower position and a bottle to his side, further detail the items within the room."
+    "objects": {
+      "29e45993": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.95
+      },
+      "1c1ddf39": {
+        "class": "chair",
+        "confidence": 0.83,
+        "depth": 0.79
+      },
+      "ba2ce9b7": {
+        "class": "suitcase",
+        "confidence": 0.76,
+        "depth": 0.82
+      },
+      "61fdee21": {
+        "class": "handbag",
+        "confidence": 0.42,
+        "depth": 0.9
+      },
+      "2b04eaad": {
+        "class": "chair",
+        "confidence": 0.42,
+        "depth": 0.89
+      },
+      "8db6dd16": {
+        "class": "backpack",
+        "confidence": 0.32,
+        "depth": 0.9
+      }
+    },
+    "descriptions": {
+      "29e45993": "A person is sitting on a chair, wearing a red shirt and holding a plastic bottle. Their positioning appears casual and they are looking towards the camera.",
+      "1c1ddf39": "A chair with a floral red and ochre pattern, visible wood arms and legs. It's positioned close to the camera at the lower left of the frame.",
+      "ba2ce9b7": "A black suitcase with an extended handle, it appears upright and ready for travel. Located slightly to the right of the person.",
+      "61fdee21": "A handbag or small bag, it's hard to distinguish due to lower confidence in detection. It seems to be on or near the floor next to the suitcase.",
+      "2b04eaad": "Another chair with a similar pattern to the first, but less visible and located to the right in the frame behind the suitcase.",
+      "8db6dd16": "A backpack that appears to be resting on or near the first chair's seat. It seems to have a dark color with a lighter patch or design on it."
+    }
   },
   {
     "frame_number": 285,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.95",
-      "chair, confidence: 0.85, depth: 0.78",
-      "suitcase, confidence: 0.74, depth: 0.82",
-      "chair, confidence: 0.31, depth: 0.89",
-      "handbag, confidence: 0.28, depth: 0.90"
-    ],
-    "description": "The image shows a young man sitting on a chair in an emptily decorated room, surrounded by a pair of chairs and suitcases. There is a purple suitcase in front of the man, with another larger green suitcase positioned further from him. An additional chair is located on the left side of the room, closer to another man who is distant from the main chair on which the man is sitting. \n\n\nTwo bottles are present in the scene, placed at a distance from the man, aligning upwards vertically. A cell phone can be found nearby. A handbag and an umbrella are also on the scene. The man's chair is positioned both inside and outside of the camera. The larger of the two suitcases is located at a distance from the main blue suitcase.\n\n\nInformation displayed on the left side of the image appears to indicate a yellow tone, while the right side has an icy blue tone, complete with grey, brown, yellow, and blue. \n\n\nThere is no notable presence of other people, giving a calm and relaxed atmosphere to the room. \n\n\nNotably, the man's head appears much larger than his torso, while the rest of the room remains a dull white color, creating a lighter atmosphere and relying on outlines for depth and structure. The suitcase in the foreground being visually overwhelming results from the perception of two colors, with a stunning change of size on the guy's head compared to the blue suitcase.\n\n\nIn summary, the room contains a chair, a man, another person, an umbrella, and a handbag. There is a cake sitting next to a body sitting on the chair."
+    "objects": {
+      "29e45993": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.95
+      },
+      "1244ddaa": {
+        "class": "chair",
+        "confidence": 0.85,
+        "depth": 0.78
+      },
+      "283417a8": {
+        "class": "suitcase",
+        "confidence": 0.74,
+        "depth": 0.82
+      },
+      "33bda609": {
+        "class": "chair",
+        "confidence": 0.31,
+        "depth": 0.89
+      },
+      "2e0d2261": {
+        "class": "handbag",
+        "confidence": 0.28,
+        "depth": 0.9
+      }
+    },
+    "descriptions": {
+      "29e45993": "A person seated on a chair, centered in the image, appearing relaxed with a bottle in one hand and legs crossed.",
+      "1244ddaa": "A chair with a red patterned fabric, positioned in the foreground to the bottom left, partially cut off from the frame.",
+      "283417a8": "A black, upright suitcase with an extended handle, placed directly in front of the seated person.",
+      "33bda609": "Another chair, similar in design to the first, located in the background to the right and slightly obscured from full view.",
+      "2e0d2261": "A handbag is suggested, possibly dark in color, located near the black suitcase and the seated person, but the image does not show this item clearly."
+    }
   },
   {
     "frame_number": 300,
-    "objects": [
-      "person, confidence: 0.87, depth: 0.95",
-      "chair, confidence: 0.83, depth: 0.76",
-      "suitcase, confidence: 0.39, depth: 0.79",
-      "chair, confidence: 0.36, depth: 0.87",
-      "handbag, confidence: 0.33, depth: 0.89",
-      "chair, confidence: 0.30, depth: 0.97"
-    ],
-    "description": "The image presents a living space filled with chairs and a small amount of luggage. In the center, there are two men sitting next to at least one piece of rolling suitcase, which is the largest of the chairs visible in the room. The chairs are arranged around the centerpiece, positioned on different sides of the room from left to right and near or far into the rear.\n\n\nSeveral suitcases filled with clothes are placed throughout the living space, both in the background and further within the room. Additionally, a bottle can be found towards the left side of the room, possibly resting on a table. Chair-like objects are on five other locations in the room, positioned in various corners which might indicate someone's usage of one-way glass doors to manage moving objects.\n\n\nThere is also a handbag situated in the lower portion of the photo, resembling a chair. The black suitcase represents a central and significant element in the room, while several other chairs are scattered around it, each featuring different levels of confidence."
+    "objects": {
+      "7eaafc0c": {
+        "class": "person",
+        "confidence": 0.87,
+        "depth": 0.95
+      },
+      "fbdc402b": {
+        "class": "chair",
+        "confidence": 0.83,
+        "depth": 0.76
+      },
+      "a3f8e586": {
+        "class": "suitcase",
+        "confidence": 0.39,
+        "depth": 0.79
+      },
+      "3b0d44ad": {
+        "class": "chair",
+        "confidence": 0.36,
+        "depth": 0.87
+      },
+      "a7aa8432": {
+        "class": "handbag",
+        "confidence": 0.33,
+        "depth": 0.89
+      },
+      "cae0963c": {
+        "class": "chair",
+        "confidence": 0.3,
+        "depth": 0.97
+      }
+    },
+    "descriptions": {
+      "7eaafc0c": "A person sitting on a chair, wearing a red shirt and black pants, with a badge on a lanyard around the neck.",
+      "fbdc402b": "A chair with red and beige patterned upholstery and wooden armrests, positioned on the right side of the image.",
+      "a3f8e586": "A suitcase with a telescopic handle, sitting upright on the ground to the right of the person.",
+      "3b0d44ad": "A chair barely visible behind the person, likely similar to the chair identified as 'fbdc402b', based on the partial pattern seen.",
+      "a7aa8432": "A handbag perched on top of the suitcase to the right of the person, dark in color.",
+      "cae0963c": "A chair positioned farthest from the viewpoint, to the right of the person, only partially visible, likely similar to the other chairs."
+    }
   },
   {
     "frame_number": 315,
-    "objects": [
-      "person, confidence: 0.88, depth: 0.96",
-      "chair, confidence: 0.82, depth: 0.80",
-      "suitcase, confidence: 0.57, depth: 0.84",
-      "chair, confidence: 0.40, depth: 0.89",
-      "backpack, confidence: 0.35, depth: 0.91",
-      "chair, confidence: 0.29, depth: 0.97",
-      "handbag, confidence: 0.27, depth: 0.91"
-    ],
-    "description": "This image depicts a room where a man is sitting comfortably in a chair, possibly using a screen as a laptop. The living area, or den, appears to be a part of the man's home. Various pieces of furniture and objects are present in the scene, including a large couch, a handbag, a suitcase, a backpack, and two chairs situated at different areas in the room.\n\n\nBeyond the human figure and the chair, there are two other chairs visible, one on the left and another on the right, further back in the room. Among the objects in the room, several handbags are scattered around\u2014one is placed close to the man, while others are located in the den on either side of the room.\n\n\nSpecifically, the man appears to be sitting on one of the chairs, which has another chair to the right in front of him. It's apparent that someone is relaxing, possibly watching television.\n\n\nThe room also has a computer desk, which is placed somewhat to the right of where the man is sitting and has a suitcase on it. It's possible that the laptop is placed on the laptop's side of the computer desk.\n\n\nThe image provides a clear view of the interior, starting from the living area being viewed from the room itself, with more chairs, suitcase and backpack in the same room."
+    "objects": {
+      "568455a1": {
+        "class": "person",
+        "confidence": 0.88,
+        "depth": 0.96
+      },
+      "34b2f71a": {
+        "class": "chair",
+        "confidence": 0.82,
+        "depth": 0.8
+      },
+      "04dc420e": {
+        "class": "suitcase",
+        "confidence": 0.57,
+        "depth": 0.84
+      },
+      "bffd92af": {
+        "class": "chair",
+        "confidence": 0.4,
+        "depth": 0.89
+      },
+      "b7033f8f": {
+        "class": "backpack",
+        "confidence": 0.35,
+        "depth": 0.91
+      },
+      "e83d1730": {
+        "class": "chair",
+        "confidence": 0.29,
+        "depth": 0.97
+      },
+      "1e4de5fc": {
+        "class": "handbag",
+        "confidence": 0.27,
+        "depth": 0.91
+      }
+    },
+    "descriptions": {
+      "568455a1": "An individual sitting on a chair directly facing the camera, with a neutral expression and wearing red attire.",
+      "34b2f71a": "A chair with a patterned red and white design, with objects placed on it.",
+      "04dc420e": "A dark-colored suitcase, standing on its wheels and positioned to the right of the person from the camera's perspective.",
+      "bffd92af": "Another chair positioned to the left of the person, partially obscured and appearing less distinct.",
+      "b7033f8f": "A backpack, likely dark in color, placed on the floor slightly behind the suitcase from the camera's perspective.",
+      "e83d1730": "A chair mostly obscured from view by the person, likely similar in appearance to the other chairs in the scene.",
+      "1e4de5fc": "A handbag, not clearly visible, possibly placed on the floor or a low surface, roughly at the same depth as the backpack."
+    }
   }
 ]

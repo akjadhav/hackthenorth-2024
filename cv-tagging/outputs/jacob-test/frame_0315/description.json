@@ -1,0 +1,54 @@
+{
+  "objects": {
+    "568455a1": {
+      "class": "person",
+      "confidence": 0.88,
+      "depth": 0.96
+    },
+    "34b2f71a": {
+      "class": "chair",
+      "confidence": 0.82,
+      "depth": 0.8
+    },
+    "04dc420e": {
+      "class": "suitcase",
+      "confidence": 0.57,
+      "depth": 0.84
+    },
+    "bffd92af": {
+      "class": "chair",
+      "confidence": 0.4,
+      "depth": 0.89
+    },
+    "b7033f8f": {
+      "class": "backpack",
+      "confidence": 0.35,
+      "depth": 0.91
+    },
+    "e83d1730": {
+      "class": "chair",
+      "confidence": 0.29,
+      "depth": 0.97
+    },
+    "1e4de5fc": {
+      "class": "handbag",
+      "confidence": 0.27,
+      "depth": 0.91
+    }
+  },
+  "descriptions": {
+    "568455a1": "An individual sitting on a chair directly facing the camera, with a neutral expression and wearing red attire.",
+    "34b2f71a": "A chair with a patterned red and white design, with objects placed on it.",
+    "04dc420e": "A dark-colored suitcase, standing on its wheels and positioned to the right of the person from the camera's perspective.",
+    "bffd92af": "Another chair positioned to the left of the person, partially obscured and appearing less distinct.",
+    "b7033f8f": "A backpack, likely dark in color, placed on the floor slightly behind the suitcase from the camera's perspective.",
+    "e83d1730": "A chair mostly obscured from view by the person, likely similar in appearance to the other chairs in the scene.",
+    "1e4de5fc": "A handbag, not clearly visible, possibly placed on the floor or a low surface, roughly at the same depth as the backpack."
+  },
+  "scene_analysis": {
+    "composition": "The scene appears to be an indoor setting with a person surrounded by luggage and seated furniture. The person is central to the composition, flanked by objects.",
+    "lighting_and_colors": "The lighting seems artificial and evenly distributed. The colors are muted with dominant yellow and gray tones in the walls and floor, contrasting with the red on the chairs.",
+    "atmosphere": "The scene appears utilitarian, likely part of a transitional space such as an airport or a waiting area. The atmosphere is calm and static.",
+    "text_and_signage": "No discernible text or signage is visible in this image other than the timestamp in the upper part and the brand watermark 'tapo' at the bottom."
+  }
+}

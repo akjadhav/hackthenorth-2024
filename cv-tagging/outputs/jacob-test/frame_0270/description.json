@@ -1,0 +1,48 @@
+{
+  "objects": {
+    "29e45993": {
+      "class": "person",
+      "confidence": 0.88,
+      "depth": 0.95
+    },
+    "1c1ddf39": {
+      "class": "chair",
+      "confidence": 0.83,
+      "depth": 0.79
+    },
+    "ba2ce9b7": {
+      "class": "suitcase",
+      "confidence": 0.76,
+      "depth": 0.82
+    },
+    "61fdee21": {
+      "class": "handbag",
+      "confidence": 0.42,
+      "depth": 0.9
+    },
+    "2b04eaad": {
+      "class": "chair",
+      "confidence": 0.42,
+      "depth": 0.89
+    },
+    "8db6dd16": {
+      "class": "backpack",
+      "confidence": 0.32,
+      "depth": 0.9
+    }
+  },
+  "descriptions": {
+    "29e45993": "A person is sitting on a chair, wearing a red shirt and holding a plastic bottle. Their positioning appears casual and they are looking towards the camera.",
+    "1c1ddf39": "A chair with a floral red and ochre pattern, visible wood arms and legs. It's positioned close to the camera at the lower left of the frame.",
+    "ba2ce9b7": "A black suitcase with an extended handle, it appears upright and ready for travel. Located slightly to the right of the person.",
+    "61fdee21": "A handbag or small bag, it's hard to distinguish due to lower confidence in detection. It seems to be on or near the floor next to the suitcase.",
+    "2b04eaad": "Another chair with a similar pattern to the first, but less visible and located to the right in the frame behind the suitcase.",
+    "8db6dd16": "A backpack that appears to be resting on or near the first chair's seat. It seems to have a dark color with a lighter patch or design on it."
+  },
+  "scene_analysis": {
+    "composition": "The scene is an indoor setting with a person seated centrally and surrounded by personal belongings like a suitcase, backpack, and chairs.",
+    "lighting_and_colors": "The lighting is bright and even, creating a clear image with no harsh shadows. The colors are muted with predominant yellow and grey walls, contrasting with the red shirt of the person and the patterned chairs.",
+    "atmosphere": "The scene looks like a waiting area or a lobby, possibly at a hotel or airport, with a relaxed ambiance.",
+    "text_and_signage": "In the top left corner, there is overlaid text likely coming from a surveillance camera showing the date '2024-09-14' and time '02:31:45'. In the bottom left corner, there's a logo with the text 'tapo'."
+  }
+}
