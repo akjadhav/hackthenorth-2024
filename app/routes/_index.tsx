@@ -16,6 +16,7 @@ export default function Index() {
           <h1 className='dark:text-gray-100 font-bold leading text-2xl text-gray-800'>
             Welcome to <span className='sr-only'>Remix</span>
           </h1>
+          <Map />
           <div className='h-[144px] w-[434px]'>
             <img
               src='/logo-light.png'
