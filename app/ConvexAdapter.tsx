@@ -19,48 +19,50 @@ type Authenticator = AdapterAuthenticator & { userId: Id<"users"> };
 
 export const ConvexAdapter: Adapter = {
   async createAuthenticator(authenticator: Authenticator) {
-    await callMutation(authAdapter.createAuthenticator, { authenticator });
+    await callMutation(api.authAdapter.createAuthenticator, { authenticator });
     return authenticator;
   },
   async createSession(session: Session) {
-    const id = await callMutation(authAdapter.createSession, {
+    const id = await callMutation(api.authAdapter.createSession, {
       session: toDB(session),
     });
     return { ...session, id };
   },
   async createUser({ id: _, ...user }: User) {
-    const id = await callMutation(authAdapter.createUser, {
+    const id = await callMutation(api.authAdapter.createUser, {
       user: toDB(user),
     });
     return { ...user, id };
   },
   async createVerificationToken(verificationToken: VerificationToken) {
-    await callMutation(authAdapter.createVerificationToken, {
+    await callMutation(api.authAdapter.createVerificationToken, {
       verificationToken: toDB(verificationToken),
     });
     return verificationToken;
   },
   async deleteSession(sessionToken) {
     return maybeSessionFromDB(
-      await callMutation(authAdapter.deleteSession, {
+      await callMutation(api.authAdapter.deleteSession, {
         sessionToken,
       })
     );
   },
   async deleteUser(id: Id<"users">) {
-    return maybeUserFromDB(await callMutation(authAdapter.deleteUser, { id }));
+    return maybeUserFromDB(
+      await callMutation(api.authAdapter.deleteUser, { id })
+    );
   },
   async getAccount(providerAccountId, provider) {
-    return await callQuery(authAdapter.getAccount, {
+    return await callQuery(api.authAdapter.getAccount, {
       provider,
       providerAccountId,
     });
   },
   async getAuthenticator(credentialID) {
-    return await callQuery(authAdapter.getAuthenticator, { credentialID });
+    return await callQuery(api.authAdapter.getAuthenticator, { credentialID });
   },
   async getSessionAndUser(sessionToken) {
-    const result = await callQuery(authAdapter.getSessionAndUser, {
+    const result = await callQuery(api.authAdapter.getSessionAndUser, {
       sessionToken,
     });
     if (result === null) {
@@ -70,11 +72,11 @@ export const ConvexAdapter: Adapter = {
     return { user: userFromDB(user), session: sessionFromDB(session) };
   },
   async getUser(id: Id<"users">) {
-    return maybeUserFromDB(await callQuery(authAdapter.getUser, { id }));
+    return maybeUserFromDB(await callQuery(api.authAdapter.getUser, { id }));
   },
   async getUserByAccount({ provider, providerAccountId }) {
     return maybeUserFromDB(
-      await callQuery(authAdapter.getUserByAccount, {
+      await callQuery(api.authAdapter.getUserByAccount, {
         provider,
         providerAccountId,
       })
@@ -82,43 +84,43 @@ export const ConvexAdapter: Adapter = {
   },
   async getUserByEmail(email) {
     return maybeUserFromDB(
-      await callQuery(authAdapter.getUserByEmail, { email })
+      await callQuery(api.authAdapter.getUserByEmail, { email })
     );
   },
   async linkAccount(account: Account) {
-    return await callMutation(authAdapter.linkAccount, { account });
+    return await callMutation(api.authAdapter.linkAccount, { account });
   },
   async listAuthenticatorsByUserId(userId: Id<"users">) {
-    return await callQuery(authAdapter.listAuthenticatorsByUserId, {
+    return await callQuery(api.authAdapter.listAuthenticatorsByUserId, {
       userId,
     });
   },
   async unlinkAccount({ provider, providerAccountId }) {
     return (
-      (await callMutation(authAdapter.unlinkAccount, {
+      (await callMutation(api.authAdapter.unlinkAccount, {
         provider,
         providerAccountId,
       })) ?? undefined
     );
   },
   async updateAuthenticatorCounter(credentialID, newCounter) {
-    return await callMutation(authAdapter.updateAuthenticatorCounter, {
+    return await callMutation(api.authAdapter.updateAuthenticatorCounter, {
       credentialID,
       newCounter,
     });
   },
   async updateSession(session: Session) {
-    return await callMutation(authAdapter.updateSession, {
+    return await callMutation(api.authAdapter.updateSession, {
       session: toDB(session),
     });
   },
   async updateUser(user: User) {
-    await callMutation(authAdapter.updateUser, { user: toDB(user) });
+    await callMutation(api.authAdapter.updateUser, { user: toDB(user) });
     return user;
   },
   async useVerificationToken({ identifier, token }) {
     return maybeVerificationTokenFromDB(
-      await callMutation(authAdapter.useVerificationToken, {
+      await callMutation(api.authAdapter.useVerificationToken, {
         identifier,
         token,
       })
