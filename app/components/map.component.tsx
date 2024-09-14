@@ -9,6 +9,7 @@ import BlueDotMarker from "./blue-dot-marker.component";
 import "@mappedin/react-sdk/lib/esm/index.css";
 
 import CONSTANTS from '../constants';
+import MicrophoneButton from "./microphone-button";
 
 export enum MapFloor {
   Floor1 = "m_e6c96a31fba4ef51",
@@ -87,6 +88,7 @@ export default function Map() {
     <MapView mapData={mapData} style={{ height: "100vh", width: "100vw" }} options={{initialFloor: MapFloor.Floor2}}>
       <FloorSelector />
       <BlueDotMarker coordinate={coordinate} />
+      <MicrophoneButton />
     </MapView>
   ) : null;
 }
