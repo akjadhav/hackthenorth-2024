@@ -5,3 +5,9 @@ node_modules
 /build
 .env
 .vscode
+.env.local
+
+camera/.env
+camera/venv
+camera/__pycache__/
+camera/*.py[cod]
