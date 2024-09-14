@@ -87,7 +87,9 @@ export default function Map() {
           const mapData = await getMapData(options);
           if (mapRef.current) {
             const mapView = await show3dMap(mapRef.current, mapData);
-            // mapView.BlueDot.enable(); // Enable BlueDot for user's live location
+            mapView.setFloor('m_98cc81edd0cb1c71');
+
+            mapView.BlueDot.enable(); // Enable BlueDot for user's live location
 
             console.log(mapData);
             console.log(mapView.BlueDot);
@@ -115,29 +117,29 @@ export default function Map() {
         }
       };
 
-      // Geolocation: Get user's current position
-      const getUserLocation = () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              setUserLocation({
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              });
-            },
-            (error) => {
-              console.error('Error getting location:', error);
-            }
-          );
-        } else {
-          console.error('Geolocation is not supported by this browser.');
-        }
-      };
+      // // Geolocation: Get user's current position
+      // const getUserLocation = () => {
+      //   if (navigator.geolocation) {
+      //     navigator.geolocation.getCurrentPosition(
+      //       (position) => {
+      //         setUserLocation({
+      //           lat: position.coords.latitude,
+      //           lng: position.coords.longitude,
+      //         });
+      //       },
+      //       (error) => {
+      //         console.error('Error getting location:', error);
+      //       }
+      //     );
+      //   } else {
+      //     console.error('Geolocation is not supported by this browser.');
+      //   }
+      // };
 
-      getUserLocation();
+      // getUserLocation();
       initMap();
     }
-  }, [userLocation]); // Re-run map initialization when userLocation changes
+  }, []); // Re-run map initialization when userLocation changes
 
   const handleMapChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedMap(event.target.value); // Update state with selected value
