@@ -1,0 +1,74 @@
+[
+    {
+      "space": "Sponsor Bay",
+      "spaceId": "s_169e07d207df9e01",
+      "floor": 2,
+      "floorId": "m_b4e5ebf844208588",
+      "camera": {
+        "location": [42.123, 54.12321],
+        "heading": 100
+      },
+      "objects": [
+        {
+          "id": "c2c10c5a",
+          "class": "person",
+          "location": [0.25, 0.75],
+          "description": "A person appears to be in an indoor setting, standing behind some office equipment or machinery, which partially obscures the view. The person seems to be wearing eyeglasses and looking toward the camera."
+        },
+        {
+          "id": "256907cb",
+          "class": "suitcase",
+          "location": [0.35, 0.65],
+          "description": "A suitcase is positioned at a distance from the camera, which makes it appear smaller in the scene. The suitcase is resting on the floor, and its brown color and rectangular shape are noticeable."
+        }
+      ]
+    },
+    {
+      "space": "Conference Room A",
+      "spaceId": "s_a45b23c891de4f02",
+      "floor": 3,
+      "floorId": "m_c7d9a6e532f01234",
+      "camera": {
+        "location": [35.789, 62.45678],
+        "heading": 270
+      },
+      "objects": [
+        {
+          "id": "f8e7d6c5",
+          "class": "suitcase",
+          "location": [0.15, 0.45],
+          "description": "A black suitcase. Maybe some blue."
+        },
+        {
+          "id": "1a2b3c4d",
+          "class": "whiteboard",
+          "location": [0.80, 0.20],
+          "description": "A large whiteboard is mounted on the wall. It has some writing and diagrams on it, suggesting a recent meeting or brainstorming session."
+        }
+      ]
+    },
+    {
+      "space": "Cafeteria",
+      "spaceId": "s_b78c45d901ae3g23",
+      "floor": 1,
+      "floorId": "m_e2f1g3h456i78901",
+      "camera": {
+        "location": [28.456, 71.98765],
+        "heading": 180
+      },
+      "objects": [
+        {
+          "id": "5e6f7g8h",
+          "class": "table",
+          "location": [0.50, 0.60],
+          "description": "A round cafeteria table is in the center of the frame. It appears to be made of light-colored wood and has seating for about 6 people."
+        },
+        {
+          "id": "9i8h7g6f",
+          "class": "vending_machine",
+          "location": [0.90, 0.85],
+          "description": "A vending machine is visible in the corner of the cafeteria. It seems to be stocked with various snacks and drinks."
+        }
+      ]
+    }
+  ]

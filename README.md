@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Voice-Centric Indoor Navigation Assistant
 
-## Getting Started
+## Overview
+This application is an innovative, voice-first indoor navigation solution designed to enhance mobility and independence for individuals with visual impairments. It leverages advanced voice interaction, real-time computer vision, and intelligent context understanding to provide accessible, spoken navigation guidance in indoor spaces.
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Frontend**: Next.js
+- **Backend**: Convex
+- **Indoor Mapping**: MappedIn SDK
+- **Computer Vision**: 
+  - Real-time video streaming: Multiple TAPO cameras (1080p)
+  - Object Detection: YOLOv8
+  - Depth Estimation: DPT (Dense Prediction Transformer)
+  - Scene Analysis: GPT-4 Vision
+- **Agent / LLM**:
+   - Voiceflow: Powers the user interaction layer, providing a seamless voice interface for visually impaired users. This forms the core of the agentic and voice-driven user experience.
+   - Cohere: Integrated within Voiceflow, it provides embeddings and Retrieval-Augmented Generation (RAG) capabilities for enhanced context understanding and response generation from the real-time computer vision tags, crucial for intelligent voice interactions.
+- **Speech Processing**:
+  - Speech-to-Text: Whisper (via Groq)
+  - Text-to-Speech: Custom model
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
+1. Voice-first user interface optimized for visually impaired users
+2. Real-time indoor mapping and navigation with spoken instructions
+3. Multi-camera real-time computer vision for environmental awareness
+4. Intelligent context understanding using Cohere's RAG within Voiceflow
+5. Adaptive, accessible navigation guidance
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Agentic Voice Interaction**
+   - Users interact with the system entirely through voice commands.
+   - Voiceflow manages the conversation flow, interpreting user intents and generating responses.
+   - Cohere's embeddings and RAG system, integrated within Voiceflow, process user queries and environmental data for enhanced understanding and context-aware responses.
 
-## Learn More
+2. **Real-time Environmental Analysis**
+   - Multiple TAPO cameras stream 1080p video throughout the venue.
+   - YOLOv7, DPT, and GPT-4 Vision process these streams in real-time to detect objects, estimate depths, and analyze scenes.
+   - Visual data is converted into text descriptions and embedded using Cohere for use in the RAG system.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Indoor Mapping and Routing**
+   - MappedIn SDK provides indoor map data and routing algorithms.
+   - Voiceflow and Cohere translate routing data into clear, spoken instructions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Navigation Guidance Delivery**
+   - The system generates step-by-step navigation instructions based on processed environmental data and user requests.
+   - Instructions are conveyed via spoken words, optimized for visually impaired individuals.
+   - Guidance is continuously updated based on real-time environmental changes and user movement.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Setup and Installation
 
-## Deploy on Vercel
+1. Clone the repository
+   ```
+   git clone [repository-url]
+   cd [project-directory]
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Set up environment variables in a `.env.local` file
+
+4. Start the development server
+   ```
+   npm run dev
+   ```
+
+## Contributing
+We welcome contributions that enhance accessibility, improve voice interaction, or refine navigation accuracy for visually impaired users. Please submit pull requests or open issues to discuss proposed changes.
