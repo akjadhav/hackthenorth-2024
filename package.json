@@ -9,8 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
+    "@convex-dev/auth": "^0.0.47",
     "@mappedin/mappedin-js": "^6.0.1-beta.3",
+    "convex": "^1.16.0",
+    "convex-helpers": "^0.1.58",
+    "jose": "^5.9.2",
     "next": "14.2.11",
+    "next-auth": "^5.0.0-beta.20",
     "react": "^18",
     "react-dom": "^18"
   },
