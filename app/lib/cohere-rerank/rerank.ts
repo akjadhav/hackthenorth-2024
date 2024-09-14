@@ -6,16 +6,13 @@ const cohere = new CohereClient({
 });
 
 interface PreparedDocument {
-  id: string;
-  text: string;
-  metadata: any;
+  [key: string]: string;
 }
 
 function prepareDocumentsForRerank(documents: Document[]): PreparedDocument[] {
   return documents.map((doc) => ({
     id: doc.id,
     text: doc.content,
-    metadata: doc.metadata,
   }));
 }
 
@@ -26,9 +23,11 @@ export async function rerankDocuments(query: string, documents: Document[], topN
     model: "rerank-english-v3.0",
     query,
     documents: preparedDocs,
-    topN,
-    returnDocuments: true,
+    topN: topN,
   });
 
-  return results;
+  return results.results.map(result => ({
+    ...result,
+    originalDocument: documents[result.index],
+  }));
 }

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { processJson } from "@/lib/process";
-import { rerankDocuments } from "@/lib/rerank";
-import { SpaceDocument, ObjectDocument } from "@/lib/process";
+import { processJson } from "../../lib/cohere-rerank/process";
+import { rerankDocuments } from "../../lib/cohere-rerank/rerank";
+import { SpaceDocument, ObjectDocument } from "../../lib/cohere-rerank/process";
+import targetData from "../../lib/cohere-rerank/target_data.json";
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
@@ -12,15 +13,13 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Missing query or intent parameter" }, { status: 400 });
   }
 
-  const jsonData = require("../../../target_data.json");
-
-  const documents = processJson(jsonData);
+  const documents = processJson(targetData);
 
   let filteredDocs;
   if (intent === "space") {
-    filteredDocs = documents.filter((doc) => doc instanceof SpaceDocument);
+    filteredDocs = documents.filter((doc): doc is SpaceDocument => doc instanceof SpaceDocument);
   } else if (intent === "object") {
-    filteredDocs = documents.filter((doc) => doc instanceof ObjectDocument);
+    filteredDocs = documents.filter((doc): doc is ObjectDocument => doc instanceof ObjectDocument);
   } else {
     return NextResponse.json({ error: "Invalid intent parameter" }, { status: 400 });
   }
