@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 async function testRerankAPI() {
   const query = "What objects are in the living room?";
   const intent = "object";
-  const url = `http://localhost:3000/api/rerank?query=${encodeURIComponent(query)}&intent=${intent}`;
+  const url = `https://rarely-enough-boxer.ngrok-free.app/api/rerank?query=${encodeURIComponent(query)}&intent=${intent}`;
 
   try {
     const response = await fetch(url);
