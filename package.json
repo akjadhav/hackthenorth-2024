@@ -11,7 +11,7 @@
   "dependencies": {
     "@auth/core": "^0.34.2",
     "@convex-dev/auth": "^0.0.47",
-    "@mappedin/mappedin-js": "^6.0.1-beta.3",
+    "@mappedin/react-sdk": "^6.0.1-beta.2",
     "convex": "^1.16.0",
     "convex-helpers": "^0.1.58",
     "jose": "^5.9.2",

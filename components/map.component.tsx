@@ -1,168 +1,91 @@
-// 'use client';
+'use client'
 
-// import { useEffect, useRef, useState } from 'react';
-// import { getMapData, show3dMap } from '@mappedin/mappedin-js';
+import { useState, useEffect } from "react";
+import { MapView, useMapData, useMap } from "@mappedin/react-sdk";
+import "@mappedin/react-sdk/lib/esm/index.css";
 
-// export default function Map() {
-//   const mapRef = useRef<HTMLDivElement | null>(null);
-//   const [selectedMap, setSelectedMap] = useState('defaultMap'); // State for dropdown
+enum MapFloor {
+  Floor1 = "m_e6c96a31fba4ef51",
+  Floor2 = "m_b4e5ebf844208588",
+  Floor3 = "m_883f57e8a60ad67b",
+  Floor4 = "m_a93a33b76d3261c5",
+  Floor5 = "m_be5257d1c86c490c",
+  Floor6 = "m_98cc81edd0cb1c71",
+  Floor7 = "m_d1a647643658e985",
+}
 
-//   useEffect(() => {
-//     if (typeof window !== 'undefined') {
-//       const options = {
-//         key: 'mik_Qar1NBX1qFjtljLDI52a60753',
-//         secret: 'mis_CXFS9WnkQkzQmy9GCt4ucn2D68zNRgVa2aiJj5hEIFM8aa40fee',
-//         mapId: '66ce20fdf42a3e000b1b0545',
-//       };
-
-//       const initMap = async () => {
-//         try {
-//           const mapData = await getMapData(options);
-//           if (mapRef.current) {
-//             const mapView = await show3dMap(mapRef.current, mapData);
-
-//             console.log(mapData);
-//             console.log(mapView.BlueDot);
-//           }
-//         } catch (error) {
-//           console.error('Error loading map:', error);
-//         }
-//       };
-
-//       initMap();
-//     }
-//   }, []);
-
-//   const handleMapChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-//     setSelectedMap(event.target.value); // Update state with selected value
-//     // You can add any logic here that reacts to the dropdown change without modifying the map options
-//   };
-
-//   return (
-//     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
-//       {/* Dropdown selector */}
-//       <div style={{ position: 'absolute', top: 10, left: 10, zIndex: 1000 }}>
-//         <select
-//           value={selectedMap}
-//           onChange={handleMapChange}>
-//           <option value='defaultMap'>Default Map</option>
-//           <option value='map1'>Map 1</option>
-//           <option value='map2'>Map 2</option>
-//           {/* Add more map options here */}
-//         </select>
-//       </div>
-
-//       {/* Map container */}
-//       <div
-//         ref={mapRef}
-//         style={{ width: '100%', height: '100%' }}
-//       />
-//     </div>
-//   );
-// }
-
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
-import { getMapData, show3dMap } from '@mappedin/mappedin-js';
-
-export default function Map() {
-  const mapRef = useRef<HTMLDivElement | null>(null);
-  const [selectedMap, setSelectedMap] = useState('defaultMap'); // State for dropdown
-  const [userLocation, setUserLocation] = useState<{
-    lat: number;
-    lng: number;
-  } | null>(null); // State for user location
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const options = {
-        key: 'mik_Qar1NBX1qFjtljLDI52a60753',
-        secret: 'mis_CXFS9WnkQkzQmy9GCt4ucn2D68zNRgVa2aiJj5hEIFM8aa40fee',
-        mapId: '66ce20fdf42a3e000b1b0545',
-      };
-
-      const initMap = async () => {
-        try {
-          const mapData = await getMapData(options);
-          if (mapRef.current) {
-            const mapView = await show3dMap(mapRef.current, mapData);
-            // mapView.BlueDot.enable(); // Enable BlueDot for user's live location
-
-            console.log(mapData);
-            console.log(mapView.BlueDot);
-
-            // // Add BlueDot or marker for user's live location
-            // if (userLocation && mapView.BlueDot) {
-            //   // If BlueDot is available
-            //   mapView.BlueDot.updatePosition({
-            //     position: {
-            //       lat: userLocation.lat,
-            //       lng: userLocation.lng,
-            //     },
-            //   });
-            // } else if (userLocation) {
-            //   // If BlueDot is not available, add a custom marker
-            //   const marker = new mapView.Marker({
-            //     position: { lat: userLocation.lat, lng: userLocation.lng },
-            //     icon: 'https://path-to-your-icon.png', // Replace with your custom marker icon if needed
-            //   });
-            //   mapView.addMarker(marker);
-            // }
-          }
-        } catch (error) {
-          console.error('Error loading map:', error);
-        }
-      };
-
-      // Geolocation: Get user's current position
-      const getUserLocation = () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              setUserLocation({
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              });
-            },
-            (error) => {
-              console.error('Error getting location:', error);
-            }
-          );
-        } else {
-          console.error('Geolocation is not supported by this browser.');
-        }
-      };
-
-      getUserLocation();
-      initMap();
+function getUserCoordinates(setCoordinates: (coords: { lat: number, long: number }) => void) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        setCoordinates({ lat: latitude, long: longitude });
+      }, (error) => {
+        console.error("Error getting location:", error);
+      });
+    } else {
+      console.error("Geolocation is not supported by this browser.");
     }
-  }, [userLocation]); // Re-run map initialization when userLocation changes
+}  
+
+function FloorSelector() {
+  const { mapView } = useMap();
+  const [selectedMap, setSelectedMap] = useState(MapFloor.Floor1);
+
+  mapView.auto();
 
   const handleMapChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedMap(event.target.value); // Update state with selected value
-    // You can add any logic here that reacts to the dropdown change without modifying the map options
+    const selectedFloor = event.target.value as MapFloor;
+    setSelectedMap(selectedFloor);
+    mapView.setFloor(selectedFloor);
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
-      {/* Dropdown selector */}
-      <div style={{ position: 'absolute', top: 10, left: 10, zIndex: 1000 }}>
-        <select
-          value={selectedMap}
-          onChange={handleMapChange}>
-          <option value='defaultMap'>Default Map</option>
-          <option value='map1'>Map 1</option>
-          <option value='map2'>Map 2</option>
-          {/* Add more map options here */}
+    <>
+      <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000 }}>
+        <select value={selectedMap} onChange={handleMapChange}>
+          <option value={MapFloor.Floor1}>Floor 1</option>
+          <option value={MapFloor.Floor2}>Floor 2</option>
+          <option value={MapFloor.Floor3}>Floor 3</option>
+          <option value={MapFloor.Floor4}>Floor 4</option>
+          <option value={MapFloor.Floor5}>Floor 5</option>
+          <option value={MapFloor.Floor6}>Floor 6</option>
+          <option value={MapFloor.Floor7}>Floor 7</option>
         </select>
       </div>
-
-      {/* Map container */}
-      <div
-        ref={mapRef}
-        style={{ width: '100%', height: '100%' }}
-      />
-    </div>
+    </>
   );
+}
+
+export default function Map() {
+    const [coordinates, setCoordinates] = useState<{ lat: number, long: number } | null>(null);
+
+  const { isLoading, error, mapData } = useMapData({
+    key: "mik_Qar1NBX1qFjtljLDI52a60753",
+    secret: "mis_CXFS9WnkQkzQmy9GCt4ucn2D68zNRgVa2aiJj5hEIFM8aa40fee",
+    mapId: "66ce20fdf42a3e000b1b0545",
+  });
+
+  useEffect(() => {
+    getUserCoordinates(setCoordinates);
+  }, []);
+
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
+  return mapData ? (
+    <MapView mapData={mapData} style={{height: '100vh', width: '100vw'}}>
+      <FloorSelector />
+      {coordinates && (
+        <div style={{ position: 'absolute', top: 50, left: 10, zIndex: 1000 }}>
+          Your Coordinates: Latitude: {coordinates.lat}, Longitude: {coordinates.long}
+        </div>
+      )}
+    </MapView>
+  ) : null;
 }
