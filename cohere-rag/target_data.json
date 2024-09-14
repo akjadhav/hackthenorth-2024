@@ -1,0 +1,296 @@
+[
+  {
+    "space": "Sponsor Bay",
+    "spaceId": "s_169e07d207df9e01",
+    "floor": 2,
+    "floorId": "m_b4e5ebf844208588",
+    "camera": {
+      "location": [42.123, 54.12321],
+      "heading": 100
+    },
+    "objects": [
+      {
+        "id": "c2c10c5a",
+        "class": "person",
+        "location": [0.25, 0.75],
+        "description": "A person wearing a blue suit and red tie, standing near a sponsor booth. They appear to be engaged in conversation with another attendee."
+      },
+      {
+        "id": "256907cb",
+        "class": "suitcase",
+        "location": [0.35, 0.65],
+        "description": "A large black rolling suitcase with a retractable handle. It has a luggage tag attached and appears to be made of durable material."
+      },
+      {
+        "id": "3d4e5f6g",
+        "class": "sponsor_booth",
+        "location": [0.50, 0.50],
+        "description": "A brightly lit sponsor booth with a large banner displaying 'TechCorp Solutions'. The booth has a sleek design with touchscreen displays showcasing products."
+      },
+      {
+        "id": "7h8i9j0k",
+        "class": "person",
+        "location": [0.60, 0.40],
+        "description": "A woman with long brown hair, wearing a name tag and holding a tablet. She seems to be a representative at the sponsor booth, ready to answer questions."
+      },
+      {
+        "id": "1l2m3n4o",
+        "class": "banner",
+        "location": [0.80, 0.20],
+        "description": "A hanging banner above the sponsor area with the conference logo and the text 'Welcome to InnovaTech 2024' in bold letters."
+      }
+    ]
+  },
+  {
+    "space": "Conference Room A",
+    "spaceId": "s_a45b23c891de4f02",
+    "floor": 3,
+    "floorId": "m_c7d9a6e532f01234",
+    "camera": {
+      "location": [35.789, 62.45678],
+      "heading": 270
+    },
+    "objects": [
+      {
+        "id": "5p6q7r8s",
+        "class": "person",
+        "location": [0.30, 0.70],
+        "description": "A speaker standing at a podium, gesturing with their hands. They're wearing a dark blazer and have short gray hair."
+      },
+      {
+        "id": "9t0u1v2w",
+        "class": "projector_screen",
+        "location": [0.10, 0.90],
+        "description": "A large projector screen showing a presentation slide with graphs and charts. The screen is fully extended and well-lit."
+      },
+      {
+        "id": "3x4y5z6a",
+        "class": "chair",
+        "location": [0.55, 0.45],
+        "description": "A padded conference room chair with wheels. It's pushed slightly away from the table as if someone recently stood up."
+      },
+      {
+        "id": "7b8c9d0e",
+        "class": "laptop",
+        "location": [0.60, 0.50],
+        "description": "An open laptop on the conference table. The screen is on and appears to be mirroring the presentation on the projector screen."
+      },
+      {
+        "id": "1f2g3h4i",
+        "class": "water_bottle",
+        "location": [0.65, 0.55],
+        "description": "A clear plastic water bottle with the conference logo printed on it. It's half-full and placed next to the laptop on the table."
+      }
+    ]
+  },
+  {
+    "space": "Exhibition Hall",
+    "spaceId": "s_b78c45d901ae3g23",
+    "floor": 1,
+    "floorId": "m_e2f1g3h456i78901",
+    "camera": {
+      "location": [28.456, 71.98765],
+      "heading": 180
+    },
+    "objects": [
+      {
+        "id": "5j6k7l8m",
+        "class": "sponsor_booth",
+        "location": [0.20, 0.80],
+        "description": "A large, elaborate sponsor booth for 'QuantumTech Industries'. It features holographic displays and interactive product demonstrations."
+      },
+      {
+        "id": "9n0o1p2q",
+        "class": "person",
+        "location": [0.25, 0.75],
+        "description": "A group of three people huddled around a product display at the QuantumTech booth. They appear to be examining a small device with great interest."
+      },
+      {
+        "id": "3r4s5t6u",
+        "class": "banner",
+        "location": [0.40, 0.60],
+        "description": "A suspended digital banner cycling through various sponsor logos and conference announcements. It's large and eye-catching."
+      },
+      {
+        "id": "7v8w9x0y",
+        "class": "suitcase",
+        "location": [0.70, 0.30],
+        "description": "A small carry-on suitcase with a hardshell exterior in a bright red color. It's standing upright near its owner who is engaged at a nearby booth."
+      },
+      {
+        "id": "1z2a3b4c",
+        "class": "information_kiosk",
+        "location": [0.85, 0.15],
+        "description": "A circular information kiosk staffed by two attendants. It has touchscreen displays for wayfinding and a stack of conference programs."
+      }
+    ]
+  },
+  {
+    "space": "Networking Lounge",
+    "spaceId": "s_c89d56e012bf4h34",
+    "floor": 2,
+    "floorId": "m_f3g2h4i567j89012",
+    "camera": {
+      "location": [39.321, 58.76543],
+      "heading": 90
+    },
+    "objects": [
+      {
+        "id": "5d6e7f8g",
+        "class": "sofa",
+        "location": [0.15, 0.85],
+        "description": "A modern, L-shaped sofa in dark gray fabric. It's part of a seating area designed for casual networking conversations."
+      },
+      {
+        "id": "9h0i1j2k",
+        "class": "person",
+        "location": [0.20, 0.80],
+        "description": "Two people sitting on the sofa, engaged in conversation. One is holding a tablet, possibly showing something to the other person."
+      },
+      {
+        "id": "3l4m5n6o",
+        "class": "coffee_table",
+        "location": [0.25, 0.75],
+        "description": "A low, rectangular coffee table with a glass top. There are several magazines and a bowl of fruit placed on its surface."
+      },
+      {
+        "id": "7p8q9r0s",
+        "class": "plant",
+        "location": [0.40, 0.60],
+        "description": "A large potted plant, possibly a ficus, adding a touch of greenery to the networking area. It's placed in a decorative pot."
+      },
+      {
+        "id": "1t2u3v4w",
+        "class": "charging_station",
+        "location": [0.70, 0.30],
+        "description": "A multi-device charging station with various cables and ports. It's mounted on a pillar and has a small shelf for devices."
+      }
+    ]
+  },
+  {
+    "space": "Keynote Auditorium",
+    "spaceId": "s_d90e67f123cg5i45",
+    "floor": 1,
+    "floorId": "m_g4h3i5j678k90123",
+    "camera": {
+      "location": [45.654, 67.23456],
+      "heading": 0
+    },
+    "objects": [
+      {
+        "id": "5x6y7z8a",
+        "class": "stage",
+        "location": [0.50, 0.10],
+        "description": "A large, elevated stage with professional lighting. There's a podium in the center and a massive screen behind it."
+      },
+      {
+        "id": "9b0c1d2e",
+        "class": "person",
+        "location": [0.52, 0.12],
+        "description": "The keynote speaker, a woman in a red blazer, standing at the podium and gesturing towards the screen behind her."
+      },
+      {
+        "id": "3f4g5h6i",
+        "class": "chair",
+        "location": [0.30, 0.70],
+        "description": "Rows of comfortable auditorium seating. The chairs are upholstered in dark blue fabric and have fold-down desk attachments."
+      },
+      {
+        "id": "7j8k9l0m",
+        "class": "person",
+        "location": [0.35, 0.65],
+        "description": "A full audience, with people of various ages and backgrounds seated and attentively watching the keynote presentation."
+      },
+      {
+        "id": "1n2o3p4q",
+        "class": "camera",
+        "location": [0.80, 0.20],
+        "description": "A professional video camera on a tripod, likely recording the keynote speech for later distribution or live streaming."
+      }
+    ]
+  },
+  {
+    "space": "VIP Lounge",
+    "spaceId": "s_e01f78g234dh6j56",
+    "floor": 3,
+    "floorId": "m_h5i4j6k789l01234",
+    "camera": {
+      "location": [33.987, 59.87654],
+      "heading": 45
+    },
+    "objects": [
+      {
+        "id": "5r6s7t8u",
+        "class": "bar",
+        "location": [0.10, 0.90],
+        "description": "A sleek, modern bar with high stools. The bar top is made of polished granite, and there's an array of premium spirits on display."
+      },
+      {
+        "id": "9v0w1x2y",
+        "class": "person",
+        "location": [0.15, 0.85],
+        "description": "A bartender in a crisp white shirt and black vest, mixing a cocktail for a guest seated at the bar."
+      },
+      {
+        "id": "3z4a5b6c",
+        "class": "sofa",
+        "location": [0.40, 0.60],
+        "description": "A plush, leather sofa in a rich brown color. It's part of a seating area that includes armchairs and side tables."
+      },
+      {
+        "id": "7d8e9f0g",
+        "class": "person",
+        "location": [0.45, 0.55],
+        "description": "A small group of VIP attendees engaged in conversation while seated on the sofas. They're holding drinks and appear to be networking."
+      },
+      {
+        "id": "1h2i3j4k",
+        "class": "artwork",
+        "location": [0.70, 0.30],
+        "description": "A large, abstract painting hanging on the wall. Its vibrant colors add a pop of energy to the otherwise subdued VIP lounge decor."
+      }
+    ]
+  },
+  {
+    "space": "Tech Demo Area",
+    "spaceId": "s_f12g89h345ei7k67",
+    "floor": 2,
+    "floorId": "m_i6j5k7l890m12345",
+    "camera": {
+      "location": [41.234, 63.34567],
+      "heading": 315
+    },
+    "objects": [
+      {
+        "id": "5l6m7n8o",
+        "class": "demo_station",
+        "location": [0.20, 0.80],
+        "description": "A high-tech demo station showcasing the latest VR technology. It includes a VR headset, motion controllers, and a large screen displaying what the user sees."
+      },
+      {
+        "id": "9p0q1r2s",
+        "class": "person",
+        "location": [0.25, 0.75],
+        "description": "A person wearing a VR headset, moving their arms as they interact with a virtual environment. A small crowd has gathered to watch."
+      },
+      {
+        "id": "3t4u5v6w",
+        "class": "robot",
+        "location": [0.50, 0.50],
+        "description": "A humanoid robot demonstrating its capabilities. It's moving its arms and head, and seems to be responding to voice commands from nearby attendees."
+      },
+      {
+        "id": "7x8y9z0a",
+        "class": "display_screen",
+        "location": [0.70, 0.30],
+        "description": "A large, curved display screen showing real-time data visualization. The graphics are colorful and dynamic, drawing attention from passersby."
+      },
+      {
+        "id": "1b2c3d4e",
+        "class": "person",
+        "location": [0.80, 0.20],
+        "description": "A tech expert giving a demonstration of a new gadget. They're wearing a company polo shirt and using animated gestures as they speak to a group of interested attendees."
+      }
+    ]
+  }
+]
