@@ -12,7 +12,7 @@ import { useState } from 'react';
 import type { LinksFunction } from '@remix-run/node';
 
 import './tailwind.css';
-import mappedInStyles from '@mappedin/mappedin-js/lib/index.css';
+// import './global.css';
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -25,16 +25,23 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
   },
-  { rel: 'stylesheet', href: mappedInStyles },
+  { rel: 'stylesheet', href: 'global.css' },
 ];
 
 export async function loader() {
-  const CONVEX_URL = process.env['CONVEX_URL']!;
+  const CONVEX_URL = process.env['CONVEX_URL'];
+  if (!CONVEX_URL) {
+    throw new Error('CONVEX_URL is not defined in environment variables');
+  }
   return json({ ENV: { CONVEX_URL } });
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const { ENV } = useLoaderData<typeof loader>();
+  const data = useLoaderData<typeof loader>();
+  const ENV = data?.ENV || {
+    CONVEX_URL: 'https://accurate-echidna-179.convex.cloud',
+  };
+
   const [convex] = useState(() => new ConvexReactClient(ENV.CONVEX_URL));
 
   return (
