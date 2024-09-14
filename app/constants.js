@@ -1,0 +1,10 @@
+const CONSTANTS = {
+    USER_LAT: "43.473081912194615",
+    USER_LONG: "-80.53977696610313",
+    CAMERA_1_LAT: 0,
+    CAMERA_1_LONG: 0,
+    CAMERA_2_LAT: 0,
+    CAMERA_2_LONG: 0,
+};
+  
+export default CONSTANTS;
