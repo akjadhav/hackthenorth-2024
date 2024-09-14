@@ -7,7 +7,7 @@
     "camera": {
       "location": [42.123, 54.12321],
       "heading": 100
-    },
+    }, 
     "objects": [
       {
         "id": "c2c10c5a",
