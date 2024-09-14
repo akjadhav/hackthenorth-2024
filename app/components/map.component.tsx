@@ -6,6 +6,7 @@ import Mappedin from "@mappedin/react-sdk";
 
 import FloorSelector from "./floor-selector.component";
 import BlueDotMarker from "./blue-dot-marker.component";
+import NavigateBetweenTwoCoordinates from "./navigation.component";
 import "@mappedin/react-sdk/lib/esm/index.css";
 
 import CONSTANTS from '../constants';
@@ -22,12 +23,17 @@ export enum MapFloor {
 }
 
 export default function Map() {
-  const [coordinate, setCoordinate] = useState(
+  const [currentCoordinate, setCurrentCoordinate] = useState(
     new Mappedin.Coordinate(0, 0, "")
   );
+  const [endCoordinate, setEndCoordinate] = useState(
+    new Mappedin.Coordinate(43.47278797233474, -80.53979144132539, MapFloor.Floor2)
+  );
+  const [accessibleToggleValue, setAccessibleToggleValue] = useState(false);
+  const [unit, setUnit] = useState<'meters' | 'feet'>('meters');
 
   useEffect(() => {
-    setCoordinate(
+    setCurrentCoordinate(
       new Mappedin.Coordinate(
         parseFloat(CONSTANTS.USER_LAT), 
         parseFloat(CONSTANTS.USER_LONG), 
@@ -42,36 +48,6 @@ export default function Map() {
     mapId: "66ce20fdf42a3e000b1b0545",
   });
 
-  // useEffect(() => {
-  //   let watchId: number | null = null;
-
-  //   function handlePosition(position: GeolocationPosition) {
-  //     const { latitude, longitude } = position.coords;
-  //     console.log('Updated location:', latitude, longitude);
-  //     // setCoordinate(new Mappedin.Coordinate(latitude, longitude, MapFloor.Floor2));
-  //   }
-
-  //   function handleError(error: GeolocationPositionError) {
-  //     console.error("Error watching user coordinates:", error);
-  //   }
-
-  //   // Start watching the user's position after a user gesture
-  //   if (navigator.geolocation) {
-  //     watchId = navigator.geolocation.watchPosition(handlePosition, handleError, {
-  //       enableHighAccuracy: true,
-  //     });
-  //   } else {
-  //     console.error("Geolocation is not supported by this browser.");
-  //   }
-
-  //   // Cleanup the watcher when the component unmounts
-  //   return () => {
-  //     if (watchId !== null) {
-  //       navigator.geolocation.clearWatch(watchId);
-  //     }
-  //   };
-  // }, []);
-
   if (isLoading) {
     return (
       <div style={styles.loadingContainer}>
@@ -84,11 +60,46 @@ export default function Map() {
     return <div>{error.message}</div>;
   }
 
+  // Handle the toggle change
+  const handleToggleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAccessibleToggleValue(event.target.checked);
+  };
+
+  const handleUnitToggle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUnit(event.target.checked ? 'feet' : 'meters');
+  };
+
   return mapData ? (
     <MapView mapData={mapData} style={{ height: "100vh", width: "100vw" }} options={{initialFloor: MapFloor.Floor2}}>
+      <div style={styles.titleContainer}>
+        <h1 style={styles.title}>PathSense</h1>
+      </div>
+      <div style={styles.toggleContainer}>
+        <label htmlFor="accessibleToggle" style={styles.label}>
+          Accessible
+        </label>
+        <input
+          id="accessibleToggle"
+          type="checkbox"
+          checked={accessibleToggleValue}
+          onChange={handleToggleChange}
+          style={styles.toggle}
+        />
+      </div>
+      {/* <div style={styles.unitToggleContainer}>
+        <button>
+          {unit === 'feet' ? "feet" : "meter"}
+        </button>
+      </div> */}
+
       <FloorSelector />
-      <BlueDotMarker coordinate={coordinate} />
+      <BlueDotMarker coordinate={currentCoordinate} />
       <MicrophoneButton />
+      <NavigateBetweenTwoCoordinates
+        start={currentCoordinate}
+        end={endCoordinate}
+        accessibleToggleValue={accessibleToggleValue}
+      />
     </MapView>
   ) : null;
 }
@@ -106,5 +117,58 @@ const styles = {
     fontWeight: "bold" as const,
     color: "#333",
     fontFamily: "Arial, sans-serif",
+  },
+  toggleContainer: {
+    position: 'absolute' as const,
+    top: '70px',
+    right: '10px',
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: '10px',
+    borderRadius: '5px',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+  },
+  label: {
+    marginRight: '10px',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '14px',
+    color: '#333',
+  },
+  toggle: {
+    cursor: 'pointer',
+  },
+  titleContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute' as const,
+    top: '10px',
+    left: '50%',
+    transform: 'translateX(-50%)', // Centering the title
+    zIndex: 11, // Ensure it's above other elements
+  },
+  title: {
+    fontSize: '30px',
+    fontWeight: 'bold' as const,
+    color: '#333',
+    margin: '0',
+    fontFamily: 'Arial, sans-serif',
+    '@media (max-width: 600px)': {
+      fontSize: '24px',
+    },
+  },
+  unitToggleContainer: {
+    position: 'absolute' as const,
+    top: '120px',
+    right: '10px',
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: '10px',
+    borderRadius: '5px',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
   },
 };

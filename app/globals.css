@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+nextjs-portal {
+  display: none;
+}
