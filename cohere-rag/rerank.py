@@ -1,12 +1,10 @@
-import json
 import os
 import cohere
 from dotenv import load_dotenv
 from typing import List
-from process import Document, process_json
+from process import Document
 
 load_dotenv("../.env.local")
-print(os.getenv('CO_API_KEY'))
 
 co = cohere.Client(api_key=os.getenv('CO_API_KEY'))
 
@@ -31,35 +29,3 @@ def rerank_documents(query: str, documents: List[Document], top_n: int = 5):
     )
     
     return results
-
-def main():
-    # load and process the JSON data
-    with open('camera_data.json', 'r') as f:
-        json_data = json.load(f)
-    
-    documents = process_json(json_data)
-
-    # example queries
-    space_query = "Find conference rooms on the third floor"
-    object_query = "Locate suitcases in any space"
-
-    # rerank for spaces
-    print("Reranking spaces:")
-    space_results = rerank_documents(space_query, [doc for doc in documents if isinstance(doc, SpaceDocument)])
-    for result in space_results:
-        print(f"Relevance: {result.relevance_score:.4f}")
-        print(f"Content: {result.document['text']}")
-        print(f"Metadata: {result.document['metadata']}")
-        print("---")
-
-    # rerank for objects
-    print("\nReranking objects:")
-    object_results = rerank_documents(object_query, [doc for doc in documents if isinstance(doc, ObjectDocument)])
-    for result in object_results:
-        print(f"Relevance: {result.relevance_score:.4f}")
-        print(f"Content: {result.document['text']}")
-        print(f"Metadata: {result.document['metadata']}")
-        print("---")
-
-if __name__ == "__main__":
-    main()

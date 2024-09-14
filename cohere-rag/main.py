@@ -1,32 +1,48 @@
 import json
-from process import process_json
+from process import SpaceDocument, ObjectDocument, process_json
 from rerank import rerank_documents
 
-def main():
-    # load JSON data
-    with open('data.json', 'r') as f:
-        json_data = json.load(f)
+def display_results(results, title):
+    print(f"\n{title}")
+    for i, result in enumerate(results.results, 1):
+        print(f"{i}. Relevance: {result.relevance_score:.4f}")
+        print(f"   Content: {result.document.text}")
+        print(f"   Metadata: {result.document.metadata}")
+        print("---")
 
-    # process JSON data into documents
+def main():
+    # load and process the JSON data
+    with open('target_data.json', 'r') as f:
+        json_data = json.load(f)
+    
     documents = process_json(json_data)
 
-    print(f"Processed {len(documents)} documents.")
-
     while True:
-        query = input("Enter your query (or 'quit' to exit): ")
-        if query.lower() == 'quit':
+        # Ask user for reranking intent
+        intent = input("Enter 'space' to rerank spaces, 'object' to rerank objects, or 'quit' to exit: ").lower()
+        
+        if intent == 'quit':
             break
+        elif intent not in ['space', 'object']:
+            print("Invalid choice. Please enter 'space', 'object', or 'quit'.")
+            continue
 
-        # perform reranking
-        rerank_response = rerank_documents(query, documents)
+        # Get user query
+        query = input("Enter your query: ")
 
-        # display results
-        print("\nTop 5 relevant results:")
-        for i, result in enumerate(rerank_response.results, 1):
-            print(f"{i}. Relevance: {result.relevance_score:.4f}")
-            print(f"   Content: {result.document.text}")
-            print(f"   Metadata: {result.document.metadata}")
-            print("---")
+        # Filter documents based on user's intent
+        if intent == 'space':
+            filtered_docs = [doc for doc in documents if isinstance(doc, SpaceDocument)]
+            title = "Reranking spaces:"
+        else:  # intent == 'object'
+            filtered_docs = [doc for doc in documents if isinstance(doc, ObjectDocument)]
+            title = "Reranking objects:"
+
+        # Perform reranking
+        rerank_results = rerank_documents(query, filtered_docs)
+
+        # Display results
+        display_results(rerank_results, title)
 
 if __name__ == "__main__":
     main()
