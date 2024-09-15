@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { MapView, useMapData } from '@mappedin/react-sdk';
 import Mappedin from '@mappedin/react-sdk';
 
-import { useQuery } from 'convex/react';
-import { api } from '../../convex/_generated/api';
+// import { useQuery } from 'convex/react';
+// import { api } from '../../convex/_generated/api';
 
 import FloorSelector from './FloorSelector';
 import MovingBlueDot from './MovingBlueDot';
@@ -30,7 +30,7 @@ export default function Map() {
   const [currentCoordinate, setCurrentCoordinate] = useState(
     new Mappedin.Coordinate(0, 0, '')
   );
-  const [navigationEndId, setNavigationEndId] = useState('');
+  const [navigationEndId, setNavigationEndId] = useState({ id: '', name: '' });
   const [accessibleToggleValue, setAccessibleToggleValue] = useState(false);
   const [route, setRoute] = useState<Mappedin.Coordinate[]>([]);
 
@@ -155,7 +155,15 @@ export default function Map() {
 
   useEffect(() => {
     if (navigationEndId) {
-      setEndLocation({ type: 'space', spaceId: navigationEndId });
+      if (navigationEndId.id.startsWith('s_')) {
+        setEndLocation({ type: 'space', spaceId: navigationEndId.id });
+      } else if (navigationEndId.id) {
+        setEndLocation({
+          type: 'object',
+          objectId: navigationEndId.id,
+          spaceName: navigationEndId.name,
+        });
+      }
     }
   }, [navigationEndId]);
 

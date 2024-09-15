@@ -232,6 +232,7 @@ const MicrophoneButton = ({ setNavigationEndId }: any) => {
 
       const object_id = logs_response.data.state.variables.object_id;
       const end_state = logs_response.data.state.variables.endState;
+      const space_name = logs_response.data.state.variables.space_name;
 
       if (end_state.includes('True')) {
         setEndState('True');
@@ -241,11 +242,12 @@ const MicrophoneButton = ({ setNavigationEndId }: any) => {
 
       console.log('Object ID:', object_id);
       console.log('End state:', end_state);
+      console.log('Space name:', space_name);
 
       setActiveObjectId(object_id);
 
       if (end_state === 'True') {
-        setNavigationEndId(object_id);
+        setNavigationEndId({ id: object_id, name: space_name });
       }
 
       console.log('Voiceflow RAW response:', response);

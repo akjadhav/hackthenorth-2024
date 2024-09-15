@@ -49,7 +49,7 @@ async function TTS(text: string) {
         Text: text,
         VoiceId: 'Will', // You can change this to Scarlett, Liv, Will, or Amy
         Bitrate: '192k',
-        Speed: '0',
+        Speed: '-0.3',
         Pitch: '1.27',
         Codec: 'libmp3lame',
       },
@@ -104,13 +104,16 @@ export default function NavigateBetweenTwoCoordinates({
         setDirectionsJson(instructions);
         setMappingDirections(directions);
       } else if (end.type === 'object') {
-        const [spread, depth] = end.objectLocation;
-        const object = Mappedin.Coordinate(spread);
-        const directions = mapView.getDirections(start, object, {
+        const space = mapData
+          .getByType('space')
+          .find((s) => s.name === end.spaceName);
+        if (!space) return;
+        const directions = mapView.getDirections(start, space, {
           accessible: accessibleToggleValue,
         });
 
         const instructions = directions?.instructions;
+        console.log('directionsJson', instructions);
         setDirectionsJson(instructions);
         setMappingDirections(directions);
       }
