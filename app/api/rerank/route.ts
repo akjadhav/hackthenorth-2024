@@ -5,7 +5,9 @@ import { SpaceDocument, ObjectDocument } from '../../lib/cohere-rerank/process';
 import { ConvexHttpClient } from 'convex/browser';
 import { api } from '../../../convex/_generated/api';
 
-const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+const convex = new ConvexHttpClient(
+  'https://silent-seahorse-185.convex.cloud'!
+);
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;

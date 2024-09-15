@@ -7,9 +7,10 @@ function SignIn() {
       action={async () => {
         'use server';
         await signIn(undefined, { redirectTo: '/loggedin' });
-      }}
-    >
-      <button type='submit' style={styles.signInButton}>
+      }}>
+      <button
+        type='submit'
+        style={styles.signInButton}>
         Get Started
       </button>
     </form>
@@ -21,7 +22,9 @@ export default function LandingPage() {
     <div style={styles.container}>
       <div style={styles.content}>
         <h1 style={styles.title}>Welcome to PathSense</h1>
-        <p style={styles.subtitle}>Navigate your world with precision and ease</p>
+        <p style={styles.subtitle}>
+          Navigate your world with precision and ease
+        </p>
         <SignIn />
       </div>
     </div>

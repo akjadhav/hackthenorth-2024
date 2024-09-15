@@ -1,28 +1,31 @@
-import { httpAction, mutation, query } from "./_generated/server";
-import { api } from "./_generated/api";
-import { v } from "convex/values";
+import { httpAction, mutation, query } from './_generated/server';
+import { api } from './_generated/api';
+import { v } from 'convex/values';
 
 export const getEntityInfo = query({
-  args: { id: v.string() },
+  args: { navigationEndId: v.string() },
   handler: async (ctx, args) => {
-    const { id } = args;
+    const { navigationEndId } = args;
+    const id = navigationEndId;
 
     // if the id starts with "s_", it's a space id
-    if (id.startsWith("s_")) {
-      return { spaceId: id };
+    if (id.startsWith('s_')) {
+      return { type: 'space', spaceId: id };
     }
 
     // otherwise, it's an object id
-    const allEntities = await ctx.db.query("entities").collect();
+    const allEntities = await ctx.db.query('entities').collect();
 
-    const results = allEntities.flatMap(entity => 
-        entity.objects.filter(obj => obj.id === id)
-          .map(obj => ({
-            spaceId: entity.spaceId,
-            objectId: obj.id,
-            objectLocation: obj.location
-          }))
-      );
+    const results = allEntities.flatMap((entity) =>
+      entity.objects
+        .filter((obj) => obj.id === id)
+        .map((obj) => ({
+          type: 'object',
+          spaceId: entity.spaceId,
+          objectId: obj.id,
+          objectLocation: obj.location,
+        }))
+    );
 
     if (results.length === 0) {
       throw new Error(`No object found with id: ${id}`);
@@ -32,15 +35,15 @@ export const getEntityInfo = query({
   },
 });
 
-
 export const update = mutation({
   args: { spaceId: v.string(), description: v.string(), objects: v.any() },
   handler: async (ctx, args) => {
     const { db } = ctx;
     const { spaceId, description, objects } = args;
 
-    const document = await db.query("entities")
-      .filter(q => q.eq(q.field("spaceId"), spaceId))
+    const document = await db
+      .query('entities')
+      .filter((q) => q.eq(q.field('spaceId'), spaceId))
       .first();
 
     if (document) {
@@ -59,4 +62,6 @@ export const updateEntities = httpAction(async (ctx, request) => {
   });
 });
 
-export const getAll = query({ handler: async (ctx) => ctx.db.query("entities").collect() });
+export const getAll = query({
+  handler: async (ctx) => ctx.db.query('entities').collect(),
+});
