@@ -70,9 +70,32 @@ const authTables = {
     .index("credentialID", ["credentialID"]),
 };
 
+// new entities table
+const entitiesTable = defineTable({
+  camera: v.union(
+    v.null(),
+    v.object({
+      heading: v.float64(),
+      location: v.array(v.float64()),
+    })
+  ),
+  description: v.union(v.null(), v.string()),
+  floor: v.float64(),
+  floorId: v.string(),
+  objects: v.array(
+    v.object({
+      class: v.string(),
+      description: v.string(),
+      id: v.string(),
+      location: v.array(v.float64()),
+    })
+  ),
+  space: v.string(),
+  spaceId: v.string(),
+});
+
 export default defineSchema({
   ...authTables,
-  // your other tables
-  // or pass `strictTableNameTypes: false`
-  // in the second argument argument to `defineSchema`
+  entities: entitiesTable,
+  // Add any other tables here
 });

@@ -16,7 +16,7 @@ export default function LandingPage() {
   return (
     <div>
       <h1>PageSense</h1>
-      {/* <SignIn /> */}
+      <SignIn />
       <button type='submit'>Start.</button>
     </div>
   );
