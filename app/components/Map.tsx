@@ -224,7 +224,7 @@ export default function Map() {
         <MovingBlueDot
           route={route}
           interval={750}
-        />onRouteCalculated
+        />
       )}
       {/* <Marker
         target={endCoordinate}
