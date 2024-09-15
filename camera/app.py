@@ -4,10 +4,11 @@ from camera import Camera
 
 app = Flask(__name__)
 
-with open('cameras.json', 'r') as f:
-    cameras_config = json.load(f)
+with app.app_context():
+    with open('cameras.json', 'r') as f:
+        cameras_config = json.load(f)
 
-cameras = {camera['username']: Camera(camera['ip'], camera['username']) for camera in cameras_config}
+    cameras = {camera['username']: Camera(camera['ip'], camera['username'], camera['spaceId']) for camera in cameras_config}
 
 @app.route('/')
 def index():
@@ -30,4 +31,4 @@ def video_feed(username, stream_type):
     return Response(camera.generate_frames(stream_type), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=9000, debug=True)
+    app.run(host='0.0.0.0', port=9000, debug=True, use_reloader=False)

@@ -1,5 +1,6 @@
 import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
+import { updateEntities } from "./entities";
 
 const http = httpRouter();
 
@@ -42,6 +43,12 @@ http.route({
 			},
 		});
 	}),
+});
+
+http.route({
+	path: "/updateEntities",
+	method: "POST",
+	handler: updateEntities,
 });
 
 export default http;
