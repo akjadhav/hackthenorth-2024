@@ -21,7 +21,7 @@ class ObjectDetector:
         metadata = MetadataCatalog.get(cfg.DATASETS.TRAIN[0] if len(cfg.DATASETS.TRAIN) > 0 else "coco_2017_train")
         self.class_names = metadata.thing_classes
 
-    def detect_objects(self, frame):
+    def detect_objects(self, frame, depth_map):
         results = self.model(frame)
         
         pred_classes = results["instances"].pred_classes
@@ -32,44 +32,38 @@ class ObjectDetector:
         
         output = []
 
-        for box, score, cls_idx in zip(pred_boxes_list, pred_scores, pred_classes):
-            class_name = self.class_names[cls_idx.item()]
-            output.append(box + [score.item(), class_name])
+        min_depth = np.min(depth_map)
+        max_depth = np.max(depth_map)
+
+        for box, score, cls in zip(pred_boxes_list, pred_scores, pred_classes):
+            class_name = self.class_names[cls.item()]
+            x1, y1, x2, y2 = map(int, box)
+            
+            x1, y1 = max(0, x1), max(0, y1)
+            x2, y2 = min(depth_map.shape[1] - 1, x2), min(depth_map.shape[0] - 1, y2)
+            
+            depth_roi = depth_map[y1:y2+1, x1:x2+1]
+            avg_depth = np.mean(depth_roi)
+            
+            normalized_depth = self.normalize_depth(avg_depth, min_depth, max_depth)
+            
+            output.append(box + [score.item(), class_name, normalized_depth.item()])
 
         return output
 
-    def scale_depth(self, depth_value, min_depth, max_depth):
-        # invert the depth value (closer objects will have lower values)
-        inverted_depth = max_depth - depth_value + min_depth
+    def normalize_depth(self, depth_value, min_depth, max_depth):
+        # Normalize the depth value to range [0, 1]
+        # 0 represents the closest point, 1 represents the furthest point
+        return (depth_value - min_depth) / (max_depth - min_depth)
 
-        # apply logarithmic scaling
-        log_depth = np.log(inverted_depth - min_depth + 1)
-
-        # normalize to 0-1 range
-        normalized_depth = (log_depth - np.log(1)) / (np.log(max_depth - min_depth + 1) - np.log(1))
-
-        return normalized_depth
-
-    def annotate_image(self, frame, detections, depth_map):
+    def annotate_image(self, frame, detections):
         img = np.copy(frame)
-
-        min_depth = np.min(depth_map)
-        max_depth = np.max(depth_map)
         
         for det in detections:
-            x1, y1, x2, y2, conf, class_name = det
-            
-            # calculate center of the bounding box
-            center_x, center_y = int((x1 + x2) / 2), int((y1 + y2) / 2)
-
-            # get depth value at the center of the object
-            depth = depth_map[center_y, center_x]
-            
-            # scale depth value
-            scaled_depth = self.scale_depth(depth, min_depth, max_depth)
+            x1, y1, x2, y2, conf, class_name, depth = det
             
             cv2.rectangle(img, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-            cv2.putText(img, f"{class_name}: {conf:.2f}, depth: {scaled_depth:.2f}", 
+            cv2.putText(img, f"{class_name}: {conf:.2f}, depth: {depth:.2f}", 
                         (int(x1), int(y1)-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         
         return img

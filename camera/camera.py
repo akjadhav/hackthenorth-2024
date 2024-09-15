@@ -96,8 +96,8 @@ class Camera:
 
     def process_frame(self, frame):
         depth_map_colored, depth_map = self.depth_estimator.estimate_depth(frame)
-        detections = self.object_detector.detect_objects(frame)
-        annotated_img = self.object_detector.annotate_image(frame, detections, depth_map)
+        detections = self.object_detector.detect_objects(frame, depth_map)
+        annotated_img = self.object_detector.annotate_image(frame, detections)
         
         with self.lock:
             self.processed_frame = annotated_img
@@ -118,12 +118,17 @@ class Camera:
                 # Process the results as they complete
                 for future in as_completed(future_to_detection):
                     detection, description = future.result()
-                    x1, y1, x2, y2, conf, class_name = detection
+                    x1, y1, x2, y2, conf, class_name, depth = detection
+
+                    width = frame.shape[1]
+                    center_x = (x1 + x2) / 2
+                    sagittal = center_x / width
+
                     data['objects'].append({
                         'class': class_name,
                         'description': description,
                         'id': str(uuid.uuid4()),
-                        'location': [0, 0]  # TODO: determine location of object in space
+                        'location': [sagittal, depth]
                     })
 
                 # Get the full frame description
@@ -141,7 +146,7 @@ class Camera:
             self.last_description_time = time.time()
 
     def generate_description_for_detection(self, frame, detection):
-        x1, y1, x2, y2, conf, class_name = detection
+        x1, y1, x2, y2, conf, class_name, depth = detection
         x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
         img = frame[y1:y2, x1:x2]
         description = self.image_describer.generate_description(img, 'object', class_name)
