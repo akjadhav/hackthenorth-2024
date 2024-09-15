@@ -20,7 +20,7 @@ PAUSE_INTERVAL = 0.1
 PROCESS_INTERVAL = 5  # process frames every 5 seconds
 DESCRIPTION_INTERVAL = 30 # describe the latest frame every 30 seconds
 
-ENTITY_URL = "http://localhost:3000/api/entities"
+ENTITY_URL = "https://silent-seahorse-185.convex.site/updateEntities"
 
 class Camera:
     def __init__(self, ip, username, space_id, port='554'):
@@ -135,6 +135,8 @@ class Camera:
                 print("Wrote description data to database")
             else:
                 print("ERROR writing description data to database")
+                print(r.status_code)
+                print(r.reason)
 
             self.last_description_time = time.time()
 
