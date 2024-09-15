@@ -34,11 +34,55 @@ export default function Map() {
     mapId: "66ce20fdf42a3e000b1b0545",
   });
 
+  // interpolation function
+  function interpolateCoordinates(
+    start: Mappedin.Coordinate,
+    end: Mappedin.Coordinate,
+    numPoints: number
+  ): Mappedin.Coordinate[] {
+    const interpolatedCoords: Mappedin.Coordinate[] = [];
+
+    for (let i = 1; i <= numPoints; i++) {
+      const t = i / (numPoints + 1);
+
+      const latitude = start.latitude + t * (end.latitude - start.latitude);
+      const longitude = start.longitude + t * (end.longitude - start.longitude);
+      const floorId = start.floorId; // Assuming both coordinates are on the same floor.
+
+      interpolatedCoords.push(new Mappedin.Coordinate(latitude, longitude, floorId));
+    }
+
+    return interpolatedCoords;
+  }
+
+  // generate smooth route
+  function generateSmoothRoute(
+    originalRoute: Mappedin.Coordinate[],
+    pointsPerSegment: number
+  ): Mappedin.Coordinate[] {
+    const smoothRoute: Mappedin.Coordinate[] = [];
+
+    for (let i = 0; i < originalRoute.length - 1; i++) {
+      const start = originalRoute[i];
+      const end = originalRoute[i + 1];
+
+      smoothRoute.push(start);
+
+      const interpolatedPoints = interpolateCoordinates(start, end, pointsPerSegment);
+      smoothRoute.push(...interpolatedPoints);
+    }
+
+    smoothRoute.push(originalRoute[originalRoute.length - 1]);
+
+    return smoothRoute;
+  }
+
   const handleRouteCalculated = useCallback(
     (directions: Mappedin.Directions) => {
       if (directions && directions.coordinates) {
-        console.log('Route coordinates:', directions.coordinates);
-        setRoute(directions.coordinates);
+        const pointsPerSegment = 5;
+        const smoothRoute = generateSmoothRoute(directions.coordinates, pointsPerSegment);
+        setRoute(smoothRoute);
       }
     },
     [setRoute]
@@ -90,7 +134,7 @@ export default function Map() {
         accessibleToggleValue={accessibleToggleValue}
         onRouteCalculated={handleRouteCalculated}
       />
-      {route.length > 0 && <MovingBlueDot route={route} interval={3000} />}
+      {route.length > 0 && <MovingBlueDot route={route} interval={500} />}
       <Marker target={endCoordinate} options={{ rank: 'always-visible' }}>
         <div style={styles.destinationMarker}>🏁</div>
       </Marker>
