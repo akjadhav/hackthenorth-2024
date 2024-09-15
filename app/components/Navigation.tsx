@@ -81,6 +81,7 @@ export default function NavigateBetweenTwoCoordinates({
   const { mapView, mapData } = useMap();
 
   const [directionsJson, setDirectionsJson] = useState(null);
+  const [mappingDirections, setMappingDirections] = useState(null);
   const [textDirections, setTextDirections] = useState('');
 
   useEffect(() => {
@@ -101,6 +102,7 @@ export default function NavigateBetweenTwoCoordinates({
         const instructions = directions?.instructions;
         console.log('directionsJson', instructions);
         setDirectionsJson(instructions);
+        setMappingDirections(directions);
       } else if (end.type === 'object') {
         const [spread, depth] = end.objectLocation;
         const object = Mappedin.Coordinate(spread);
@@ -110,6 +112,7 @@ export default function NavigateBetweenTwoCoordinates({
 
         const instructions = directions?.instructions;
         setDirectionsJson(instructions);
+        setMappingDirections(directions);
       }
     }
   }, [end, start, accessibleToggleValue, mapView, mapData]);
@@ -131,5 +134,7 @@ export default function NavigateBetweenTwoCoordinates({
     }
   }, [directionsJson]);
 
-  return directionsJson ? <Navigation directions={directionsJson} /> : null;
+  return mappingDirections ? (
+    <Navigation directions={mappingDirections} />
+  ) : null;
 }
