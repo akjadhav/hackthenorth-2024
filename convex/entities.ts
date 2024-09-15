@@ -18,17 +18,18 @@ export const getEntityInfo = query({
     console.log(allEntities);
 
     const results = allEntities.flatMap(entity => 
-      entity.objects.filter(obj => obj.id === id)
-        .map(obj => ({
-          spaceId: entity.spaceId,
-          objectId: obj.id,
-          objectLocation: obj.location
-        }))
-    );
+        entity.objects.filter(obj => obj.id === id)
+          .map(obj => ({
+            spaceId: entity.spaceId,
+            objectId: obj.id,
+            objectLocation: obj.location
+          }))
+      );
 
     if (results.length === 0) {
-      throw new Error(`No entity found for object id: ${id}`);
+      throw new Error(`No object found with id: ${id}`);
     }
+
     return results[0];
   },
 });

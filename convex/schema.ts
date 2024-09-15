@@ -97,5 +97,4 @@ const entitiesTable = defineTable({
 export default defineSchema({
   ...authTables,
   entities: entitiesTable,
-  // Add any other tables here
 });

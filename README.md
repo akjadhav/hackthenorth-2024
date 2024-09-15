@@ -1,72 +1,62 @@
-# Voice-Centric Indoor Navigation Assistant
+# Voice-Centric Indoor Navigation Assistant - Detailed Technology Overview
 
-## Overview
-This application is an innovative, voice-first indoor navigation solution designed to enhance mobility and independence for individuals with visual impairments. It leverages advanced voice interaction, real-time computer vision, and intelligent context understanding to provide accessible, spoken navigation guidance in indoor spaces.
+## Purpose
+This innovative application aims to enhance mobility and independence for visually impaired individuals by providing a voice-first indoor navigation solution. It combines advanced technologies to offer accessible, spoken navigation guidance in indoor spaces.
 
-## Technologies
+## Detailed Technology Breakdown
 
-- **Frontend**: Next.js
-- **Backend**: Convex
-- **Indoor Mapping**: MappedIn SDK
-- **Computer Vision**: 
-  - Real-time video streaming: Multiple TAPO cameras (1080p)
-  - Object Detection: YOLOv8
-  - Depth Estimation: DPT (Dense Prediction Transformer)
-  - Scene Analysis: GPT-4 Vision
-- **Agent / LLM**:
-   - Voiceflow: Powers the user interaction layer, providing a seamless voice interface for visually impaired users. This forms the core of the agentic and voice-driven user experience.
-   - Cohere: Integrated within Voiceflow, it provides embeddings and Retrieval-Augmented Generation (RAG) capabilities for enhanced context understanding and response generation from the real-time computer vision tags, crucial for intelligent voice interactions.
-- **Speech Processing**:
-  - Speech-to-Text: Whisper (via Groq)
-  - Text-to-Speech: Custom model
+1. **Computer Vision (CV) Pipeline**
+   - Object Detection: Detectron is used to identify and locate objects within the video streams.
+   - Depth Estimation: DPT (Dense Prediction Transformer) provides depth information for each pixel in the image.
+   - Image Processing and Scene Analysis: 
+     * The system breaks down images into various sub-bounding boxes for detailed analysis.
+     * GPT-4 Vision (mini) generates narrations for each sub-bounding box in parallel.
+     * The narrations for all sub-boxes are then combined to provide a comprehensive description of the scene.
+   - Data Integration: All CV data is attached in JSON format and stored in a Convex database using MappedIn SDK.
 
-## Key Features
-1. Voice-first user interface optimized for visually impaired users
-2. Real-time indoor mapping and navigation with spoken instructions
-3. Multi-camera real-time computer vision for environmental awareness
-4. Intelligent context understanding using Cohere's RAG within Voiceflow
-5. Adaptive, accessible navigation guidance
+2. **Semantic Search and Reranking (Cohere)**
+   - Cohere's Rerank API endpoint is used for powerful semantic search capabilities.
+   - Function: Given a `query` and a list of `documents`, Rerank indexes the documents from most to least semantically relevant to the query.
+   - Data Source: Documents are composed of two types of data stored in the Convex database:
+     * Tags generated from the computer vision pipeline
+     * Floor plan information from the MappedIn SDK
+   - Reranking Process: The system performs reranking on each of these objects, connecting both CV and mapping data for comprehensive search results.
 
-## How It Works
+3. **Voice Interaction and Workflow Management (Voiceflow)**
+   - Decision Tree Structure: Programmatically created with numerous steps, loops, and cases for complex voice interactions.
+   - User Intent Differentiation: The decision tree structure distinguishes between user requests for:
+     * General "spaces" (e.g., rooms, areas)
+     * Specific "objects" (e.g., persons, desks, sponsor booths)
+   - Goal: To understand the user's final destination or object of interest through a series of questions and interactions.
+   - Integration: Voiceflow integrates with Cohere's reranking to understand relevant tags created from computer vision models and mapping data.
+   - Scope: Handles text-to-text responses and creates complex workflows for answering questions. Does not handle speech-to-text or text-to-speech conversion.
 
-1. **Agentic Voice Interaction**
-   - Users interact with the system entirely through voice commands.
-   - Voiceflow manages the conversation flow, interpreting user intents and generating responses.
-   - Cohere's embeddings and RAG system, integrated within Voiceflow, process user queries and environmental data for enhanced understanding and context-aware responses.
+4. **Speech Processing**
+   - Speech-to-Text: Utilizes a Groq model based on Open AI's Whisper transcription model, chosen for its very low latency, which is crucial for real-time speech processing.
+   - Text-to-Speech: Implemented using Unreal Engine, which doesn't specify an AI model but provides very fast processing.
 
-2. **Real-time Environmental Analysis**
-   - Multiple TAPO cameras stream 1080p video throughout the venue.
-   - YOLOv7, DPT, and GPT-4 Vision process these streams in real-time to detect objects, estimate depths, and analyze scenes.
-   - Visual data is converted into text descriptions and embedded using Cohere for use in the RAG system.
+5. **Indoor Mapping and Navigation (MappedIn SDK)**
+   - Route Generation: Provides a route from the current location to the final destination.
+   - Detailed Navigation: Once a space is selected, the system offers more specific navigation guidance.
+   - Depth-Based Guidance: Utilizes depth information from the CV pipeline to provide more accurate positioning.
+   - Object-Relative Navigation: Uses the relative positioning between objects and depth data to guide the user more precisely.
 
-3. **Indoor Mapping and Routing**
-   - MappedIn SDK provides indoor map data and routing algorithms.
-   - Voiceflow and Cohere translate routing data into clear, spoken instructions.
+## Workflow Integration
 
-4. **Navigation Guidance Delivery**
-   - The system generates step-by-step navigation instructions based on processed environmental data and user requests.
-   - Instructions are conveyed via spoken words, optimized for visually impaired individuals.
-   - Guidance is continuously updated based on real-time environmental changes and user movement.
+1. The user interacts with the system through voice commands.
+2. Voiceflow manages the conversation flow, using its decision tree structure to understand the user's intent (space or object) and desired destination.
+3. Multiple TAPO cameras stream 1080p video of the environment.
+4. The CV pipeline (Detectron, DPT, GPT-4 Vision mini) processes the video streams in real-time:
+   - Detecting objects
+   - Estimating depth
+   - Breaking down images into sub-bounding boxes
+   - Generating parallel narrations for each sub-box
+   - Combining narrations for a comprehensive scene description
+5. This CV data, along with MappedIn SDK floor plan information, is stored in JSON format in the Convex database.
+6. Cohere's reranking is used to find the most relevant information from both CV tags and mapping data based on the user's query.
+7. MappedIn SDK generates a route from the current location to the desired destination or object.
+8. Voiceflow, integrated with Cohere, uses the reranked information and MappedIn route to generate appropriate responses and navigation instructions.
+9. These text instructions are converted to speech using Unreal Engine's text-to-speech capabilities.
+10. The user receives spoken guidance, which is continuously updated based on their movement and changes in the environment.
 
-## Setup and Installation
-
-1. Clone the repository
-   ```
-   git clone [repository-url]
-   cd [project-directory]
-   ```
-
-2. Install dependencies
-   ```
-   npm install
-   ```
-
-3. Set up environment variables in a `.env.local` file
-
-4. Start the development server
-   ```
-   npm run dev
-   ```
-
-## Contributing
-We welcome contributions that enhance accessibility, improve voice interaction, or refine navigation accuracy for visually impaired users. Please submit pull requests or open issues to discuss proposed changes.
+This integrated system provides a comprehensive, real-time, and adaptive navigation solution specifically designed for visually impaired users, leveraging cutting-edge AI and computer vision technologies to enhance accessibility in indoor spaces.
