@@ -1,5 +1,5 @@
 import { ConvexAdapter } from "./app/ConvexAdapter";
-import GitHub from "@auth/core/providers/github";
+import GitHubProvider from "next-auth/providers/github";
 import { SignJWT, importPKCS8 } from "jose";
 import NextAuth from "next-auth";
 
@@ -10,7 +10,7 @@ const CONVEX_SITE_URL = process.env.NEXT_PUBLIC_CONVEX_URL!.replace(
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   debug: true,
-  providers: [GitHub],
+  providers: [GitHubProvider],
   adapter: ConvexAdapter,
   callbacks: {
     async session({ session }) {
