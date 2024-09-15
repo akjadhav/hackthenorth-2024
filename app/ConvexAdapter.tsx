@@ -7,7 +7,6 @@ import type {
   VerificationToken,
 } from "@auth/core/adapters";
 import { fetchMutation, fetchQuery } from "convex/nextjs";
-import { authAdapter } from "../convex/authAdapter";
 import { FunctionArgs, FunctionReference } from "convex/server";
 import { api } from "../convex/_generated/api";
 import { Doc, Id } from "../convex/_generated/dataModel";
@@ -44,12 +43,12 @@ export const ConvexAdapter: Adapter = {
     return maybeSessionFromDB(
       await callMutation(api.authAdapter.deleteSession, {
         sessionToken,
-      })
+      }),
     );
   },
   async deleteUser(id: Id<"users">) {
     return maybeUserFromDB(
-      await callMutation(api.authAdapter.deleteUser, { id })
+      await callMutation(api.authAdapter.deleteUser, { id }),
     );
   },
   async getAccount(providerAccountId, provider) {
@@ -79,12 +78,12 @@ export const ConvexAdapter: Adapter = {
       await callQuery(api.authAdapter.getUserByAccount, {
         provider,
         providerAccountId,
-      })
+      }),
     );
   },
   async getUserByEmail(email) {
     return maybeUserFromDB(
-      await callQuery(api.authAdapter.getUserByEmail, { email })
+      await callQuery(api.authAdapter.getUserByEmail, { email }),
     );
   },
   async linkAccount(account: Account) {
@@ -123,22 +122,23 @@ export const ConvexAdapter: Adapter = {
       await callMutation(api.authAdapter.useVerificationToken, {
         identifier,
         token,
-      })
+      }),
     );
   },
 };
 
-/// helpers
+/// Helpers
+
 function callQuery<Query extends FunctionReference<"query">>(
   query: Query,
-  args: Omit<FunctionArgs<Query>, "secret">
+  args: Omit<FunctionArgs<Query>, "secret">,
 ) {
   return fetchQuery(query, addSecret(args) as any);
 }
 
 function callMutation<Mutation extends FunctionReference<"mutation">>(
   mutation: Mutation,
-  args: Omit<FunctionArgs<Mutation>, "secret">
+  args: Omit<FunctionArgs<Mutation>, "secret">,
 ) {
   return fetchMutation(mutation, addSecret(args) as any);
 }
@@ -178,7 +178,7 @@ function sessionFromDB(session: Doc<"sessions">) {
 }
 
 function maybeVerificationTokenFromDB(
-  verificationToken: Doc<"verificationTokens"> | null
+  verificationToken: Doc<"verificationTokens"> | null,
 ) {
   if (verificationToken === null) {
     return null;
@@ -195,7 +195,7 @@ function maybeDate(value: number | undefined) {
 }
 
 function toDB<T extends object>(
-  obj: T
+  obj: T,
 ): {
   [K in keyof T]: T[K] extends Date
     ? number

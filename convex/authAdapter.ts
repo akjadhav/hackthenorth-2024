@@ -30,9 +30,9 @@ const adapterMutation = customMutation(mutation, {
 });
 
 function checkSecret(secret: string) {
-  if (process.env.CONVEX_AUTH_ADAPTER_SECRET === undefined) {
+	if (process.env.CONVEX_AUTH_ADAPTER_SECRET === undefined) {
     throw new Error(
-      "Missing CONVEX_AUTH_ADAPTER_SECRET Convex environment variable"
+      "Missing CONVEX_AUTH_ADAPTER_SECRET Convex environment variable",
     );
   }
   if (secret !== process.env.CONVEX_AUTH_ADAPTER_SECRET) {
@@ -115,7 +115,7 @@ export const getAccount = adapterQuery({
     return await ctx.db
       .query("accounts")
       .withIndex("providerAndAccountId", (q) =>
-        q.eq("provider", provider).eq("providerAccountId", providerAccountId)
+        q.eq("provider", provider).eq("providerAccountId", providerAccountId),
       )
       .unique();
   },
@@ -162,7 +162,7 @@ export const getUserByAccount = adapterQuery({
     const account = await ctx.db
       .query("accounts")
       .withIndex("providerAndAccountId", (q) =>
-        q.eq("provider", provider).eq("providerAccountId", providerAccountId)
+        q.eq("provider", provider).eq("providerAccountId", providerAccountId),
       )
       .unique();
     if (account === null) {
@@ -206,7 +206,7 @@ export const unlinkAccount = adapterMutation({
     const account = await ctx.db
       .query("accounts")
       .withIndex("providerAndAccountId", (q) =>
-        q.eq("provider", provider).eq("providerAccountId", providerAccountId)
+        q.eq("provider", provider).eq("providerAccountId", providerAccountId),
       )
       .unique();
     if (account === null) {
@@ -226,7 +226,7 @@ export const updateAuthenticatorCounter = adapterMutation({
       .unique();
     if (authenticator === null) {
       throw new Error(
-        `Authenticator not found for credentialID: ${credentialID}`
+        `Authenticator not found for credentialID: ${credentialID}`,
       );
     }
     await ctx.db.patch(authenticator._id, { counter: newCounter });
@@ -245,7 +245,7 @@ export const updateSession = adapterMutation({
     const existingSession = await ctx.db
       .query("sessions")
       .withIndex("sessionToken", (q) =>
-        q.eq("sessionToken", session.sessionToken)
+        q.eq("sessionToken", session.sessionToken),
       )
       .unique();
     if (existingSession === null) {
@@ -277,7 +277,7 @@ export const useVerificationToken = adapterMutation({
     const verificationToken = await ctx.db
       .query("verificationTokens")
       .withIndex("identifierToken", (q) =>
-        q.eq("identifier", identifier).eq("token", token)
+        q.eq("identifier", identifier).eq("token", token),
       )
       .unique();
     if (verificationToken === null) {
