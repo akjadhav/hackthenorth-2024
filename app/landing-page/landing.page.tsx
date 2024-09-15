@@ -1,3 +1,4 @@
+import React from 'react';
 import { signIn } from '../../auth';
 
 function SignIn() {
@@ -6,8 +7,11 @@ function SignIn() {
       action={async () => {
         'use server';
         await signIn(undefined, { redirectTo: '/loggedin' });
-      }}>
-      <button type='submit' style={styles.signInButton}>Sign In</button>
+      }}
+    >
+      <button type='submit' style={styles.signInButton}>
+        Get Started
+      </button>
     </form>
   );
 }
@@ -15,8 +19,11 @@ function SignIn() {
 export default function LandingPage() {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Welcome to PathSense</h1>
-      <SignIn />
+      <div style={styles.content}>
+        <h1 style={styles.title}>Welcome to PathSense</h1>
+        <p style={styles.subtitle}>Navigate your world with precision and ease</p>
+        <SignIn />
+      </div>
     </div>
   );
 }
@@ -28,21 +35,33 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#f0f4f8',
-  },
-  title: {
-    fontSize: '36px',
-    color: '#007AFF',
-    marginBottom: '20px',
+    background: 'linear-gradient(to right, #4A90E2, #50E3C2)',
     fontFamily: 'Arial, sans-serif',
   },
+  content: {
+    textAlign: 'center' as const,
+    color: '#FFFFFF',
+  },
+  title: {
+    fontSize: '48px',
+    fontWeight: 'bold' as const,
+    marginBottom: '20px',
+    textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+  },
+  subtitle: {
+    fontSize: '24px',
+    marginBottom: '40px',
+    textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
+  },
   signInButton: {
-    padding: '12px 24px',
+    padding: '14px 28px',
     fontSize: '18px',
-    color: '#fff',
-    backgroundColor: '#007AFF',
+    color: '#4A90E2',
+    backgroundColor: '#FFFFFF',
     border: 'none',
-    borderRadius: '6px',
+    borderRadius: '30px',
     cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
   },
 };

@@ -148,28 +148,32 @@ const MicrophoneButton = () => {
     <button
       className='microphone-button'
       style={{
-        position: 'absolute',
-        top: '10px',
-        left: '10px',
+        position: 'fixed',
+        bottom: '20px',
+        left: '20px',
         zIndex: 1000,
         display: 'flex',
         alignItems: 'center',
-        background: 'rgba(255, 255, 255, 0.8)',
-        padding: '20px',
-        borderRadius: '5px',
-        boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.2)',
-        color: 'black',
+        justifyContent: 'center',
+        background: 'linear-gradient(145deg, #3498db, #2980b9)',
+        padding: '16px',
+        borderRadius: '50%',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)',
+        color: 'white',
+        border: 'none',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
       }}
-      onClick={handleMicClick}>
+      onClick={handleMicClick}
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 24 24'
-        width='30px'
-        height='30px'
-        fill='currentColor'>
-        <path d='m439.5,236c0-11.3-9.1-20.4-20.4-20.4s-20.4,9.1-20.4,20.4c0,70-64,126.9-142.7,126.9-78.7,0-142.7-56.9-142.7-126.9 0-11.3-9.1-20.4-20.4-20.4s-20.4,9.1-20.4,20.4c0,86.2 71.5,157.4 163.1,166.7v57.5h-23.6c-11.3,0-20.4,9.1-20.4,20.4 0,11.3 9.1,20.4 20.4,20.4h88c11.3,0 20.4-9.1 20.4-20.4 0-11.3-9.1-20.4-20.4-20.4h-23.6v-57.5c91.6-9.3 163.1-80.5 163.1-166.7z' />
-        <path d='m256,323.5c51,0 92.3-41.3 92.3-92.3v-127.9c0-51-41.3-92.3-92.3-92.3s-92.3,41.3-92.3,92.3v127.9c0,51 41.3,92.3 92.3,92.3zm-52.3-220.2c0-28.8 23.5-52.3 52.3-52.3s52.3,23.5 52.3,52.3v127.9c0,28.8-23.5,52.3-52.3,52.3s-52.3-23.5-52.3-52.3v-127.9z' />{' '}
-        <path d='M12 14c1.654 0 3-1.346 3-3V5c0-1.654-1.346-3-3-3S9 3.346 9 5v6c0 1.654 1.346 3 3 3zm6-3h-2c0 2.206-1.794 4-4 4s-4-1.794-4-4H6c0 2.886 2.165 5.278 5 5.91V20H8v2h8v-2h-3v-3.09c2.835-.632 5-3.024 5-5.91z' />
+        width='24px'
+        height='24px'
+        fill='currentColor'
+      >
+        <path d='M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z' />
       </svg>
     </button>
   );
