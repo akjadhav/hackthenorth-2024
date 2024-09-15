@@ -25,7 +25,7 @@ export enum MapFloor {
 }
 
 export default function Map() {
-  const [currentCoordinate, setCurrentCoordinate] = useState(
+  const [currentCoordinate] = useState(
     new Mappedin.Coordinate(43.4727, -80.5398, MapFloor.Floor2)
   );
   const [endCoordinate] = useState(
@@ -35,9 +35,9 @@ export default function Map() {
   const [route, setRoute] = useState<Mappedin.Coordinate[]>([]);
 
   const { isLoading, error, mapData } = useMapData({
-    key: 'your_api_key',
-    secret: 'your_api_secret',
-    mapId: 'your_map_id',
+    key: "mik_Qar1NBX1qFjtljLDI52a60753",
+    secret: "mis_CXFS9WnkQkzQmy9GCt4ucn2D68zNRgVa2aiJj5hEIFM8aa40fee",
+    mapId: "66ce20fdf42a3e000b1b0545",
   });
 
   const handleRouteCalculated = (directions: Mappedin.Directions) => {
@@ -59,7 +59,7 @@ export default function Map() {
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return <div>Error loading map: {error.message}</div>;
   }
 
   return mapData ? (
@@ -68,7 +68,6 @@ export default function Map() {
       style={{ height: '100vh', width: '100vw' }}
       options={{ initialFloor: MapFloor.Floor2 }}
     >
-      {/* <SignOutButton /> */}
       <div style={styles.titleContainer}>
         <h1 style={styles.title}>PathSense</h1>
       </div>
@@ -93,9 +92,7 @@ export default function Map() {
         accessibleToggleValue={accessibleToggleValue}
         onRouteCalculated={handleRouteCalculated}
       />
-      {route.length > 0 && (
-        <MovingBlueDot route={route} interval={1000} />
-      )}
+      {route.length > 0 && <MovingBlueDot route={route} interval={1000} />}
       <Marker target={endCoordinate} options={{ rank: 'always-visible' }}>
         <div style={styles.destinationMarker}>🏁</div>
       </Marker>
