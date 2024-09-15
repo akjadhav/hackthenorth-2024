@@ -5,20 +5,22 @@ import type {
   AdapterSession,
   AdapterUser,
   VerificationToken,
-} from "@auth/core/adapters";
-import { fetchMutation, fetchQuery } from "convex/nextjs";
-import { FunctionArgs, FunctionReference } from "convex/server";
-import { api } from "../convex/_generated/api";
-import { Doc, Id } from "../convex/_generated/dataModel";
+} from '@auth/core/adapters';
+import { fetchMutation, fetchQuery } from 'convex/nextjs';
+import { FunctionArgs, FunctionReference } from 'convex/server';
+import { api } from '../convex/_generated/api';
+import { Doc, Id } from '../convex/_generated/dataModel';
 
-type User = AdapterUser & { id: Id<"users"> };
-type Session = AdapterSession & { userId: Id<"users"> };
-type Account = AdapterAccount & { userId: Id<"users"> };
-type Authenticator = AdapterAuthenticator & { userId: Id<"users"> };
+type User = AdapterUser & { id: Id<'users'> };
+type Session = AdapterSession & { userId: Id<'users'> };
+type Account = AdapterAccount & { userId: Id<'users'> };
+type Authenticator = AdapterAuthenticator & { userId: Id<'users'> };
 
 export const ConvexAdapter: Adapter = {
   async createAuthenticator(authenticator: Authenticator) {
-    await callMutation(api.authAdapter.createAuthenticator, { authenticator });
+    await callMutation(api.authAdapter.createAuthenticator, {
+      authenticator: toDB(authenticator),
+    });
     return authenticator;
   },
   async createSession(session: Session) {
@@ -43,12 +45,12 @@ export const ConvexAdapter: Adapter = {
     return maybeSessionFromDB(
       await callMutation(api.authAdapter.deleteSession, {
         sessionToken,
-      }),
+      })
     );
   },
-  async deleteUser(id: Id<"users">) {
+  async deleteUser(id: Id<'users'>) {
     return maybeUserFromDB(
-      await callMutation(api.authAdapter.deleteUser, { id }),
+      await callMutation(api.authAdapter.deleteUser, { id })
     );
   },
   async getAccount(providerAccountId, provider) {
@@ -70,7 +72,7 @@ export const ConvexAdapter: Adapter = {
     const { user, session } = result;
     return { user: userFromDB(user), session: sessionFromDB(session) };
   },
-  async getUser(id: Id<"users">) {
+  async getUser(id: Id<'users'>) {
     return maybeUserFromDB(await callQuery(api.authAdapter.getUser, { id }));
   },
   async getUserByAccount({ provider, providerAccountId }) {
@@ -78,18 +80,18 @@ export const ConvexAdapter: Adapter = {
       await callQuery(api.authAdapter.getUserByAccount, {
         provider,
         providerAccountId,
-      }),
+      })
     );
   },
   async getUserByEmail(email) {
     return maybeUserFromDB(
-      await callQuery(api.authAdapter.getUserByEmail, { email }),
+      await callQuery(api.authAdapter.getUserByEmail, { email })
     );
   },
   async linkAccount(account: Account) {
     return await callMutation(api.authAdapter.linkAccount, { account });
   },
-  async listAuthenticatorsByUserId(userId: Id<"users">) {
+  async listAuthenticatorsByUserId(userId: Id<'users'>) {
     return await callQuery(api.authAdapter.listAuthenticatorsByUserId, {
       userId,
     });
@@ -122,43 +124,43 @@ export const ConvexAdapter: Adapter = {
       await callMutation(api.authAdapter.useVerificationToken, {
         identifier,
         token,
-      }),
+      })
     );
   },
 };
 
 /// Helpers
 
-function callQuery<Query extends FunctionReference<"query">>(
+function callQuery<Query extends FunctionReference<'query'>>(
   query: Query,
-  args: Omit<FunctionArgs<Query>, "secret">,
+  args: Omit<FunctionArgs<Query>, 'secret'>
 ) {
   return fetchQuery(query, addSecret(args) as any);
 }
 
-function callMutation<Mutation extends FunctionReference<"mutation">>(
+function callMutation<Mutation extends FunctionReference<'mutation'>>(
   mutation: Mutation,
-  args: Omit<FunctionArgs<Mutation>, "secret">,
+  args: Omit<FunctionArgs<Mutation>, 'secret'>
 ) {
   return fetchMutation(mutation, addSecret(args) as any);
 }
 
 if (process.env.CONVEX_AUTH_ADAPTER_SECRET === undefined) {
-  throw new Error("Missing CONVEX_AUTH_ADAPTER_SECRET environment variable");
+  throw new Error('Missing CONVEX_AUTH_ADAPTER_SECRET environment variable');
 }
 
 function addSecret(args: Record<string, any>) {
   return { ...args, secret: process.env.CONVEX_AUTH_ADAPTER_SECRET! };
 }
 
-function maybeUserFromDB(user: Doc<"users"> | null) {
+function maybeUserFromDB(user: Doc<'users'> | null) {
   if (user === null) {
     return null;
   }
   return userFromDB(user);
 }
 
-function userFromDB(user: Doc<"users">) {
+function userFromDB(user: Doc<'users'>) {
   return {
     ...user,
     id: user._id,
@@ -166,19 +168,19 @@ function userFromDB(user: Doc<"users">) {
   };
 }
 
-function maybeSessionFromDB(session: Doc<"sessions"> | null) {
+function maybeSessionFromDB(session: Doc<'sessions'> | null) {
   if (session === null) {
     return null;
   }
   return sessionFromDB(session);
 }
 
-function sessionFromDB(session: Doc<"sessions">) {
+function sessionFromDB(session: Doc<'sessions'>) {
   return { ...session, id: session._id, expires: new Date(session.expires) };
 }
 
 function maybeVerificationTokenFromDB(
-  verificationToken: Doc<"verificationTokens"> | null,
+  verificationToken: Doc<'verificationTokens'> | null
 ) {
   if (verificationToken === null) {
     return null;
@@ -186,7 +188,7 @@ function maybeVerificationTokenFromDB(
   return verificationTokenFromDB(verificationToken);
 }
 
-function verificationTokenFromDB(verificationToken: Doc<"verificationTokens">) {
+function verificationTokenFromDB(verificationToken: Doc<'verificationTokens'>) {
   return { ...verificationToken, expires: new Date(verificationToken.expires) };
 }
 
@@ -195,7 +197,7 @@ function maybeDate(value: number | undefined) {
 }
 
 function toDB<T extends object>(
-  obj: T,
+  obj: T
 ): {
   [K in keyof T]: T[K] extends Date
     ? number
