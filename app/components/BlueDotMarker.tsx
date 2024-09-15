@@ -7,8 +7,11 @@ interface BlueDotMarkerProps {
 }
 
 export default function BlueDotMarker({ coordinate }: BlueDotMarkerProps) {
+  const key = `${coordinate.floorId}-${coordinate.latitude}-${coordinate.longitude}`;
+
   return coordinate ? (
     <Marker
+      key={key}
       target={coordinate}
       options={{
         rank: 'always-visible',

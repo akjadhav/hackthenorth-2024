@@ -1,27 +1,21 @@
 // map.component.tsx
 'use client';
 
-import { useState, useEffect } from "react";
-import { MapView, useMapData, Marker } from "@mappedin/react-sdk";
-import Mappedin from "@mappedin/react-sdk";
+import { useState, useEffect, useCallback } from 'react';
+import { MapView, useMapData, Marker } from '@mappedin/react-sdk';
+import Mappedin from '@mappedin/react-sdk';
 
-import FloorSelector from "./FloorSelector";
-import MovingBlueDot from "./MovingBlueDot";
-import NavigateBetweenTwoCoordinates from "./Navigation";
-import "@mappedin/react-sdk/lib/esm/index.css";
+import FloorSelector from './FloorSelector';
+import MovingBlueDot from './MovingBlueDot';
+import NavigateBetweenTwoCoordinates from './Navigation';
+import '@mappedin/react-sdk/lib/esm/index.css';
 
-import CONSTANTS from '../constants';
-import MicrophoneButton from "./MicrophoneButton";
-// import SignOutButton from './SignOutButton';
+import MicrophoneButton from './MicrophoneButton';
 
 export enum MapFloor {
-  Floor1 = "m_e6c96a31fba4ef51",
-  Floor2 = "m_b4e5ebf844208588",
-  Floor3 = "m_883f57e8a60ad67b",
-  Floor4 = "m_a93a33b76d3261c5",
-  Floor5 = "m_be5257d1c86c490c",
-  Floor6 = "m_98cc81edd0cb1c71",
-  Floor7 = "m_d1a647643658e985",
+  Floor1 = 'm_e6c96a31fba4ef51',
+  Floor2 = 'm_b4e5ebf844208588',
+  // Add other floors if necessary
 }
 
 export default function Map() {
@@ -40,11 +34,15 @@ export default function Map() {
     mapId: "66ce20fdf42a3e000b1b0545",
   });
 
-  const handleRouteCalculated = (directions: Mappedin.Directions) => {
-    if (directions && directions.coordinates) {
-      setRoute(directions.coordinates);
-    }
-  };
+  const handleRouteCalculated = useCallback(
+    (directions: Mappedin.Directions) => {
+      if (directions && directions.coordinates) {
+        console.log('Route coordinates:', directions.coordinates);
+        setRoute(directions.coordinates);
+      }
+    },
+    [setRoute]
+  );
 
   const handleToggleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAccessibleToggleValue(event.target.checked);
@@ -92,7 +90,7 @@ export default function Map() {
         accessibleToggleValue={accessibleToggleValue}
         onRouteCalculated={handleRouteCalculated}
       />
-      {route.length > 0 && <MovingBlueDot route={route} interval={1000} />}
+      {route.length > 0 && <MovingBlueDot route={route} interval={3000} />}
       <Marker target={endCoordinate} options={{ rank: 'always-visible' }}>
         <div style={styles.destinationMarker}>🏁</div>
       </Marker>
