@@ -229,11 +229,15 @@ const MicrophoneButton = ({ setNavigationEndId }) => {
 
       const object_id = logs_response.data.state.variables.object_id;
       const end_state = logs_response.data.state.variables.endState;
+      if (endState.includes('True')) {
+        setEndState('True');
+      } else {
+        setEndState('False');
+      }
       console.log('Object ID:', object_id);
       console.log('End state:', end_state);
 
       setActiveObjectId(object_id);
-      setEndState(end_state);
 
       if (end_state === 'True') {
         setNavigationEndId(object_id);
@@ -259,7 +263,7 @@ const MicrophoneButton = ({ setNavigationEndId }) => {
       className='microphone-button'
       style={{
         position: 'fixed',
-        bottom: '20px',
+        top: '20px',
         left: '20px',
         zIndex: 1000,
         display: 'flex',

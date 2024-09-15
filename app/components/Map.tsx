@@ -4,6 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { MapView, useMapData } from '@mappedin/react-sdk';
 import Mappedin from '@mappedin/react-sdk';
 
+import { useQuery } from 'convex/react';
+import { api } from '../../convex/_generated/api';
+
 import FloorSelector from './FloorSelector';
 import MovingBlueDot from './MovingBlueDot';
 // import BlueDotMarker from './BlueDotMarker';
@@ -32,13 +35,15 @@ export default function Map() {
   const [route, setRoute] = useState<Mappedin.Coordinate[]>([]);
 
   const [unit, setUnit] = useState<'meters' | 'feet'>('meters');
-  const [endLocation, setEndLocation] = useState();
+  const [endLocation, setEndLocation] = useState<any>();
 
   const { isLoading, error, mapData } = useMapData({
     key: 'mik_Qar1NBX1qFjtljLDI52a60753',
     secret: 'mis_CXFS9WnkQkzQmy9GCt4ucn2D68zNRgVa2aiJj5hEIFM8aa40fee',
     mapId: '66ce20fdf42a3e000b1b0545',
   });
+
+  // const entityData = useQuery(api.entities.getEntityInfo, { navigationEndId });
 
   useEffect(() => {
     setCurrentCoordinate(
@@ -148,19 +153,9 @@ export default function Map() {
     [setRoute]
   );
 
-  function GetLocationFromId() {
-    const data = useQuery(api.entities.getEntityInfo, { navigationEndId });
-
-    // new Mappedin.Coordinate(
-    //   43.47278797233474,
-    //   -80.53979144132539,
-    //   MapFloor.Floor2
-    // )
-  }
-
   useEffect(() => {
     if (navigationEndId) {
-      GetLocationFromId();
+      setEndLocation({ type: 'space', spaceId: navigationEndId });
     }
   }, [navigationEndId]);
 
