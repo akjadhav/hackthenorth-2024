@@ -95,8 +95,10 @@ export default function NavigateBetweenTwoCoordinates({
       // do groq on directions to get the path
       // text to speech on directions
 
-      directionsJson = directions;
+      directionsJson = directions?.instructions;
+      console.log('directionsJson', directionsJson);
       const textual_directions = groqCompletion(directionsJson);
+
       console.log('textual_directions', textual_directions);
     } else if (end.type == 'object') {
       const spread = end.objectLocation[0];
