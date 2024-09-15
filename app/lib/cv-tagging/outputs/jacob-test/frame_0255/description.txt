@@ -1,7 +1,0 @@
-The image presents a hotel room or a living space of an "other person's room" setting with vending points at the edge. The most prominent figure in the scene is a man wearing shorts and a t-shirt, seated in a chair in front of a suitcase or a checked chair without personal items and a black backpack. Surrounding the man are benches, a chair not having personal items, and other such nearby, all with varying degrees of probability.
-
-
-There are several suitcases in the image. A red suitcase is centered and has a higher confidence. Another suitcase is located near the man and also has a notable confidence. In addition to these, there are two other suitcases that are less stable in the scene. They are closer to the periphery of the image. Alongside the furniture, there is a bottle and chair with a handbag beside the checked chair with no personal items and a black bag.
-
-
-The room is also adorned with textured prints of a chair, which are situated near the man on the left. There is another print on the wall with a bottle placed on it. The vending points, which are located at the edge of the scene, extend into a multitude of directions without significant confidence.

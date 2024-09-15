@@ -2,6 +2,13 @@
     {
         "ip": "10.37.117.39",
         "username": "htn-pathsense-1",
+        "spaceId": "s_169e07d207df9e01",
         "description": "Overlooks sponsor bay"
+    },
+    {
+        "ip": "10.37.119.72",
+        "username": "htn-pathsense-2",
+        "spaceId": "s_c8ca73752ef36167",
+        "description": "Watches us sleep"
     }
 ]

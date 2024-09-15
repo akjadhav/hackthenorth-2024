@@ -9,5 +9,5 @@ node_modules
 
 camera/.env
 camera/venv
-camera/__pycache__/
-camera/*.py[cod]
+camera/**/__pycache__/
+camera/**/*.py[cod]

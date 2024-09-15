@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ camera.description }} - Camera View</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1, h2 {
+                color: #333;
+            }
+            .camera-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .camera-feed {
+                width: 30%;
+                margin-bottom: 20px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .back-link {
+                display: inline-block;
+                margin-top: 20px;
+                color: #0066cc;
+                text-decoration: none;
+            }
+            .back-link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ camera.description }}</h1>
+        <div class="camera-container">
+            <div class="camera-feed">
+                <h2>Original Feed</h2>
+                <img src="{{ url_for('video_feed', username=camera.username, stream_type='original') }}" alt="Original Feed">
+            </div>
+            <div class="camera-feed">
+                <h2>Processed Feed</h2>
+                <img src="{{ url_for('video_feed', username=camera.username, stream_type='processed') }}" alt="Processed Feed">
+            </div>
+            <div class="camera-feed">
+                <h2>Depth Map</h2>
+                <img src="{{ url_for('video_feed', username=camera.username, stream_type='depth') }}" alt="Depth Map">
+            </div>
+        </div>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Camera List</a>
+    </body>
+</html>
