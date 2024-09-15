@@ -60,3 +60,8 @@ This innovative application aims to enhance mobility and independence for visual
 10. The user receives spoken guidance, which is continuously updated based on their movement and changes in the environment.
 
 This integrated system provides a comprehensive, real-time, and adaptive navigation solution specifically designed for visually impaired users, leveraging cutting-edge AI and computer vision technologies to enhance accessibility in indoor spaces.
+
+## Running
+
+- `git clone https://github.com/akjadhav/hackthenorth-2024.git && cd hackthenorth-2024`
+- `npm run dev`
