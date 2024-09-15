@@ -1,11 +1,11 @@
 import LandingPage from './landing-page/landing.page';
-import Map from './components/Map';
+// import Map from './components/Map';
 
 export default function Home() {
   return (
     <div>
-      {/* <LandingPage /> */}
-      <Map />
+      <LandingPage />
+      {/* <Map /> */}
     </div>
   );
 }
