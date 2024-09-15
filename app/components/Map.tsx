@@ -161,7 +161,7 @@ export default function Map() {
         accessibleToggleValue={accessibleToggleValue}
         onRouteCalculated={handleRouteCalculated}
       />
-      {route.length > 0 && <MovingBlueDot route={route} interval={1000} />}
+      {route.length > 0 && <MovingBlueDot route={route} interval={750} />}
       <Marker target={endCoordinate} options={{ rank: 'always-visible' }}>
         <div style={styles.destinationMarker}>🏁</div>
       </Marker>
