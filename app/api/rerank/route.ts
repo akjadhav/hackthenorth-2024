@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { processJson } from '../../lib/cohere-rerank/process';
 import { rerankDocuments } from '../../lib/cohere-rerank/rerank';
 import { SpaceDocument, ObjectDocument } from '../../lib/cohere-rerank/process';
-import targetData from '../../lib/cohere-rerank/target_data.json';
+import { ConvexHttpClient } from 'convex/browser';
+import { api } from '../../../convex/_generated/api';
+
+const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
@@ -16,7 +19,8 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const documents = processJson(targetData);
+  const entities = await convex.query(api.entities.getAll, {});
+  const documents = processJson(entities);
 
   let filteredDocs;
   if (intent === 'space') {

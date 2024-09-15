@@ -14,8 +14,6 @@ export const getEntityInfo = query({
 
     // otherwise, it's an object id
     const allEntities = await ctx.db.query("entities").collect();
-    
-    console.log(allEntities);
 
     const results = allEntities.flatMap(entity => 
         entity.objects.filter(obj => obj.id === id)
@@ -60,3 +58,5 @@ export const updateEntities = httpAction(async (ctx, request) => {
     status: 200,
   });
 });
+
+export const getAll = query({ handler: async (ctx) => ctx.db.query("entities").collect() });
