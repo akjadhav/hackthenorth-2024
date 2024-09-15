@@ -74,7 +74,7 @@ const MicrophoneIcon = () => (
   </svg>
 );
 
-const MicrophoneButton = ({ setNavigationEndId }) => {
+const MicrophoneButton = ({ setNavigationEndId }: any) => {
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [queryCounter, setQueryCounter] = useState(0);
   const [userQueries, setUserQueries] = useState({});

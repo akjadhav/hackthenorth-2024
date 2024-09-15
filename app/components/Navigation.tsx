@@ -2,8 +2,8 @@
 
 import { useMap, Navigation } from '@mappedin/react-sdk';
 import Mappedin from '@mappedin/react-sdk';
-import axios from 'axios';
 import Groq from 'groq-sdk';
+import { useState, useEffect } from 'react';
 interface CoordinatesProps {
   start: Mappedin.Coordinate;
   end: any;
@@ -21,7 +21,7 @@ export const getGroqChatCompletion = async (
       {
         role: 'system',
         content:
-          'You exist to convert a json object of directions that let a person navigate an indoor building. You will be given a json object in a string format, and you will need to covert it to a short, concise paragraph that can be read out loud to a user.',
+          'You exist to convert a json object of directions that let a person navigate an indoor building. You will be given a json object in a string format, and you will need to covert it to a short, concise paragraph that can be read out loud to a user. These are verbal instructions like Google Maps has, so do not include any other words besides the instructions.',
       },
       // Set a user message for the assistant to respond to.
       {
@@ -73,6 +73,12 @@ export default function NavigateBetweenTwoCoordinates({
 }: CoordinatesProps) {
   const { mapView, mapData } = useMap();
 
+  const [textDirections, setTextDirections] = useState('');
+
+  useEffect(() => {
+    console.log('textDirections', textDirections);
+  }, [textDirections]);
+
   let directionsJson: any = null;
 
   async function groqCompletion(
@@ -97,7 +103,10 @@ export default function NavigateBetweenTwoCoordinates({
 
       directionsJson = directions?.instructions;
       console.log('directionsJson', directionsJson);
-      const textual_directions = groqCompletion(directionsJson);
+      const textual_directions = groqCompletion(directionsJson).then((res) => {
+        console.log('res', res);
+        setTextDirections(res);
+      });
 
       console.log('textual_directions', textual_directions);
     } else if (end.type == 'object') {
