@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMap } from "@mappedin/react-sdk";
-import { MapFloor } from "./map.component";
+import { MapFloor } from "./Map";
 
 export default function FloorSelector() {
     const { mapView } = useMap();
