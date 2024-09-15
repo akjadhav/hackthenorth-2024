@@ -34,54 +34,81 @@ export default function Map() {
     mapId: "66ce20fdf42a3e000b1b0545",
   });
 
-  // interpolation function
+  function calculateDistance(
+    coord1: Mappedin.Coordinate,
+    coord2: Mappedin.Coordinate
+  ): number {
+    const R = 6371; // earth's radius in kilometers
+    const dLat = (coord2.latitude - coord1.latitude) * Math.PI / 180;
+    const dLon = (coord2.longitude - coord1.longitude) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(coord1.latitude * Math.PI / 180) * Math.cos(coord2.latitude * Math.PI / 180) * 
+      Math.sin(dLon/2) * Math.sin(dLon/2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    return R * c;
+  }
+  
   function interpolateCoordinates(
     start: Mappedin.Coordinate,
     end: Mappedin.Coordinate,
     numPoints: number
   ): Mappedin.Coordinate[] {
     const interpolatedCoords: Mappedin.Coordinate[] = [];
-
+  
     for (let i = 1; i <= numPoints; i++) {
       const t = i / (numPoints + 1);
-
+  
       const latitude = start.latitude + t * (end.latitude - start.latitude);
       const longitude = start.longitude + t * (end.longitude - start.longitude);
       const floorId = start.floorId; // Assuming both coordinates are on the same floor.
-
+  
       interpolatedCoords.push(new Mappedin.Coordinate(latitude, longitude, floorId));
     }
-
+  
     return interpolatedCoords;
   }
-
-  // generate smooth route
+  
   function generateSmoothRoute(
     originalRoute: Mappedin.Coordinate[],
-    pointsPerSegment: number
+    basePointsPerSegment: number,
+    maxPoints: number
   ): Mappedin.Coordinate[] {
     const smoothRoute: Mappedin.Coordinate[] = [];
-
+    let totalDistance = 0;
+  
+    // Calculate total distance of the route
+    for (let i = 0; i < originalRoute.length - 1; i++) {
+      totalDistance += calculateDistance(originalRoute[i], originalRoute[i + 1]);
+    }
+  
     for (let i = 0; i < originalRoute.length - 1; i++) {
       const start = originalRoute[i];
       const end = originalRoute[i + 1];
-
+      
       smoothRoute.push(start);
-
-      const interpolatedPoints = interpolateCoordinates(start, end, pointsPerSegment);
+  
+      const segmentDistance = calculateDistance(start, end);
+      const segmentRatio = segmentDistance / totalDistance;
+      
+      // calculate the number of points for this segment based on its length relative to the total route
+      const pointsForSegment = Math.round(basePointsPerSegment + (maxPoints - basePointsPerSegment) * segmentRatio);
+      
+      const interpolatedPoints = interpolateCoordinates(start, end, pointsForSegment);
       smoothRoute.push(...interpolatedPoints);
     }
-
+  
     smoothRoute.push(originalRoute[originalRoute.length - 1]);
-
+  
     return smoothRoute;
   }
-
+  
   const handleRouteCalculated = useCallback(
     (directions: Mappedin.Directions) => {
       if (directions && directions.coordinates) {
-        const pointsPerSegment = 5;
-        const smoothRoute = generateSmoothRoute(directions.coordinates, pointsPerSegment);
+        const basePointsPerSegment = 1;
+        const maxPoints = 50; 
+        const smoothRoute = generateSmoothRoute(directions.coordinates, basePointsPerSegment, maxPoints);
         setRoute(smoothRoute);
       }
     },
@@ -134,7 +161,7 @@ export default function Map() {
         accessibleToggleValue={accessibleToggleValue}
         onRouteCalculated={handleRouteCalculated}
       />
-      {route.length > 0 && <MovingBlueDot route={route} interval={500} />}
+      {route.length > 0 && <MovingBlueDot route={route} interval={1000} />}
       <Marker target={endCoordinate} options={{ rank: 'always-visible' }}>
         <div style={styles.destinationMarker}>🏁</div>
       </Marker>

@@ -5,7 +5,7 @@ import BlueDotMarker from './BlueDotMarker';
 
 interface MovingBlueDotProps {
   route: Mappedin.Coordinate[];
-  interval: number; // Interval in milliseconds
+  interval: number; // interval in milliseconds
 }
 
 const MovingBlueDot: React.FC<MovingBlueDotProps> = ({ route, interval }) => {
@@ -27,7 +27,7 @@ const MovingBlueDot: React.FC<MovingBlueDotProps> = ({ route, interval }) => {
         setCurrentPosition(newCoord);
         timerRef.current = setTimeout(moveToNextPosition, interval);
       } else {
-        // Reached the end of the route
+        // reached the end of the route
         if (timerRef.current) {
           clearTimeout(timerRef.current);
         }
