@@ -1,7 +1,28 @@
-# Voice-Centric Indoor Navigation Assistant - Detailed Technology Overview
+# Voice-Centric Indoor Navigation Assistant
 
 ## Purpose
+
 This innovative application aims to enhance mobility and independence for visually impaired individuals by providing a voice-first indoor navigation solution. It combines advanced technologies to offer accessible, spoken navigation guidance in indoor spaces.
+
+## Workflow
+
+1. The user interacts with the system through voice commands.
+2. Voiceflow manages the conversation flow, using its decision tree structure to understand the user's intent (space or object) and desired destination.
+3. Multiple TAPO cameras stream 1080p video of the environment (over Wifi).
+4. The CV pipeline (Detectron, DPT, gpt-4o mini) processes the video streams in real-time:
+   - Detecting objects 
+   - Estimating depth
+   - Breaking down images into sub-bounding boxes
+   - Generating parallel narrations for each sub-box
+   - Combining narrations for a comprehensive scene description
+5. This CV data, along with MappedIn SDK floor plan information, is stored in JSON format in the Convex database.
+6. Cohere's reranking is used to find the most relevant information from both CV tags and mapping data based on the user's query.
+7. MappedIn SDK generates a route from the current location to the desired destination or object.
+8. Voiceflow, integrated with Cohere, uses the reranked information and MappedIn route to generate appropriate responses and navigation instructions.
+9. These text instructions are converted to speech using Unreal Engine's text-to-speech capabilities.
+10. The user receives spoken guidance, which is continuously updated based on their movement and changes in the environment.
+
+This integrated system provides a comprehensive, real-time, and adaptive navigation solution specifically designed for visually impaired users, leveraging cutting-edge AI and computer vision technologies to enhance accessibility in indoor spaces.
 
 ## Detailed Technology Breakdown
 
@@ -41,27 +62,7 @@ This innovative application aims to enhance mobility and independence for visual
    - Depth-Based Guidance: Utilizes depth information from the CV pipeline to provide more accurate positioning.
    - Object-Relative Navigation: Uses the relative positioning between objects and depth data to guide the user more precisely.
 
-## Workflow Integration
-
-1. The user interacts with the system through voice commands.
-2. Voiceflow manages the conversation flow, using its decision tree structure to understand the user's intent (space or object) and desired destination.
-3. Multiple TAPO cameras stream 1080p video of the environment.
-4. The CV pipeline (Detectron, DPT, GPT-4 Vision mini) processes the video streams in real-time:
-   - Detecting objects
-   - Estimating depth
-   - Breaking down images into sub-bounding boxes
-   - Generating parallel narrations for each sub-box
-   - Combining narrations for a comprehensive scene description
-5. This CV data, along with MappedIn SDK floor plan information, is stored in JSON format in the Convex database.
-6. Cohere's reranking is used to find the most relevant information from both CV tags and mapping data based on the user's query.
-7. MappedIn SDK generates a route from the current location to the desired destination or object.
-8. Voiceflow, integrated with Cohere, uses the reranked information and MappedIn route to generate appropriate responses and navigation instructions.
-9. These text instructions are converted to speech using Unreal Engine's text-to-speech capabilities.
-10. The user receives spoken guidance, which is continuously updated based on their movement and changes in the environment.
-
-This integrated system provides a comprehensive, real-time, and adaptive navigation solution specifically designed for visually impaired users, leveraging cutting-edge AI and computer vision technologies to enhance accessibility in indoor spaces.
-
 ## Running
 
-- `git clone https://github.com/akjadhav/hackthenorth-2024.git && cd hackthenorth-2024`
-- `npm run dev`
+1. `git clone https://github.com/akjadhav/hackthenorth-2024.git && cd hackthenorth-2024`
+2. `npm run dev`
