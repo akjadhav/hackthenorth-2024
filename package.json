@@ -14,6 +14,7 @@
     "@convex-dev/auth": "^0.0.47",
     "@mappedin/react-sdk": "^6.0.1-beta.2",
     "@types/node-fetch": "^2.6.11",
+    "axios": "^1.7.7",
     "cohere-ai": "^7.13.1",
     "convex": "^1.16.0",
     "convex-helpers": "^0.1.58",
