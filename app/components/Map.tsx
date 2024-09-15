@@ -9,7 +9,7 @@ import Mappedin from '@mappedin/react-sdk';
 
 import FloorSelector from './FloorSelector';
 import MovingBlueDot from './MovingBlueDot';
-// import BlueDotMarker from './BlueDotMarker';
+import BlueDotMarker from './BlueDotMarker';
 import NavigateBetweenTwoCoordinates from './Navigation';
 import '@mappedin/react-sdk/lib/esm/index.css';
 
@@ -54,6 +54,10 @@ export default function Map() {
       )
     );
   }, [CONSTANTS]);
+
+  useEffect(() => {
+    console.log('Route updated:', route);
+  }, [route]);
 
   function calculateDistance(
     coord1: Mappedin.Coordinate,
@@ -139,6 +143,7 @@ export default function Map() {
 
   const handleRouteCalculated = useCallback(
     (directions: Mappedin.Directions) => {
+      console.log('handleRouteCalculated called with directions:', directions); 
       if (directions && directions.coordinates) {
         const basePointsPerSegment = 1;
         const maxPoints = 50;
@@ -147,6 +152,7 @@ export default function Map() {
           basePointsPerSegment,
           maxPoints
         );
+        console.log('Generated smoothRoute:', smoothRoute);
         setRoute(smoothRoute);
       }
     },
@@ -222,18 +228,14 @@ export default function Map() {
         start={currentCoordinate}
         end={endLocation}
         accessibleToggleValue={accessibleToggleValue}
+        onRouteCalculated={handleRouteCalculated}
       />
       {route.length > 0 && (
         <MovingBlueDot
           route={route}
-          interval={750}
+          speed={5} // Speed in km/h (adjust as needed)
         />
       )}
-      {/* <Marker
-        target={endCoordinate}
-        options={{ rank: 'always-visible' }}>
-        <div style={styles.destinationMarker}>🏁</div>
-      </Marker> */}
     </MapView>
   ) : null;
 }

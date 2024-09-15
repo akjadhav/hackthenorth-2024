@@ -10,7 +10,9 @@ interface CoordinatesProps {
   start: Mappedin.Coordinate;
   end: any;
   accessibleToggleValue: boolean;
+  onRouteCalculated: (directions: Mappedin.Directions) => void; 
 }
+
 
 const groq = new Groq({
   apiKey: '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',
@@ -77,6 +79,7 @@ export default function NavigateBetweenTwoCoordinates({
   start,
   end,
   accessibleToggleValue,
+  onRouteCalculated,
 }: CoordinatesProps) {
   const { mapView, mapData } = useMap();
 
@@ -103,6 +106,9 @@ export default function NavigateBetweenTwoCoordinates({
         console.log('directionsJson', instructions);
         setDirectionsJson(instructions);
         setMappingDirections(directions);
+        if (directions) {
+          onRouteCalculated(directions); 
+        }
       } else if (end.type === 'object') {
         const space = mapData
           .getByType('space')
