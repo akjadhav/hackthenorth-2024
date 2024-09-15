@@ -73,17 +73,3 @@ class ObjectDetector:
                         (int(x1), int(y1)-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         
         return img
-
-    def get_detection_info(self, detections, depth_map):
-        min_depth = np.min(depth_map)
-        max_depth = np.max(depth_map)
-        info = []
-
-        for det in detections:
-            x1, y1, x2, y2, conf, class_name = det
-            center_x, center_y = int((x1 + x2) / 2), int((y1 + y2) / 2)
-            depth = depth_map[center_y, center_x]
-            scaled_depth = self.scale_depth(depth, min_depth, max_depth)
-            info.append(f"{class_name}, confidence: {conf:.2f}, depth: {scaled_depth:.2f}")
-
-        return info
