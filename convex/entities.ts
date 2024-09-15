@@ -26,8 +26,9 @@ export const getEntityInfo = query({
     );
 
     if (results.length === 0) {
-      throw new Error(`No entity found for object id: ${id}`);
+      throw new Error(`No object found with id: ${id}`);
     }
+
     return results[0];
   },
 });
