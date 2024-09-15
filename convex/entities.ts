@@ -11,26 +11,23 @@ export const getEntityInfo = query({
       return { spaceId: id };
     }
 
-    // otherwise, it's an object id and need to fetch all entities
+    // otherwise, it's an object id
     const allEntities = await ctx.db.query("entities").collect();
-    // filter in memory
-    const entity = allEntities.find(entity => 
-      entity.objects.some(obj => obj.id === id)
+    
+    console.log(allEntities);
+
+    const results = allEntities.flatMap(entity => 
+      entity.objects.filter(obj => obj.id === id)
+        .map(obj => ({
+          spaceId: entity.spaceId,
+          objectId: obj.id,
+          objectLocation: obj.location
+        }))
     );
 
-    if (!entity) {
+    if (results.length === 0) {
       throw new Error(`No entity found for object id: ${id}`);
     }
-
-    const object = entity.objects.find(obj => obj.id === id);
-    if (!object) {
-      throw new Error(`Object with id ${id} not found in the entity`);
-    }
-
-    return {
-      spaceId: entity.spaceId,
-      objectId: id,
-      objectLocation: object.location
-    };
+    return results[0];
   },
 });

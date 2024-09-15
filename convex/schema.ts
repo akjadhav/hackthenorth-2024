@@ -70,7 +70,7 @@ const authTables = {
     .index("credentialID", ["credentialID"]),
 };
 
-// New entities table
+// new entities table
 const entitiesTable = defineTable({
   camera: v.union(
     v.null(),
