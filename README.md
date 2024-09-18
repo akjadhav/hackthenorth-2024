@@ -1,4 +1,6 @@
-# Voice-Centric Indoor Navigation Assistant
+# PathSense
+
+Devpost: https://devpost.com/software/pathsense-athy2r
 
 ## Purpose
 
