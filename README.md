@@ -3,6 +3,7 @@
 Empowering Vision Through Voice. Revolutionizing indoor mobility with real-time, adaptive AI-enabled guidance for seamless navigation in complex spaces.
 
 Devpost: https://devpost.com/software/pathsense-athy2r
+
 Won Hack the North 2024 (grand winner) & 1st Place "Best Use of Cohere"
 
 ## Purpose
